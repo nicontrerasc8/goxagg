@@ -127,7 +127,7 @@ Transformar la página principal de GOXA en una **landing page de conversión** 
 ### 3.2 Número de WhatsApp
 **Formato del Enlace:**
 ```
-https://wa.me/51987654321?text=Hola%20GOXA%2C%20me%20interesa%20conocer%20sus%20productos
+https://wa.me/51998855069?text=Hola%20GOXA%2C%20me%20interesa%20conocer%20sus%20productos
 ```
 
 **Mensaje Predefinido:**
@@ -302,7 +302,7 @@ https://wa.me/51987654321?text=Hola%20GOXA%2C%20me%20interesa%20conocer%20sus%20
   <div class="hero-content">
     <h1>Productos Naturales de Oxapampa</h1>
     <p>Mieles 100% naturales, carnes artesanales y orquídeas únicas</p>
-    <a href="https://wa.me/51987654321" class="whatsapp-btn">
+    <a href="https://wa.me/51998855069" class="whatsapp-btn">
       Comprar por WhatsApp
     </a>
   </div>
@@ -320,7 +320,7 @@ https://wa.me/51987654321?text=Hola%20GOXA%2C%20me%20interesa%20conocer%20sus%20
       <img src="miel.jpg" alt="Miel de Oxapampa">
       <h3>Miel de Oxapampa</h3>
       <p>100% natural, sin aditivos</p>
-      <a href="https://wa.me/51987654321" class="whatsapp-btn-small">
+      <a href="https://wa.me/51998855069" class="whatsapp-btn-small">
         Ver en WhatsApp
       </a>
     </div>
@@ -332,7 +332,7 @@ https://wa.me/51987654321?text=Hola%20GOXA%2C%20me%20interesa%20conocer%20sus%20
 <section class="final-cta">
   <h2>¿Listo para probar nuestros productos?</h2>
   <p>Contáctanos ahora y recibe tu pedido en 24-48 horas</p>
-  <a href="https://wa.me/51987654321" class="whatsapp-btn-large">
+  <a href="https://wa.me/51998855069" class="whatsapp-btn-large">
     Comprar por WhatsApp
   </a>
 </section>

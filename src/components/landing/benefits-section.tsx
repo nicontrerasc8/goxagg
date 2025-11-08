@@ -79,7 +79,7 @@ export default function BenefitsSection() {
               >
                 {/* Icon */}
                 <div className={`w-16 h-16 ${benefit.bgColor} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <IconComponent className={`w-8 h-8 ${benefit.color}`} />
+                  <IconComponent className={`w-16 h-16 ${benefit.color}`} />
                 </div>
 
                 {/* Content */}
