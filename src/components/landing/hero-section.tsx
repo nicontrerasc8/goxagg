@@ -58,7 +58,7 @@ export default function HeroSection() {
           {/* Título Principal */}
           <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight shadow-text">
             Productos Naturales y Gourmet de{" "}
-            <span className="text-amber-400 block sm:inline">Oxapampa</span>
+            <span className="text-yellow-400 block sm:inline">Oxapampa</span>
           </h1>
 
           {/* Subtítulo */}
