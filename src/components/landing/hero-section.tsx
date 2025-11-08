@@ -5,7 +5,7 @@ import WhatsAppButton from "@/components/ui/whatsapp-button";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden s">
       {/* Background with gradient */}
       <div className="absolute inset-0 hero-gradient opacity-90"></div>
       
