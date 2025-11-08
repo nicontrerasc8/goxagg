@@ -106,7 +106,7 @@ export default function ProcessSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div className="flex items-center gap-2 text-gray-700">
                 <MessageCircle className="w-5 h-5 text-whatsapp" />
-                <span>WhatsApp: +51 987 654 321</span>
+                <span>WhatsApp: +51 998 855 069</span>
               </div>
               <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
               <div className="flex items-center gap-2 text-gray-700">

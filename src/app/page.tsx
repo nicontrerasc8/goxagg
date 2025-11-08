@@ -41,7 +41,7 @@ export default function Home() {
               Productos naturales y gourmet de Oxapampa
             </p>
             <div className="flex justify-center gap-4 text-sm text-gray-400">
-              <span>📱 WhatsApp: +51 987 654 321</span>
+              <span>📱 WhatsApp: +51 998 855 069</span>
               <span>📧 contacto@goxa.pe</span>
             </div>
           </div>

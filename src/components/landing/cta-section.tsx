@@ -79,7 +79,7 @@ export default function CTASection() {
 
           {/* Contact info */}
           <div className="mt-12 text-white/80 text-lg">
-            <p className="mb-2">📱 **WhatsApp:** +51 987 654 321</p>
+            <p className="mb-2">📱 **WhatsApp:** +51 998 855 069</p>
             <p className="mb-2">📧 **Email:** contacto@goxa.pe</p>
             <p>📍 Entregas en Lima | Origen en Oxapampa</p>
           </div>
