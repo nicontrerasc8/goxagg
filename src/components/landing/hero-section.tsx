@@ -1,131 +1,160 @@
 "use client";
 
-// Importamos React y los iconos necesarios de lucide-react
-import React from 'react';
-import { MessageCircle, Truck, Shield, Star, Facebook, Instagram } from "lucide-react";
+import React, { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Facebook, Instagram } from "lucide-react";
 
-// NOTA: Como no tengo acceso a tu componente "@/components/ui/whatsapp-button",
-// he creado un botón estándar <button> y le he aplicado estilos de Tailwind
-// para que se parezca a un botón de WhatsApp.
+type Slide = { src: string; alt: string };
 
 export default function HeroSection() {
+  const slides: Slide[] = useMemo(
+    () => [
+      { src: "/hero-1.png", alt: "Paisaje de Oxapampa" },
+
+    ],
+    []
+  );
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setIndex((i) => (i + 1) % slides.length);
+    }, 6500);
+    return () => window.clearInterval(id);
+  }, [slides.length]);
+
+  const goPrev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
+  const goNext = () => setIndex((i) => (i + 1) % slides.length);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden font-sans text-black">
-      {/* Fondo con Gradiente Mejorado:
-        Usamos un gradiente más oscuro y "natural" que va de un verde oscuro
-        a un gris oscuro y de vuelta a un verde esmeralda.
-      */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-green-200 via-green-500 opacity-95"></div>
-      
-      {/* Contenedor principal del contenido */}
-      <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          
-          {/* Logo del Cliente:
-            Añadido según tu petición. w-48 es ~192px, muy cercano a 200px.
-            Tiene bordes redondeados, una sombra y un borde sutil.
-            Añadido un onError para un fallback por si 'logo.jpg' no carga.
-          */}
-          <img 
-            src="logo.jpg" 
-            alt="Logo Oxapampa Gourmet"
-            className="w-48 h-48 mx-auto mb-6 rounded-full shadow-2xl border-4 border-white/20 object-cover"
-            onError={(e) => {
-              e.currentTarget.src = "https://placehold.co/200x200/333/FFF?text=Logo";
-              e.currentTarget.onerror = null; 
-            }}
-          />
-
-          {/* Trust Badges (Insignias de Confianza) - Estilo Mejorado:
-            Ahora usan un fondo semitransparente con backdrop-blur para un 
-            efecto "glassmorphism" moderno.
-          */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8">
-            <div className="flex items-center rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-sm font-medium text-black/90 shadow-lg">
-              <Truck className="w-4 h-4 mr-2 text-amber-300" />
-              Envíos a Lima
-            </div>
-            <div className="flex items-center rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-sm font-medium text-black/90 shadow-lg">
-              <Shield className="w-4 h-4 mr-2 text-amber-300" />
-              Productos Frescos
-            </div>
-            <div className="flex items-center rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-sm font-medium text-black/90 shadow-lg">
-              <Star className="w-4 h-4 mr-2 text-amber-300" />
-              Calidad Garantizada
+    <section id="home" className="relative min-h-[92vh] w-full overflow-hidden">
+      {/* Header (estilo Oregon Foods) */}
+      <div className="absolute top-0 left-0 right-0 z-30 bg-[#2F4B39]/90 backdrop-blur-md">
+        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.jpg"
+              alt="Logo GOXA"
+              className="w-10 h-10 rounded-full border border-white/20 object-cover shadow"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src =
+                  "https://placehold.co/80x80/333/FFF?text=Logo";
+              }}
+            />
+            <div className="leading-tight">
+              <div className="text-white font-semibold tracking-wider">GOXA</div>
+              <div className="hidden sm:block text-white/70 text-xs">
+                Oxapampa • Natural • Gourmet
+              </div>
             </div>
           </div>
 
-          {/* Título Principal */}
-          <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight shadow-text">
-            Productos Naturales y Gourmet de{" "}
-            <span className="text-yellow-400 block sm:inline">Oxapampa</span>
-          </h1>
 
-          {/* Subtítulo */}
-          <p className="text-xl md:text-2xl text-black/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Mieles 100% naturales, carnes artesanales y orquídeas únicas
-          </p>
-
-          {/* Botón de CTA (WhatsApp) - Estilo Mejorado:
-            Un botón más grande y claro con un color verde distintivo 
-            y efectos hover sutiles.
-          */}
-          <div className="mb-12">
-            <button className="flex items-center justify-center mx-auto bg-green-500 hover:bg-green-600 text-black font-bold text-lg sm:text-xl px-8 py-4 rounded-full shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105 group">
-              <MessageCircle className="w-6 h-6 mr-3 transition-transform duration-300 group-hover:rotate-12" />
-              <span>Comprar por WhatsApp</span>
-            </button>
-          </div>
-
-          {/* Elementos de Confianza Adicionales - Layout Mejorado:
-            Usamos flex-row en pantallas grandes para que se vea más limpio.
-          */}
-          <div className="text-black/80 text-base sm:text-lg flex flex-col sm:flex-row gap-2 sm:gap-6 justify-center">
-            <p className="flex items-center justify-center">
-              <span className="text-2xl mr-2">🌱</span>
-              <span>Productos 100% Naturales</span>
-            </p>
-            <p className="flex items-center justify-center">
-              <span className="text-2xl mr-2">🚚</span>
-              <span>Envío Gratis a Lima</span>
-            </p>
-            <p className="flex items-center justify-center">
-              <span className="text-2xl mr-2">⭐</span>
-              <span>Calidad Garantizada</span>
-            </p>
-          </div>
-           {/* ----- INICIO: Botones de Redes Sociales ----- */}
-          <div className="mt-12 flex justify-center gap-8">
-            <a 
-              href="https://www.facebook.com/people/Goxa/61566229425220/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Síguenos en Facebook"
-              className="text-black/70 hover:text-blue-600 transition-colors duration-300"
-            >
-              <Facebook className="w-8 h-8" />
-            </a>
-            <a 
-              href="https://www.instagram.com/goxa_pe" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Síguenos en Instagram"
-              className="text-black/70 hover:text-pink-600 transition-colors duration-300"
-            >
-              <Instagram className="w-8 h-8" />
-            </a>
-          </div>
-          {/* ----- FIN: Botones de Redes Sociales ----- */}
+          <nav className="flex items-center gap-6 text-sm font-medium text-white/90">
+            <a href="#home" className="hover:text-white transition-colors">HOME</a>
+            <a href="#productos" className="hover:text-white transition-colors">PRODUCTOS</a>
+            <a href="#contacto" className="hover:text-white transition-colors">CONTACTO</a>
+          </nav>
         </div>
       </div>
 
-      {/* Indicador de Scroll (Decorativo):
-        Mantenido del diseño original, es un buen detalle.
-      */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2 animate-bounce">
-          <div className="w-1 h-2 bg-white/50 rounded-full animate-pulse"></div>
+      {/* Slider background */}
+      <div className="absolute inset-0">
+        {slides.map((s, i) => (
+          <div
+            key={s.src}
+            className={`absolute inset-0 transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
+              }`}
+          >
+            <Image
+              src={s.src}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        ))}
+
+        {/* Overlays para look premium */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/25" />
+      </div>
+
+   
+
+      {/* Contenido central */}
+      <div className="relative z-20 container mx-auto px-4 pt-28 pb-16 min-h-[92vh] flex items-center">
+        <div className="w-full text-center">
+          {/* “Logo pill” */}
+          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full shadow-xl">
+            <img
+              src="/logo.jpg"
+              alt="Logo GOXA"
+              className="w-20 h-20 rounded-full border border-white/20 object-cover shadow"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src =
+                  "https://placehold.co/80x80/333/FFF?text=Logo";
+              }}
+            />
+          </div>
+
+          {/* Headline */}
+          <h1 className="mt-7 text-white font-extrabold tracking-tight leading-[0.95] text-4xl sm:text-5xl md:text-7xl">
+            Sabor real de Oxapampa.
+            <span className="block text-white/90">Hecho para disfrutar.</span>
+          </h1>
+
+          {/* Subcopy */}
+          <p className="mt-5 text-white/85 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+            Productos naturales con carácter gourmet: seleccionados, cuidados y
+            listos para elevar cualquier comida.
+          </p>
+
+          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="#productos"
+              className="px-7 py-3 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg hover:brightness-95 transition"
+            >
+              Ver Productos
+            </a>
+            <a
+              href="https://wa.me/51998855069"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3 rounded-full bg-white/15 text-white font-semibold border border-white/25 hover:bg-white/20 transition"
+            >
+              Comprar por WhatsApp
+            </a>
+          </div>
+
+    
         </div>
+      </div>
+
+      {/* Redes (abajo izquierda) */}
+      <div className="absolute left-6 bottom-6 z-30 flex items-center gap-4 text-white/90">
+        <span className="hidden sm:inline text-sm tracking-widest uppercase">Síguenos</span>
+        <a
+          href="https://www.facebook.com/people/Goxa/61566229425220/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="hover:text-white transition"
+        >
+          <Facebook className="w-5 h-5" />
+        </a>
+        <a
+          href="https://www.instagram.com/goxa_pe"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="hover:text-white transition"
+        >
+          <Instagram className="w-5 h-5" />
+        </a>
       </div>
     </section>
   );

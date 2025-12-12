@@ -1,119 +1,113 @@
 "use client";
 
-import { Star, Quote } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import React from "react";
+import { Star } from "lucide-react";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "María González",
-    location: "San Isidro, Lima",
-    rating: 5,
-    text: "La miel de GOXA es increíble, nunca había probado algo tan puro. El envío fue súper rápido y la atención al cliente excelente.",
-    avatar: "MG",
-  },
-  {
-    id: 2,
-    name: "Carlos Mendoza",
-    location: "Miraflores, Lima",
-    rating: 5,
-    text: "Las hamburguesas artesanales son deliciosas. Mi familia las adora y siempre pedimos más. La calidad es excepcional.",
-    avatar: "CM",
-  },
-  {
-    id: 3,
-    name: "Ana Rodríguez",
-    location: "La Molina, Lima",
-    rating: 5,
-    text: "Las orquídeas llegaron perfectas y hermosas. El cuidado en el empaque y la frescura de los productos es impresionante.",
-    avatar: "AR",
-  },
-  {
-    id: 4,
-    name: "Roberto Silva",
-    location: "Surco, Lima",
-    rating: 5,
-    text: "Los chorizos para parrilla son auténticos. Sabor único que nos recuerda a Oxapampa. Definitivamente volveremos a pedir.",
-    avatar: "RS",
-  },
-];
+type Testimonial = {
+  name: string;
+  place: string;
+  text: string;
+  rating: 4 | 5;
+};
+
+function initials(name: string) {
+  const parts = name.trim().split(" ");
+  const a = parts[0]?.[0] ?? "G";
+  const b = parts[1]?.[0] ?? "X";
+  return (a + b).toUpperCase();
+}
 
 export default function TestimonialsSection() {
+  const testimonials: Testimonial[] = [
+    {
+      name: "Valeria R.",
+      place: "Lima",
+      text: "Se nota la calidad desde que lo pruebas. Compré miel y polen, y el sabor es súper auténtico. Recomendadísimo.",
+      rating: 5,
+    },
+    {
+      name: "Javier M.",
+      place: "San Borja",
+      text: "La presentación es bonita y el producto llega bien. Me gustó que responden rápido por WhatsApp.",
+      rating: 5,
+    },
+    {
+      name: "Camila S.",
+      place: "Surco",
+      text: "Los packs son buenazos para regalo. Me encantó el enfoque natural y el sabor de Oxapampa.",
+      rating: 5,
+    },
+    {
+      name: "Rodrigo P.",
+      place: "Miraflores",
+      text: "Buen producto y buena atención. Se siente artesanal y de confianza.",
+      rating: 4,
+    },
+    {
+      name: "Andrea L.",
+      place: "La Molina",
+      text: "Probé propóleo y miel: excelente. Se volvió parte de mi rutina.",
+      rating: 5,
+    },
+  ];
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[#F4F1EA]">
       <div className="container mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-gray-900 mb-4">
-            Lo que dicen nuestros clientes
+        <div className="text-center mb-12">
+          <p className="text-amber-700 font-bold tracking-[0.2em] uppercase">
+            Reseñas
+          </p>
+          <h2 className="mt-3 text-4xl md:text-5xl font-extrabold text-green-900 tracking-tight">
+            Lo que dicen de GOXA
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Testimonios reales de clientes satisfechos con nuestros productos
+          <p className="mt-4 text-green-950/70 max-w-2xl mx-auto">
+            Testimonios reales (por ahora genéricos). Luego los cambiamos por tus reseñas reales.
           </p>
         </div>
 
-        {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-6">
-                {/* Quote icon */}
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center">
-                    <Quote className="w-6 h-6 text-white" />
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t, idx) => (
+            <div
+              key={idx}
+              className="rounded-3xl bg-white shadow-lg border border-green-900/10 p-6 hover:shadow-xl transition"
+            >
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-green-800 text-white flex items-center justify-center font-bold">
+                  {initials(t.name)}
                 </div>
-
-                {/* Rating */}
-                <div className="flex justify-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+                <div>
+                  <p className="font-bold text-green-950">{t.name}</p>
+                  <p className="text-sm text-green-950/60">{t.place}</p>
                 </div>
+              </div>
 
-                {/* Testimonial text */}
-                <blockquote className="text-gray-700 text-center mb-6 leading-relaxed">
-                  "{testimonial.text}"
-                </blockquote>
+              <div className="mt-4 flex gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${i < t.rating ? "text-amber-500" : "text-gray-300"}`}
+                    fill={i < t.rating ? "currentColor" : "none"}
+                  />
+                ))}
+              </div>
 
-                {/* Customer info */}
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold text-lg mx-auto mb-3">
-                    {testimonial.avatar}
-                  </div>
-                  <h4 className="font-poppins font-semibold text-gray-900">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-gray-500">
-                    {testimonial.location}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+              <p className="mt-4 text-green-950/80 leading-relaxed">
+                “{t.text}”
+              </p>
+            </div>
           ))}
         </div>
 
-        {/* Bottom section */}
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-            <h3 className="text-2xl md:text-3xl font-poppins font-bold text-gray-900 mb-4">
-              ¿Listo para ser nuestro próximo cliente satisfecho?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Únete a cientos de clientes que ya disfrutan de nuestros productos naturales de Oxapampa
-            </p>
-            
-            {/* Average rating display */}
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <span className="text-lg font-semibold text-gray-900">4.9/5</span>
-              <span className="text-gray-500">(500+ reseñas)</span>
-            </div>
-          </div>
+        <div id="contacto" className="mt-14 text-center">
+          <a
+            href="https://wa.me/51998855069"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-green-800 text-white font-bold shadow-lg hover:bg-green-900 transition"
+          >
+            Escribir por WhatsApp
+          </a>
         </div>
       </div>
     </section>
