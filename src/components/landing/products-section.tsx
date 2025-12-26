@@ -113,15 +113,23 @@ export default function ProductsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((p) => (
             <article key={p.id} className="group relative overflow-hidden rounded-3xl bg-white/85 backdrop-blur border border-green-900/10 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              
+
               {/* Imagen Container */}
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
                   src={p.imageSrc}
                   alt={p.alt}
                   fill
+                  sizes="
+    (max-width: 640px) 100vw,
+    (max-width: 1024px) 50vw,
+    33vw
+  "
+                  quality={85}
+                  priority={p.id === 1} // solo el primer producto (mejora LCP)
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+
                 {p.badge && (
                   <div className="absolute top-4 left-4 rounded-full bg-green-950/85 text-white px-3 py-1 shadow-md backdrop-blur">
                     <span className="text-xs font-extrabold tracking-widest uppercase">{p.badge}</span>
