@@ -116,7 +116,7 @@ export default function HeroSection() {
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="#productos"
-              className="px-7 py-3 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg hover:brightness-95 transition"
+              className="px-7 py-3 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25  transition"
             >
               Ver Productos
             </a>
@@ -124,7 +124,7 @@ export default function HeroSection() {
               href="https://wa.me/51998855069"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3 rounded-full bg-white/15 text-white font-semibold border border-white/25 hover:bg-white/20 transition"
+              className="px-7 py-3 rounded-full bg-green-800 text-white font-semibold border border-white/25  transition"
             >
               Comprar por WhatsApp
             </a>
