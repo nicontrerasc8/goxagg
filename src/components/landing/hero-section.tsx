@@ -34,20 +34,15 @@ export default function HeroSection() {
         <div className="container mx-auto px-4 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Logo GOXA"
-              className="w-10 h-10 rounded-full border border-white/20 object-cover shadow"
+              className="w-20 h-20 rounded-full border border-white/20 object-cover shadow"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src =
                   "https://placehold.co/80x80/333/FFF?text=Logo";
               }}
             />
-            <div className="leading-tight">
-              <div className="text-white font-semibold tracking-wider">GOXA</div>
-              <div className="hidden sm:block text-white/70 text-xs">
-                Oxapampa • Natural • Gourmet
-              </div>
-            </div>
+         
           </div>
 
 
@@ -91,9 +86,9 @@ export default function HeroSection() {
           {/* “Logo pill” */}
           <div className="inline-flex items-center justify-center px-6 py-2 rounded-full shadow-xl">
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Logo GOXA"
-              className="w-20 h-20 rounded-full border border-white/20 object-cover shadow"
+              className="w-40 h-40 rounded-full border border-white/20 object-cover shadow"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src =
                   "https://placehold.co/80x80/333/FFF?text=Logo";
