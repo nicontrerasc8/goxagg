@@ -131,7 +131,7 @@ https://wa.me/51998855069?text=Hola%20GOXA%2C%20me%20interesa%20conocer%20sus%20
 ```
 
 **Mensaje Predefinido:**
-"Hola GOXA, me interesa conocer sus productos naturales de Oxapampa. ¿Podrían enviarme el catálogo y precios?"
+"Hola, me interesa conocer sus productos naturales de Oxapampa. ¿Podrían enviarme el catálogo y precios?"
 
 ### 3.3 Elementos de Confianza
 - **Badges de Seguridad**: "Envío Seguro" | "Pago Protegido"

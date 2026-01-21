@@ -19,7 +19,7 @@ const WhatsAppButton = ({
   variant = "default",
   className,
   phoneNumber = "51998855069", // Default number from guidelines
-  message = "Hola GOXA, me interesa conocer sus productos naturales de Oxapampa. ¿Podrían enviarme el catálogo y precios?",
+  message = "Hola, me interesa conocer sus productos naturales de Oxapampa. ¿Podrían enviarme el catálogo y precios?",
 }: WhatsAppButtonProps) => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

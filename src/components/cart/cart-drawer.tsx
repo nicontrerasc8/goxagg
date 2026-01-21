@@ -37,7 +37,7 @@ export default function CartDrawer() {
     const handleWhatsAppCheckout = () => {
         if (items.length === 0) return;
 
-        let message = "*¡Hola GOXA! Quiero realizar el siguiente pedido:*%0A%0A";
+        let message = "*¡Hola! Quiero realizar el siguiente pedido:*%0A%0A";
 
         items.forEach((item) => {
             message += `• ${item.quantity}x ${item.productName} (${item.variantLabel}) - S/ ${(item.price * item.quantity).toFixed(2)}%0A`;
