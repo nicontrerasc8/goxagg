@@ -84,7 +84,7 @@ export const products: Product[] = [
   },
 
   // DESAYUNOS
-  {
+/*   {
     id: 7,
     name: "Yogurt Probiótico",
     description: "Yogurt con cultivos vivos que fortalecen digestión y defensas.",
@@ -92,8 +92,8 @@ export const products: Product[] = [
     imageSrc: "/yogurt-probiotico.png",
     alt: "Yogurt probiótico",
     category: "Desayunos",
-  },
-  {
+  }, */
+  /* {
     id: 8,
     name: "Yogurt Griego",
     description: "0% grasas, 0% azúcar añadida, alto en proteína.",
@@ -113,8 +113,8 @@ export const products: Product[] = [
     imageSrc: "/queso-brie.png",
     alt: "Queso Brie",
     category: "Desayunos"
-  },
-  {
+  }, */
+/*   {
     id: 10,
     name: "Queso Camembert",
     description: "Queso francés con sabor intenso y textura cremosa.",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     imageSrc: "/queso-camembert.png",
     alt: "Queso Camembert",
     category: "Desayunos",
-  },
+  }, */
   {
     id: 11,
     name: "Mantequilla Artesanal",
@@ -180,7 +180,7 @@ export const products: Product[] = [
     alt: "Chorizo oxapampino",
     category: "Parrillas",
   },
-  {
+/*   {
     id: 16,
     name: "Costillas Ahumadas",
     description: "Costillas de cerdo sazonadas y ahumadas artesanalmente.",
@@ -191,8 +191,8 @@ export const products: Product[] = [
     imageSrc: "/costillas.png",
     alt: "Costillas ahumadas",
     category: "Parrillas",
-  },
-  {
+  }, */
+/*   {
     id: 17,
     name: "Cecina Ahumada",
     description: "Cortes selectos de cerdo con ahumado artesanal a leña.",
@@ -200,7 +200,7 @@ export const products: Product[] = [
     imageSrc: "/cecina.png",
     alt: "Cecina ahumada",
     category: "Parrillas",
-  },
+  }, */
   {
     id: 18,
     name: "Cerveza Toro Bravo",
@@ -222,7 +222,7 @@ export const products: Product[] = [
     alt: "Cúrcuma en polvo",
     category: "Salud",
   },
-  {
+/*   {
     id: 20,
     name: "Sacha Jergón",
     description: "Tubérculo anticanceroso y antiinflamatorio de la selva peruana.",
@@ -230,7 +230,7 @@ export const products: Product[] = [
     imageSrc: "/sacha-jergon.png",
     alt: "Sacha Jergón",
     category: "Salud",
-  },
+  }, */
   {
     id: 21,
     name: "Tocosh (Penicilina Natural)",
@@ -259,17 +259,16 @@ export const products: Product[] = [
     id: 23,
     name: "Pack Familiar Salud",
     description: "El combo ideal para proteger a toda la familia con productos naturales.",
-    variants: [{ label: "Pack", price: "S/ 95" }],
+    variants: [{ label: "Pack", price: "S/ 107.9" }],
     imageSrc: "/pack-energia.png",
     alt: "Pack Miel y derivados",
     category: "Packs",
-    badge: "Pack",
   },
   {
     id: 24,
     name: "Pack Familiar GOXA",
     description: "Selección de favoritos para la mesa familiar: quesos, café y más.",
-    variants: [{ label: "Pack", price: "S/ 120" }],
+    variants: [{ label: "Pack", price: "S/ 143.9" }],
     imageSrc: "/pack-familia.png",
     alt: "Pack familiar GOXA",
     category: "Packs",

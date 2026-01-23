@@ -90,7 +90,7 @@ export default function HeroSection() {
       <div className="relative z-20 container mx-auto px-4 pt-32 pb-16 min-h-[92vh] flex items-center">
         <div className="relative w-full text-center">
           <div
-            className="absolute right-4 flex items-center justify-center rounded-full backdrop-blur"
+            className=" inset-x-0 flex items-center justify-center rounded-full"
             style={{ top: "-2.5rem" }}
           >
             <img
@@ -106,10 +106,9 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1 className="mt-7 text-white font-extrabold tracking-tight leading-[1.05] text-3xl sm:text-4xl md:text-5xl">
-            <span className="block">Sabor real de Oxapampa,</span>
-            <span className="block text-lg sm:text-xl font-semibold tracking-wide text-white/80">
-              hecho para disfrutar
-            </span>
+            <span className="block">Sabor real de Oxapampa, hecho para disfrutar
+</span>
+         
           </h1>
 
           {/* Subcopy */}
