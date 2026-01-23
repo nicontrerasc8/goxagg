@@ -30,13 +30,13 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-[92vh] w-full overflow-hidden">
       {/* Header (estilo Oregon Foods) */}
-      <div className="absolute top-0 left-0 right-0 z-30 bg-[#2F4B39]/90 backdrop-blur-md">
-        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
+      <div className="absolute top-0 left-0 right-0 z-30 bg-[#2F4B39]/90 backdrop-blur-md border-b border-white/10">
+        <div className="container mx-auto px-6 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
               src="/logo.png"
               alt="Logo GOXA"
-              className="w-20 h-20 rounded-full border border-white/20 object-cover shadow"
+              className="w-24 h-24 rounded-full border border-white/20 object-cover shadow-lg transition-transform duration-300"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src =
                   "https://placehold.co/80x80/333/FFF?text=Logo";
@@ -46,10 +46,16 @@ export default function HeroSection() {
           </div>
 
 
-          <nav className="flex items-center gap-6 text-sm font-medium text-white/90">
-            <a href="#home" className="hover:text-white transition-colors">HOME</a>
-            <a href="#productos" className="hover:text-white transition-colors">PRODUCTOS</a>
-            <a href="#contacto" className="hover:text-white transition-colors">CONTACTO</a>
+          <nav className="flex items-center gap-3 text-sm sm:text-base font-semibold text-white/90 uppercase tracking-wide">
+            {["HOME", "PRODUCTOS", "CONTACTO"].map((label) => (
+              <a
+                key={label}
+                href={`#${label === "HOME" ? "home" : label === "PRODUCTOS" ? "productos" : "contacto"}`}
+                className="rounded-full border border-white/30 bg-white/5 px-5 sm:px-6 py-3 text-sm sm:text-base transition-all duration-200 hover:border-white hover:bg-white/20"
+              >
+                {label}
+              </a>
+            ))}
           </nav>
         </div>
       </div>
@@ -81,14 +87,16 @@ export default function HeroSection() {
    
 
       {/* Contenido central */}
-      <div className="relative z-20 container mx-auto px-4 pt-28 pb-16 min-h-[92vh] flex items-center">
-        <div className="w-full text-center">
-          {/* “Logo pill” */}
-          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full shadow-xl">
+      <div className="relative z-20 container mx-auto px-4 pt-32 pb-16 min-h-[92vh] flex items-center">
+        <div className="relative w-full text-center">
+          <div
+            className="absolute right-4 flex items-center justify-center rounded-full backdrop-blur"
+            style={{ top: "-2.5rem" }}
+          >
             <img
               src="/logo.png"
               alt="Logo GOXA"
-              className="w-40 h-40 rounded-full border border-white/20 object-cover shadow"
+              className="w-40 h-40 rounded-full border border-white/25 object-cover shadow-lg"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src =
                   "https://placehold.co/80x80/333/FFF?text=Logo";
@@ -97,13 +105,15 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="mt-7 text-white font-extrabold tracking-tight leading-[0.95] text-4xl sm:text-5xl md:text-7xl">
-            Sabor real de Oxapampa,
-            <span className="block text-white/90">hecho para disfrutar</span>
+          <h1 className="mt-7 text-white font-extrabold tracking-tight leading-[1.05] text-3xl sm:text-4xl md:text-5xl">
+            <span className="block">Sabor real de Oxapampa,</span>
+            <span className="block text-lg sm:text-xl font-semibold tracking-wide text-white/80">
+              hecho para disfrutar
+            </span>
           </h1>
 
           {/* Subcopy */}
-          <p className="mt-5 text-white font-bold text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+          <p className="mt-5 text-white font-bold text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Productos naturales con carácter gourmet: seleccionados, cuidados y
             listos para mejorar tu calidad de vida y salud
           </p>
@@ -111,7 +121,7 @@ export default function HeroSection() {
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="#productos"
-              className="px-7 py-3 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25  transition"
+              className="px-10 py-4 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
             >
               Ver Productos
             </a>
@@ -119,7 +129,7 @@ export default function HeroSection() {
               href="https://wa.me/51998855069"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3 rounded-full bg-green-800 text-white font-semibold border border-white/25  transition"
+              className="px-10 py-4 rounded-full bg-green-800 text-white font-semibold border border-white/25 transition text-lg sm:text-xl"
             >
               Comprar por WhatsApp
             </a>

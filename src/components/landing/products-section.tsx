@@ -17,39 +17,49 @@ const categoryOrder: Category[] = [
   "Packs",
 ];
 
-const categoryMeta: Record<Category, { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; iconBg: string }> = {
+const categoryMeta: Record<
+  Category,
+  { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; circleBg: string; accentBg: string }
+> = {
   Todos: {
     icon: LayoutGrid,
-    iconBg: "border border-emerald-100 bg-emerald-50 text-emerald-600",
+    circleBg: "bg-emerald-50 text-emerald-800",
+    accentBg: "from-emerald-900 to-emerald-700",
   },
   Miel: {
     icon: Sparkles,
-    iconBg: "border border-amber-100 bg-amber-50 text-amber-600",
+    circleBg: "bg-amber-50 text-amber-700",
+    accentBg: "from-amber-900 to-amber-700",
   },
   "Café y chocolates": {
     icon: Coffee,
-    iconBg: "border border-amber-200 bg-amber-50 text-amber-700",
+    circleBg: "bg-amber-100 text-amber-900",
+    accentBg: "from-amber-900 to-amber-800",
   },
   Desayunos: {
     icon: Sunrise,
-    iconBg: "border border-slate-200 bg-white text-slate-700",
+    circleBg: "bg-slate-50 text-slate-700",
+    accentBg: "from-slate-900 to-slate-500",
   },
   Parrillas: {
     icon: Flame,
-    iconBg: "border border-red-100 bg-red-50 text-red-600",
+    circleBg: "bg-red-50 text-red-700",
+    accentBg: "from-red-900 to-red-700",
   },
   Salud: {
     icon: HeartPulse,
-    iconBg: "border border-emerald-100 bg-emerald-50 text-emerald-700",
+    circleBg: "bg-emerald-50 text-emerald-700",
+    accentBg: "from-emerald-900 to-emerald-600",
   },
   Packs: {
     icon: Gift,
-    iconBg: "border border-indigo-100 bg-indigo-50 text-indigo-600",
+    circleBg: "bg-indigo-50 text-indigo-700",
+    accentBg: "from-indigo-900 to-indigo-700",
   },
 };
 
 export default function ProductsSection() {
-  const { addItem, openCart } = useCart();
+  const { addItem, openCart }:any = useCart();
   const [active, setActive] = useState<Category>("Todos");
 
   const filtered = useMemo(() => {
@@ -75,7 +85,7 @@ export default function ProductsSection() {
           <span className="pointer-events-none absolute -left-4 -top-6 hidden h-24 w-24 rounded-2xl bg-emerald-100/60 blur-3xl sm:block" />
           <span className="pointer-events-none absolute right-4 -bottom-8 hidden h-28 w-28 rounded-3xl bg-amber-100/70 blur-3xl lg:block" />
           <div className="relative overflow-hidden rounded-[32px] border border-green-100 bg-gradient-to-br from-emerald-50/80 via-white to-amber-50/70 p-6 shadow-[0_30px_60px_-30px_rgba(16,185,129,0.6)]">
-            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
               {categoryOrder.map((cat) => {
                 const meta = categoryMeta[cat];
                 const isActive = active === cat;
@@ -84,20 +94,20 @@ export default function ProductsSection() {
                     key={cat}
                     type="button"
                     onClick={() => setActive(cat)}
-                    className={`group flex flex-col items-center gap-4 rounded-[24px] border p-4 text-center transition-all duration-200 ${isActive
-                        ? "border-transparent bg-white shadow-[0_15px_40px_rgba(16,185,129,0.25)]"
+                    className={`group relative flex flex-col items-center gap-3 rounded-[32px] border p-3 pt-6 text-center transition-all duration-200 ${isActive
+                        ? "border-transparent bg-white shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
                         : "border border-green-100 bg-white/80 hover:bg-white"
                       }`}
                   >
                     <span
-                      className={`flex h-20 w-20 items-center justify-center rounded-[26px] ${isActive
-                          ? "border border-transparent bg-gradient-to-br from-green-900 to-emerald-800 text-white shadow-[0_15px_40px_rgba(16,185,129,0.35)]"
-                          : `${meta.iconBg}`
+                      className={`flex h-[140px] w-[140px] items-center justify-center rounded-full text-3xl transition-all duration-200 ${isActive
+                          ? `bg-gradient-to-br ${meta.accentBg} text-white shadow-[0_25px_60px_rgba(16,185,129,0.35)]`
+                          : `${meta.circleBg} shadow-lg`
                         }`}
                     >
-                      <meta.icon className="h-10 w-10" />
+                      <meta.icon className={`${isActive ? "h-12 w-12" : "h-10 w-10"}`} />
                     </span>
-                    <span className="text-sm font-semibold text-green-900">{cat}</span>
+                    <span className="text-sm font-semibold text-green-900 uppercase tracking-[0.3em]">{cat}</span>
                   </button>
                 );
               })}
