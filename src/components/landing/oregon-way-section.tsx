@@ -13,7 +13,7 @@ export default function OregonWaySection() {
   </p>
 
   <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-green-900 tracking-tight">
-    Oxapampa se siente. El sabor lo confirma.
+    Oxapampa se siente, el sabor lo confirma
   </h2>
 
   <div className="mt-6 space-y-5 text-green-950/80 leading-relaxed">

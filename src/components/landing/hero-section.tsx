@@ -98,14 +98,14 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1 className="mt-7 text-white font-extrabold tracking-tight leading-[0.95] text-4xl sm:text-5xl md:text-7xl">
-            Sabor real de Oxapampa.
-            <span className="block text-white/90">Hecho para disfrutar.</span>
+            Sabor real de Oxapampa,
+            <span className="block text-white/90">hecho para disfrutar</span>
           </h1>
 
           {/* Subcopy */}
-          <p className="mt-5 text-white/85 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+          <p className="mt-5 text-white font-bold text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Productos naturales con carácter gourmet: seleccionados, cuidados y
-            listos para elevar cualquier comida.
+            listos para mejorar tu calidad de vida y salud
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">

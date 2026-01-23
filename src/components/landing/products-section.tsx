@@ -2,10 +2,51 @@
 
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
-import { ShoppingCart } from "lucide-react";
+import { Coffee, Flame, Gift, HeartPulse, LayoutGrid, ShoppingCart, Sparkles, Sunrise } from "lucide-react";
 import { products, Category } from "@/data/products";
 import { useCart } from "@/context/cart-context";
 import { Button } from "@/components/ui/button";
+
+const categoryOrder: Category[] = [
+  "Todos",
+  "Miel",
+  "Café y chocolates",
+  "Desayunos",
+  "Parrillas",
+  "Salud",
+  "Packs",
+];
+
+const categoryMeta: Record<Category, { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; iconBg: string }> = {
+  Todos: {
+    icon: LayoutGrid,
+    iconBg: "border border-emerald-100 bg-emerald-50 text-emerald-600",
+  },
+  Miel: {
+    icon: Sparkles,
+    iconBg: "border border-amber-100 bg-amber-50 text-amber-600",
+  },
+  "Café y chocolates": {
+    icon: Coffee,
+    iconBg: "border border-amber-200 bg-amber-50 text-amber-700",
+  },
+  Desayunos: {
+    icon: Sunrise,
+    iconBg: "border border-slate-200 bg-white text-slate-700",
+  },
+  Parrillas: {
+    icon: Flame,
+    iconBg: "border border-red-100 bg-red-50 text-red-600",
+  },
+  Salud: {
+    icon: HeartPulse,
+    iconBg: "border border-emerald-100 bg-emerald-50 text-emerald-700",
+  },
+  Packs: {
+    icon: Gift,
+    iconBg: "border border-indigo-100 bg-indigo-50 text-indigo-600",
+  },
+};
 
 export default function ProductsSection() {
   const { addItem, openCart } = useCart();
@@ -29,24 +70,43 @@ export default function ProductsSection() {
           <h2 className="mt-4 text-4xl md:text-6xl font-extrabold text-green-950 tracking-tight">Nuestros Productos</h2>
         </div>
 
-        {/* Filter Buttons (Optional/Simple) */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {(["Todos", "Mieles", "Derivados", "Packs"] as Category[]).map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${active === cat
-                  ? "bg-green-800 text-white shadow-lg"
-                  : "bg-white text-green-800 border border-green-100 hover:bg-green-50"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
+        {/* Categorías */}
+        <div className="relative mb-10">
+          <span className="pointer-events-none absolute -left-4 -top-6 hidden h-24 w-24 rounded-2xl bg-emerald-100/60 blur-3xl sm:block" />
+          <span className="pointer-events-none absolute right-4 -bottom-8 hidden h-28 w-28 rounded-3xl bg-amber-100/70 blur-3xl lg:block" />
+          <div className="relative overflow-hidden rounded-[32px] border border-green-100 bg-gradient-to-br from-emerald-50/80 via-white to-amber-50/70 p-6 shadow-[0_30px_60px_-30px_rgba(16,185,129,0.6)]">
+            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
+              {categoryOrder.map((cat) => {
+                const meta = categoryMeta[cat];
+                const isActive = active === cat;
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setActive(cat)}
+                    className={`group flex flex-col items-center gap-4 rounded-[24px] border p-4 text-center transition-all duration-200 ${isActive
+                        ? "border-transparent bg-white shadow-[0_15px_40px_rgba(16,185,129,0.25)]"
+                        : "border border-green-100 bg-white/80 hover:bg-white"
+                      }`}
+                  >
+                    <span
+                      className={`flex h-20 w-20 items-center justify-center rounded-[26px] ${isActive
+                          ? "border border-transparent bg-gradient-to-br from-green-900 to-emerald-800 text-white shadow-[0_15px_40px_rgba(16,185,129,0.35)]"
+                          : `${meta.iconBg}`
+                        }`}
+                    >
+                      <meta.icon className="h-10 w-10" />
+                    </span>
+                    <span className="text-sm font-semibold text-green-900">{cat}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {filtered.map((p) => (
             <article key={p.id} className="group relative overflow-hidden rounded-3xl bg-white/85 backdrop-blur border border-green-900/10 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
 
@@ -56,10 +116,10 @@ export default function ProductsSection() {
                   src={p.imageSrc}
                   alt={p.alt}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   quality={85}
                   priority={p.id === 1}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover rounded-3xl transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {p.badge && (
