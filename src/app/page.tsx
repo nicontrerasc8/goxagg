@@ -117,7 +117,7 @@ export default function Home() {
             <p className="text-white/90 mb-4">Productos naturales y gourmet de Oxapampa</p>
             <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-6 text-sm text-white/90">
               <span>📱 WhatsApp: +51 998 855 069</span>
-              <span>📧 contacto@goxa.pe</span>
+   
             </div>
           </div>
 

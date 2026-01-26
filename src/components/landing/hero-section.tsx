@@ -47,7 +47,7 @@ export default function HeroSection() {
 
 
           <nav className="flex items-center gap-3 text-sm sm:text-base font-semibold text-white/90 uppercase tracking-wide">
-            {["HOME", "PRODUCTOS", "CONTACTO"].map((label) => (
+            {["HOME", "PRODUCTOS"].map((label) => (
               <a
                 key={label}
                 href={`#${label === "HOME" ? "home" : label === "PRODUCTOS" ? "productos" : "contacto"}`}
