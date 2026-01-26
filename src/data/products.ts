@@ -255,8 +255,8 @@ export const products: Product[] = [
     name: "Jabón Artesanal Oxapampa",
     description: "Jabón 100% natural hecho con miel, aceite de sacha inchi y plantas de la Selva Central.",
     variants: [
-      { label: "100g", price: "S/ 12" },
-      { label: "200g", price: "S/ 20" },
+      { label: "100g", price: "S/ 16" },
+  
     ],
     imageSrc: "/jabon.png",
     alt: "Jabón natural Oxapampa",
@@ -267,8 +267,7 @@ export const products: Product[] = [
     name: "Fideos de Quinoa y Arroz",
     description: "Fideos integrales libres de gluten elaborados con quinoa y arroz ancestral para pastas ligeras.",
     variants: [
-      { label: "250g", price: "S/ 15" },
-      { label: "500g", price: "S/ 28" },
+      { label: "200g", price: "S/ 14" },
     ],
     imageSrc: "/fideos.png",
     alt: "Fideos de quinoa y arroz",
