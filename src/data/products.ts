@@ -82,9 +82,7 @@ export const products: Product[] = [
     alt: "Chocolates artesanales Goxa",
     category: "Café y chocolates",
   },
-
-  // DESAYUNOS
-/*   {
+{
     id: 7,
     name: "Yogurt Probiótico",
     description: "Yogurt con cultivos vivos que fortalecen digestión y defensas.",
@@ -92,8 +90,8 @@ export const products: Product[] = [
     imageSrc: "/yogurt-probiotico.png",
     alt: "Yogurt probiótico",
     category: "Desayunos",
-  }, */
-  /* {
+  }, 
+  {
     id: 8,
     name: "Yogurt Griego",
     description: "0% grasas, 0% azúcar añadida, alto en proteína.",
@@ -105,6 +103,8 @@ export const products: Product[] = [
     alt: "Yogurt griego",
     category: "Desayunos",
   },
+  // DESAYUNOS
+/*   
   {
     id: 9,
     name: "Queso Brie",
@@ -144,15 +144,25 @@ export const products: Product[] = [
     alt: "Queso Bel Paese",
     category: "Desayunos",
   },
+   {
+    id: 29,
+    name: "Granola Premium",
+    description: "Mezcla crocante de cereales y frutos, ideal para desayunos.",
+    variants: [
+      { label: "350g", price: "S/ 18" }
+    ],
+    imageSrc: "/granola2.png",
+    alt: "Granola artesanal",
+    category: "Desayunos",
+  },
   {
     id: 13,
     name: "Granola Spirulina Premium",
     description: "Mezcla crocante de cereales y frutos, ideal para desayunos.",
     variants: [
-      { label: "300g", price: "S/ 18" },
-      { label: "500g", price: "S/ 28" },
+      { label: "350g", price: "S/ 18" }
     ],
-    imageSrc: "/granola.png",
+    imageSrc: "/granola1.png",
     alt: "Granola artesanal",
     category: "Desayunos",
   },
@@ -222,7 +232,7 @@ export const products: Product[] = [
     alt: "Cúrcuma en polvo",
     category: "Salud",
   },
-/*   {
+  {
     id: 20,
     name: "Sacha Jergón",
     description: "Tubérculo anticanceroso y antiinflamatorio de la selva peruana.",
@@ -230,7 +240,7 @@ export const products: Product[] = [
     imageSrc: "/sacha-jergon.png",
     alt: "Sacha Jergón",
     category: "Salud",
-  }, */
+  },
   {
     id: 21,
     name: "Tocosh (Penicilina Natural)",
@@ -241,18 +251,18 @@ export const products: Product[] = [
     category: "Salud",
   
   },
-  {
-    id: 22,
-    name: "Penicilina Natural",
-    description: "Mezcla tradicional de miel, limón y kión para reforzar defensas.",
-    variants: [
-      { label: "250ml", price: "S/ 20" },
-      { label: "500ml", price: "S/ 36" },
-    ],
-    imageSrc: "/penicilina.png",
-    alt: "Penicilina natural",
-    category: "Salud",
-  },
+  // {
+  //   id: 22,
+  //   name: "Penicilina Natural",
+  //   description: "Mezcla tradicional de miel, limón y kión para reforzar defensas.",
+  //   variants: [
+  //     { label: "250ml", price: "S/ 20" },
+  //     { label: "500ml", price: "S/ 36" },
+  //   ],
+  //   imageSrc: "/penicilina.png",
+  //   alt: "Penicilina natural",
+  //   category: "Salud",
+  // },
 
   // PACKS
   {
