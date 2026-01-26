@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function OregonWaySection() {
   return (
@@ -52,29 +53,14 @@ export default function OregonWaySection() {
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl border border-green-900/10">
             <div className="absolute inset-0 bg-gradient-to-tr from-green-900/[0.03] to-amber-500/[0.05]" />
             <div className="relative p-6 sm:p-10">
-              <svg
-                viewBox="0 0 900 500"
-                className="w-full h-auto"
-                aria-label="Ilustración granja"
-              >
-                <g fill="none" stroke="#2F4B39" strokeWidth="4" opacity="0.9">
-                  <path d="M60 360 C140 320, 220 310, 320 340 C420 370, 520 380, 620 350 C720 320, 800 330, 860 360" />
-                  <path d="M290 340 L290 220 L430 140 L570 220 L570 340" />
-                  <path d="M330 340 L330 250 L430 190 L530 250 L530 340" />
-                  <path d="M430 190 L430 340" />
-                  <path d="M365 285 L410 285" />
-                  <path d="M450 285 L495 285" />
-                  <path d="M620 340 L620 210 L690 210 L690 340" />
-                  <path d="M620 210 C620 170, 690 170, 690 210" />
-                  <path d="M720 340 C740 320, 780 320, 800 340 C820 360, 780 380, 760 370" />
-                  <path d="M745 335 C752 325, 768 325, 775 335" />
-                  <path d="M200 350 C210 330, 240 330, 250 350 C260 370, 240 390, 220 380" />
-                </g>
-                <g fill="none" stroke="#2F4B39" strokeWidth="3" opacity="0.5">
-                  <path d="M720 150 C760 110, 820 110, 860 150" />
-                  <path d="M650 140 C690 100, 750 100, 790 140" />
-                </g>
-              </svg>
+              <Image
+                src="/hero-2.png"
+                alt="Paisaje de Oxapampa"
+                width={900}
+                height={500}
+                className="w-full h-auto rounded-2xl border border-green-900/10 object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

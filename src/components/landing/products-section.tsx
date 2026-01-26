@@ -5,7 +5,8 @@ import Image from "next/image";
 import { Coffee, Flame, Gift, HeartPulse, LayoutGrid, ShoppingCart, Sparkles, Sunrise } from "lucide-react";
 import { products, Category } from "@/data/products";
 import { useCart } from "@/context/cart-context";
-import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 const categoryOrder: Category[] = [
   "Todos",
@@ -59,112 +60,159 @@ const categoryMeta: Record<
 };
 
 export default function ProductsSection() {
-  const { addItem, openCart }:any = useCart();
+  const { addItem }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
+  const gridRef = React.useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
     if (active === "Todos") return products;
     return products.filter((p) => p.category === active);
   }, [active]);
 
+  const activeLabel = active === "Todos" ? "Todo el catálogo" : active;
+  const productCount = filtered.length;
+
   const handleAddToCart = (product: typeof products[0], variantIdx: number) => {
     addItem(product, variantIdx);
+    const variantLabel = product.variants[variantIdx].label;
+
+    toast.success("¡Agregado al carrito!", {
+      description: `${product.name} (${variantLabel}) ya está listo para ti.`,
+      icon: <ShoppingCart className="w-5 h-5 text-green-600" />,
+      duration: 3000,
+      className: "bg-white border-green-100"
+    });
   };
 
   return (
     <section id="productos" className="relative py-20 bg-gradient-to-b from-white via-green-50/70 to-white overflow-hidden">
       <div className="relative container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-10">
-          <p className="text-green-900 font-extrabold tracking-[0.35em] uppercase text-sm">Catálogo</p>
-          <h2 className="mt-4 text-4xl md:text-6xl font-extrabold text-green-950 tracking-tight">Nuestros Productos</h2>
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center p-2 mb-4 rounded-full bg-green-100/50 text-green-800 text-sm font-bold tracking-wider uppercase px-4">
+            <Sparkles className="w-4 h-4 mr-2" /> Catalogo Disponible
+          </div>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-green-950 tracking-tight mb-4">
+            Nuestros Productos
+          </h2>
+      
         </div>
 
         {/* Categorías */}
-        <div className="relative mb-10">
+        <div className="relative mb-16">
           <span className="pointer-events-none absolute -left-4 -top-6 hidden h-24 w-24 rounded-2xl bg-emerald-100/60 blur-3xl sm:block" />
           <span className="pointer-events-none absolute right-4 -bottom-8 hidden h-28 w-28 rounded-3xl bg-amber-100/70 blur-3xl lg:block" />
-          <div className="relative overflow-hidden rounded-[32px] border border-green-100 bg-gradient-to-br from-emerald-50/80 via-white to-amber-50/70 p-6 shadow-[0_30px_60px_-30px_rgba(16,185,129,0.6)]">
-            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
-              {categoryOrder.map((cat) => {
-                const meta = categoryMeta[cat];
-                const isActive = active === cat;
-                return (
-                  <button
-                    key={cat}
-                    type="button"
-                    onClick={() => setActive(cat)}
-                    className={`group relative flex flex-col items-center gap-3 rounded-[32px] border p-3 pt-6 text-center transition-all duration-200 ${isActive
-                        ? "border-transparent bg-white shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
-                        : "border border-green-100 bg-white/80 hover:bg-white"
-                      }`}
-                  >
-                    <span
-                      className={`flex h-[140px] w-[140px] items-center justify-center rounded-full text-3xl transition-all duration-200 ${isActive
-                          ? `bg-gradient-to-br ${meta.accentBg} text-white shadow-[0_25px_60px_rgba(16,185,129,0.35)]`
-                          : `${meta.circleBg} shadow-lg`
-                        }`}
+
+          <div className="relative">
+            <div className="flex w-full justify-center">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4 px-2">
+                {categoryOrder.map((cat) => {
+                  const meta = categoryMeta[cat];
+                  const isActive = active === cat;
+                  const handleClick = () => {
+                    setActive(cat);
+                    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  };
+                  return (
+                    <button
+                      key={cat}
+                      type="button"
+                      onClick={handleClick}
+                      className={cn(
+                        "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border",
+                        isActive
+                          ? "bg-green-800 text-white border-green-800 shadow-lg scale-105"
+                          : "bg-white text-green-900 border-green-100 hover:border-green-300 hover:bg-green-50/50"
+                      )}
                     >
-                      <meta.icon className={`${isActive ? "h-12 w-12" : "h-10 w-10"}`} />
-                    </span>
-                    <span className="text-sm font-semibold text-green-900 uppercase tracking-[0.3em]">{cat}</span>
-                  </button>
-                );
-              })}
+                      <meta.icon className={cn("w-4 h-4", isActive ? "text-green-200" : "text-green-600")} />
+                      {cat}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Resumen dinámico */}
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold text-green-700/80 uppercase tracking-[0.3em] mb-2">
+            {activeLabel}
+          </p>
+    
+        </div>
+
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {filtered.map((p) => (
-            <article key={p.id} className="group relative overflow-hidden rounded-3xl bg-white/85 backdrop-blur border border-green-900/10 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+           <article key={p.id} className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-white border border-gray-100 shadow-xl shadow-green-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-900/10 hover:border-green-200/50">
 
-              {/* Imagen Container */}
-              <div className="relative w-full aspect-[4/5] overflow-hidden">
-                <Image
-                  src={p.imageSrc}
-                  alt={p.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                  quality={85}
-                  priority={p.id === 1}
-                  className="object-cover rounded-3xl transition-transform duration-500 group-hover:scale-105"
-                />
+  {/* Imagen Container */}
+  <div className="relative w-full aspect-[4/5] overflow-hidden bg-white rounded-xl">
+    <Image
+      src={p.imageSrc}
+      alt={p.alt}
+      fill
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+      quality={90}
+      className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105 rounded-xl"
+    />
 
-                {p.badge && (
-                  <div className="absolute top-4 left-4 rounded-full bg-green-950/85 text-white px-3 py-1 shadow-md backdrop-blur">
-                    <span className="text-xs font-extrabold tracking-widest uppercase">{p.badge}</span>
-                  </div>
-                )}
-              </div>
+    {/* Badges */}
+    <div className="absolute top-4 left-4 flex flex-col gap-2">
+      {p.badge && (
+        <div className="rounded-full bg-white/95 text-green-900 px-3 py-1 text-xs font-extrabold tracking-widest uppercase shadow-sm backdrop-blur border border-green-100">
+          {p.badge}
+        </div>
+      )}
+    </div>
+  </div>
 
-              {/* Contenido */}
-              <div className="p-6">
-                <h3 className="text-xl font-extrabold text-green-950 text-center">{p.name}</h3>
-                <p className="mt-2 text-sm text-green-950/70 text-center min-h-[40px]">{p.description}</p>
+  {/* Contenido */}
+  <div className="p-6 flex flex-col flex-1">
+    <div className="flex justify-between items-start mb-2">
+      <span className="text-[10px] font-bold tracking-wider text-green-600 uppercase bg-green-50 px-2 py-1 rounded-md">
+        {p.category}
+      </span>
+    </div>
 
-                {/* Sección de Variantes y Botones */}
-                <div className="mt-6 flex flex-col gap-3">
-                  {p.variants.map((variant, idx) => (
-                    <div key={idx} className="flex items-center justify-between bg-amber-50/50 border border-amber-100 rounded-xl p-3">
-                      <div className="flex flex-col">
-                        <span className="text-xs uppercase font-bold text-amber-800">{variant.label}</span>
-                        <span className="text-lg font-black text-green-950">{variant.price}</span>
-                      </div>
-                      <Button
-                        onClick={() => handleAddToCart(p, idx)}
-                        size="sm"
-                        className="bg-green-800 hover:bg-green-900 text-white font-bold rounded-lg h-9"
-                      >
-                        <ShoppingCart className="w-4 h-4 mr-2" />
-                        Agregar
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </article>
+    <h3 className="text-xl font-bold text-green-950 mb-2 leading-tight group-hover:text-green-700 transition-colors">
+      {p.name}
+    </h3>
+
+    <p className="text-sm text-gray-500 mb-6 line-clamp-2 leading-relaxed flex-1">
+      {p.description}
+    </p>
+
+    {/* Presentaciones */}
+    <div className="flex flex-col gap-2">
+      {p.variants.map((variant, idx) => (
+        <div
+          key={idx}
+          className="flex items-center justify-between rounded-lg border border-green-100 bg-green-50/80 px-4 py-3"
+        >
+          <div className="flex flex-col">
+            <span className="text-sm font-semibold text-green-900">
+              {variant.label}
+            </span>
+            <span className="text-lg font-bold text-green-800">
+              {variant.price}
+            </span>
+          </div>
+          
+          <button
+            onClick={() => handleAddToCart(p, idx)}
+            className="rounded-lg border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95"
+            aria-label={`Agregar ${variant.label} de ${p.name}`}
+          >
+            Agregar
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</article>
           ))}
         </div>
       </div>
