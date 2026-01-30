@@ -43,7 +43,7 @@ export default function CartDrawer() {
             message += `• ${item.quantity}x ${item.productName} (${item.variantLabel}) - S/ ${(item.price * item.quantity).toFixed(2)}%0A`;
         });
 
-        message += `%0A*Total Estimado: S/ ${totalPrice.toFixed(2)}*`;
+        message += `%0A*Total estimado: S/ ${totalPrice.toFixed(2)}*`;
         message += "%0A%0A¿Me podrían ayudar con el envío y el pago? ¡Gracias!";
 
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
@@ -112,7 +112,7 @@ export default function CartDrawer() {
                             <div className="bg-amber-50/60 border border-amber-100 rounded-xl p-4 flex gap-3 items-start">
                                 <span className="text-lg">💡</span>
                                 <p className="text-sm text-amber-900/80 leading-snug">
-                                    <strong>¿Sabías que?</strong> Nuestros productos son 100% naturales de Oxapampa. ¡Llevas salud a tu mesa!
+                                    <strong>¿Sabías que?</strong> Nuestros productos son 100% naturales. ¡Llevas salud a tu mesa y mejoras tu calidad de vida!
                                 </p>
                             </div>
 
@@ -131,7 +131,7 @@ export default function CartDrawer() {
                         <div className="space-y-3 mb-6">
                             <div className="flex justify-between items-center text-sm text-green-800/60">
                                 <span>Subtotal</span>
-                                <span>Calculando...</span>
+                                
                             </div>
                             <div className="flex justify-between items-end">
                                 <span className="text-lg font-bold text-green-950">Total Estimado</span>
@@ -141,7 +141,13 @@ export default function CartDrawer() {
                                 </div>
                             </div>
                         </div>
-
+                                  <Button
+                            variant="ghost"
+                            className="w-full mb-4 border border-green-200 rounded-xl text-green-800 font-semibold"
+                            onClick={closeCart}
+                        >
+                            Seguir comprando
+                        </Button>
                         <Button
                             className="w-full relative h-[56px] text-lg font-bold bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl shadow-lg hover:shadow-[#25D366]/25 hover:-translate-y-0.5 transition-all duration-300 group overflow-hidden"
                             onClick={handleWhatsAppCheckout}
@@ -155,6 +161,7 @@ export default function CartDrawer() {
                         <p className="mt-4 text-xs text-center text-green-800/40">
                             Serás redirigido a WhatsApp para coordinar los detalles.
                         </p>
+              
                     </div>
                 )}
             </div>

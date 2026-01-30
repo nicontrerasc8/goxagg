@@ -1,10 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Facebook, Instagram } from "lucide-react";
 
 type Slide = { src: string; alt: string };
+
+const navLinks = [
+  { label: "HOME", href: "#home" },
+  { label: "PRODUCTOS", href: "#productos" },
+  { label: "QUIÉNES SOMOS", href: "/quienes-somos" },
+];
 
 export default function HeroSection() {
   const slides: Slide[] = useMemo(
@@ -47,16 +54,24 @@ export default function HeroSection() {
 
 
           <nav className="flex items-center gap-3 text-sm sm:text-base font-semibold text-white/90 uppercase tracking-wide">
-            {["HOME", "PRODUCTOS"].map((label) => (
-              
-              <a
-                key={label}
-                href={`#${label === "HOME" ? "home" : label === "PRODUCTOS" ? "productos" : "contacto"}`}
-                className="rounded-full border border-white/30 bg-white/5 px-5 sm:px-6 py-3 text-sm sm:text-base transition-all duration-200 hover:border-white hover:bg-white/20"
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks.map(({ label, href }) => {
+              const navClass =
+                "rounded-full border border-white/30 bg-white/5 px-5 sm:px-6 py-3 text-sm sm:text-base transition-all duration-200 hover:border-white hover:bg-white/20";
+
+              if (href.startsWith("#")) {
+                return (
+                  <a key={label} href={href} className={navClass}>
+                    {label}
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={label} href={href} className={navClass}>
+                  {label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>
