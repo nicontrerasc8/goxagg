@@ -14,7 +14,7 @@ const instagramComments = [
   { handle: "germanc00", text: "🔥🔥 buenazas recomendado" },
   { handle: "sandra.zarak", text: "Super ricas! Generosas, jugosas y de gran calidad" },
   { handle: "__robinsonc__", text: "Que tales burgers! 🔥 brutales" },
-  { handle: "augustootero", text: "👏👏👏" },
+ 
   { handle: "carlapenagos", text: "DELICIOSOOOO!! Super recomendado!" },
 ];
 
