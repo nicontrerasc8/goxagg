@@ -1,5 +1,7 @@
 import { Metadata } from "next";
-import { Facebook, Instagram, Mail, MapPin, MessageCircle, Video } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Instagram, MapPin, MessageCircle, Music, Music2, Video } from "lucide-react";
+import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
 export const metadata: Metadata = {
   title: "Quiénes somos | GOXA natural de Oxapampa",
@@ -10,9 +12,9 @@ export const metadata: Metadata = {
 const highlightValues = [
   {
     label: "Herencia familiar",
-    detail: "Más de 30 años",
+    detail: "Empresa familiar",
     description:
-      "Cuatro generaciones conectadas por la pasión por la alimentación premium y el comercio justo.",
+      "Hacemos todo con cariño y empeño, cuidando cada proceso para llevar a tu mesa solo lo mejor de Oxapampa.",
   },
   {
     label: "Origen autentico",
@@ -37,13 +39,6 @@ const contactDetails = [
     icon: MessageCircle,
   },
   {
-    label: "Email",
-    value: "contacto@goxa.pe",
-    description: "Solicita envíos especiales, pedidos familiares o cotizaciones.",
-    href: "mailto:contacto@goxa.pe",
-    icon: Mail,
-  },
-  {
     label: "Ubicación",
     value: "Oxapampa · Pasco (producción) / Lima & Perú (distribución)",
     description: "Cuidamos cada detalle del origen hasta la entrega en tu mesa.",
@@ -52,13 +47,51 @@ const contactDetails = [
   },
 ];
 
-const videoId = "lkMN8bRnDho";
+const recommendations = [
+  {
+    handle: "sofiacarreras1",
+    text: "👏👏👏🍯💗💗 es excelente la miel que vendes!!! 😍😍",
+  },
+  {
+    handle: "ruh.peru",
+    text: "Son demasiado buenas, recomendación total!!",
+  },
+  {
+    handle: "jackie_fuller_b",
+    text: "Son espectaculares!!!",
+  },
+  {
+    handle: "germanrc00",
+    text: "🔥🔥 buenazas, recomendado",
+  },
+  {
+    handle: "sandrazarak",
+    text: "Super ricas! Generosas, jugosas y de gran calidad",
+  },
+  {
+    handle: "__jrobinsonc__",
+    text: "Que tales burgers! 🔥 brutales",
+  },
+  {
+    handle: "carlapenagos",
+    text: "DELICIOSOOOO!! Super recomendado!",
+  },
+];
 
+const videoEmbedUrl = "https://www.youtube.com/embed/ZXesAtWXYvY?feature=share";
 export default function QuienesSomosPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-gradient-to-br from-slate-900 via-emerald-900 to-emerald-700 text-white">
-        <div className="container mx-auto px-4 py-16 md:py-20">
+      <section className="relative isolate overflow-hidden rounded-b-[3rem] bg-slate-900 text-white">
+        <Image
+          src="/hero-3.png"
+          alt="Fondo de Oxapampa para Quiénes somos"
+          fill
+          priority
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-950/80 via-emerald-900/70 to-emerald-800/80" />
+        <div className="relative z-10 container mx-auto px-4 py-16 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.5em] text-emerald-200">
             Somos GOXA
           </p>
@@ -126,10 +159,10 @@ export default function QuienesSomosPage() {
               Mira cómo viajamos desde la selva central hasta tu mesa, seleccionando cada ingrediente, tostando
               nuestros cafés y cuidando la cadena de frío de los quesos y carnes artesanales.
             </p>
-            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-slate-900 shadow-2xl">
-              <div className="aspect-video">
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-slate-900 shadow-2xl mx-auto max-w-[420px] sm:max-w-[520px]">
+              <div className="aspect-[9/16]">
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                  src={videoEmbedUrl}
                   title="Video institucional de GOXA en Oxapampa"
                   className="h-full w-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -197,8 +230,36 @@ export default function QuienesSomosPage() {
                   <Facebook className="h-4 w-4" />
                   GOXA en Facebook
                 </a>
+                <a
+                  href="https://www.tiktok.com/@goxa_peru"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-semibold text-emerald-800"
+                >
+                  <Music2 />
+                  @goxa_peru
+                </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 py-16 lg:py-20">
+        <div className="rounded-3xl border border-slate-100 bg-slate-50 p-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
+              Recomendaciones
+            </p>
+            <span className="text-xs text-slate-400">Comentarios reales de Instagram</span>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {recommendations.map((rec) => (
+              <article key={rec.handle} className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
+                <p className="text-sm font-semibold text-slate-900">@{rec.handle}</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{rec.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

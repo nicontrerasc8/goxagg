@@ -3,7 +3,8 @@
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Facebook, Instagram } from "lucide-react";
+import { ChevronLeft, ChevronRight, Facebook, Instagram, Music2 } from "lucide-react";
+import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
 type Slide = { src: string; alt: string };
 
@@ -174,6 +175,15 @@ export default function HeroSection() {
           className="hover:text-white transition"
         >
           <Instagram className="w-5 h-5" />
+        </a>
+        <a
+          href="https://www.tiktok.com/@goxa_peru"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+          className="hover:text-white transition"
+        >
+          <Music2 className="h-5 w-5" />
         </a>
       </div>
     </section>

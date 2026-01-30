@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
@@ -75,8 +75,8 @@ export default function ProductsSection() {
     addItem(product, variantIdx);
     const variantLabel = product.variants[variantIdx].label;
 
-    toast.success("¡Agregado al carrito!", {
-      description: `${product.name} (${variantLabel}) ya está listo para ti.`,
+    toast.success("Â¡Agregado al carrito!", {
+      description: `${product.name} (${variantLabel}) ya estÃ¡ listo para ti.`,
       icon: <ShoppingCart className="w-5 h-5 text-green-600" />,
       duration: 3000,
       className: "bg-white border-green-100"
@@ -99,44 +99,78 @@ export default function ProductsSection() {
       
         </div>
 
-        {/* Categorías */}
-        <div className="relative mb-16">
-          <span className="pointer-events-none absolute -left-4 -top-6 hidden h-24 w-24 rounded-2xl bg-emerald-100/60 blur-3xl sm:block" />
-          <span className="pointer-events-none absolute right-4 -bottom-8 hidden h-28 w-28 rounded-3xl bg-amber-100/70 blur-3xl lg:block" />
+        {/* CategorÃ­as */}
+        <div className="relative mb-20">
+  <span className="pointer-events-none absolute -left-6 -top-10 hidden h-32 w-32 rounded-full bg-emerald-200/60 blur-3xl sm:block" />
+  <span className="pointer-events-none absolute right-6 -bottom-10 hidden h-36 w-36 rounded-full bg-amber-200/70 blur-3xl lg:block" />
 
-          <div className="relative">
-            <div className="flex w-full justify-center">
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4 px-2">
-                {categoryOrder.map((cat) => {
-                  const meta = categoryMeta[cat];
-                  const isActive = active === cat;
-                  const handleClick = () => {
-                    setActive(cat);
-                    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  };
-                  return (
-                    <button
-                      key={cat}
-                      type="button"
-                      onClick={handleClick}
-                      className={cn(
-                        "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border",
-                        isActive
-                          ? "bg-green-800 text-white border-green-800 shadow-lg scale-105"
-                          : "bg-white text-green-900 border-green-100 hover:border-green-300 hover:bg-green-50/50"
-                      )}
-                    >
-                      <meta.icon className={cn("w-4 h-4", isActive ? "text-green-200" : "text-green-600")} />
-                      {cat}
-                    </button>
-                  );
-                })}
-              </div>
+  <div className="relative flex justify-center">
+    <div className="grid w-full max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+      {categoryOrder.map((cat) => {
+        const meta = categoryMeta[cat];
+        const isActive = active === cat;
+
+        const handleClick = () => {
+          setActive(cat);
+          gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+
+        return (
+          <button
+            key={cat}
+            type="button"
+            onClick={handleClick}
+            className={cn(
+              "group relative flex flex-col items-center gap-3 rounded-3xl px-6 py-6 text-center transition-all duration-300",
+              isActive
+                ? `bg-gradient-to-br ${meta.accentBg} text-white shadow-xl scale-[1.04]`
+                : "bg-white border border-emerald-100 hover:-translate-y-1 hover:shadow-lg"
+            )}
+          >
+            {/* Icono */}
+            <div
+              className={cn(
+                "flex h-20 w-20 items-center justify-center rounded-full transition-all duration-300",
+                isActive
+                  ? "bg-white/20"
+                  : "bg-emerald-50 group-hover:bg-emerald-100"
+              )}
+            >
+              <meta.icon
+                className={cn(
+                  "h-10 w-10",
+                  isActive ? "text-white" : "text-emerald-600"
+                )}
+              />
             </div>
-          </div>
-        </div>
 
-        {/* Resumen dinámico */}
+            {/* Título */}
+            <span
+              className={cn(
+                "text-sm font-bold uppercase tracking-wide",
+                isActive ? "text-white" : "text-slate-900"
+              )}
+            >
+              {cat}
+            </span>
+
+            {/* Descripción */}
+            <span
+              className={cn(
+                "text-xs leading-snug",
+                isActive ? "text-white/90" : "text-slate-500"
+              )}
+            >
+              {meta.description}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+        {/* Resumen dinÃ¡mico */}
         <div className="text-center mb-10">
           <p className="text-sm font-semibold text-green-700/80 uppercase tracking-[0.3em] mb-2">
             {activeLabel}
@@ -159,6 +193,8 @@ export default function ProductsSection() {
       quality={90}
       className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105 rounded-xl"
     />
+    
+
 
     {/* Badges */}
     <div className="absolute top-4 left-4 flex flex-col gap-2">
@@ -229,59 +265,79 @@ export default function ProductsSection() {
         </div>
 
         {selectedProduct?.popup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-10">
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
             <div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
               onClick={closePopup}
             />
-            <div className="relative z-10 w-full max-w-5xl rounded-[2rem] bg-white/95 p-6 shadow-2xl shadow-emerald-900/20 ring-1 ring-white/60">
+            <div className="relative z-10 w-full max-w-[95vw] lg:max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl shadow-emerald-900/10 ring-1 ring-emerald-100">
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
                     {selectedProduct.category}
                   </p>
-                  <h3 className="mt-2 text-3xl font-bold text-green-950">
-                    {selectedProduct.popup.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-500">{selectedProduct.popup.description}</p>
-                </div>
-                <button
-                  type="button"
-                  onClick={closePopup}
-                  className="rounded-full border border-slate-200 bg-white p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:border-slate-300 hover:text-slate-900"
-                >
-                  <span className="sr-only">Cerrar detalle</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                <h3 className="mt-2 text-3xl font-bold text-green-950">
+                  {selectedProduct.popup.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-500">{selectedProduct.popup.description}</p>
               </div>
+            </div>
 
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                {selectedProduct.popup.sections.map((section) => (
-                  <div key={section.heading} className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50/60 to-white p-4 shadow-inner shadow-emerald-200/40">
-                    <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
-                      {section.heading}
-                    </h4>
-                    <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                      {section.points.map((point) => (
-                        <li key={point} className="flex items-start gap-2">
-                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-700" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+            <button
+              type="button"
+              onClick={closePopup}
+              className="absolute top-4 right-4 inline-flex items-center justify-center rounded-full bg-white/90 p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:bg-white hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 sm:top-6 sm:right-6"
+            >
+              <span className="sr-only">Cerrar</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+              <div className="mt-8 grid gap-6 lg:grid-cols-[0.65fr,1fr]">
+                <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-emerald-50/40 flex items-center justify-center p-1">
+                  <div className="relative h-full w-full max-w-[280px]">
+                    <Image
+                      src={selectedProduct.imageSrc}
+                      alt={selectedProduct.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain"
+                    />
                   </div>
-                ))}
-              </div>
-
-              {selectedProduct.popup.notes && (
-                <div className="mt-6 space-y-2 rounded-2xl border border-dashed border-emerald-200 bg-emerald-50/80 p-4 text-sm text-emerald-700">
-                  {selectedProduct.popup.notes.map((note) => (
-                    <p key={note}>{note}</p>
-                  ))}
                 </div>
-              )}
+
+                <div className="space-y-6">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {selectedProduct.popup.sections.map((section) => (
+                      <div
+                        key={section.heading}
+                        className="rounded-2xl border border-emerald-100 bg-white/90 p-4"
+                      >
+                        <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                          {section.heading}
+                        </h4>
+                        <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                          {section.points.map((point) => (
+                            <li key={point} className="flex items-start gap-2">
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-700" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {selectedProduct.popup.notes && (
+                    <div className="space-y-2 rounded-2xl border border-dashed border-emerald-200 bg-emerald-50/30 p-4 text-sm text-emerald-700">
+                      {selectedProduct.popup.notes.map((note) => (
+                        <p key={note}>{note}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )}

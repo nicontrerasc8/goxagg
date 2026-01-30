@@ -50,17 +50,19 @@ export default function OregonWaySection() {
 
 
           {/* Ilustración estilo “line art” */}
-          <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl border border-green-900/10">
-            <div className="absolute inset-0 bg-gradient-to-tr from-green-900/[0.03] to-amber-500/[0.05]" />
-            <div className="relative p-6 sm:p-10">
-              <Image
-                src="/hero-2.png"
-                alt="Paisaje de Oxapampa"
-                width={900}
-                height={500}
-                className="w-full h-auto rounded-2xl border border-green-900/10 object-cover"
-                priority
-              />
+          <div className="relative overflow-hidden rounded-[32px] bg-white shadow-xl border border-green-900/10">
+            <div className="absolute inset-0 bg-gradient-to-tr from-green-900/[0.05] to-amber-500/[0.06]" />
+            <div className="relative px-4 py-6 sm:px-6 sm:py-8">
+              <div className="mx-auto w-full max-w-[460px] overflow-hidden rounded-[26px] border border-green-900/10 bg-white shadow-2xl shadow-emerald-900/20">
+                <Image
+                  src="/hero-2.png"
+                  alt="Paisaje de Oxapampa"
+                  width={900}
+                  height={500}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

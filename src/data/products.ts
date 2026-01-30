@@ -106,6 +106,7 @@ export const products: Product[] = [
     imageSrc: "/gel.png",
     alt: "Goxa Power Gel",
     category: "Miel",
+    badge: "Top",
     popup: {
       title: "Goxa Power (Gel Natural)",
       description: "Combina miel, polen, jalea real y propoleo para entregar energia y defensas 100% natural.",
@@ -143,6 +144,7 @@ export const products: Product[] = [
     imageSrc: "/propoleo.png",
     alt: "Propóleo",
     category: "Miel",
+    badge: "Top",
     popup: {
       title: "Propoleo",
       description: "Antibiotico natural de la colmena que refuerza defensas y combate afecciones respiratorias comunes.",
@@ -809,6 +811,7 @@ export const products: Product[] = [
     imageSrc: "/pack-energia.png",
     alt: "Pack Miel y derivados",
     category: "Packs",
+        badge: "Pack",
     popup: {
       title: "Pack Familiar Salud",
       description: "Combo ideal para proteger a toda la familia con productos naturales contra resfríos, gripes e influenza.",
