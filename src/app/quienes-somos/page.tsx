@@ -251,7 +251,7 @@ export default function QuienesSomosPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
               Recomendaciones
             </p>
-            <span className="text-xs text-slate-400">Comentarios reales de Instagram</span>
+           
           </div>
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {recommendations.map((rec) => (
