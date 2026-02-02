@@ -205,9 +205,18 @@ export default function ProductsSection() {
       quality={90}
       className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105 rounded-xl"
     />
-    
-
-
+    {p.popup && (
+      <button
+        type="button"
+        onClick={() => setSelectedProduct(p)}
+        className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+      >
+        <span className="text-xs font-semibold tracking-[0.4em] uppercase">
+          Ver info
+        </span>
+        <span className="text-[11px] text-white/80">Más sobre este producto</span>
+      </button>
+    )}
     {/* Badges */}
     <div className="absolute top-4 left-4 flex flex-col gap-2">
       {p.badge && (
@@ -259,17 +268,6 @@ export default function ProductsSection() {
           </button>
         </div>
       ))}
-      {p.popup && (
-        <div className="pt-2">
-          <button
-            type="button"
-            onClick={() => setSelectedProduct(p)}
-            className="w-full rounded-lg border border-green-600 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-700 transition hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
-          >
-            Ver info
-          </button>
-        </div>
-      )}
     </div>
   </div>
 </article>
