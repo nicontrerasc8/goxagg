@@ -5,7 +5,7 @@ import OregonWaySection from "@/components/landing/oregon-way-section";
 
 import ProductsSection from "@/components/landing/products-section";
 import { StickyWhatsAppButton } from "@/components/ui/whatsapp-button";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Music2 } from "lucide-react";
 
 const instagramComments = [
   { handle: "sofiacarreras1", text: "👏👏👏🍯❤️❤️ es excelente la miel que vendes!!! 😍😍" },
@@ -90,6 +90,15 @@ export default function Home() {
               className="text-green-200 hover:text-white transition-colors duration-300"
             >
               <Instagram className="w-7 h-7" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@goxa_peru"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Síguenos en TikTok"
+              className="text-green-200 hover:text-white transition-colors duration-300"
+            >
+              <Music2 className="w-7 h-7" />
             </a>
           </div>
 

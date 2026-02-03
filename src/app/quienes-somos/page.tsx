@@ -128,45 +128,55 @@ export default function QuienesSomosPage() {
     <main className="bg-white text-slate-900">
       {/* HERO */}
       <section className="relative isolate overflow-hidden rounded-b-[3rem] bg-slate-900 text-white">
-        <Image
-          src="/hero-3.png"
-          alt="Fondo de Oxapampa"
-          fill
-          priority
-          className="absolute inset-0 -z-10 object-cover"
-        />
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-950/60 via-emerald-900/60 to-emerald-800/0" />
 
         <div className="relative z-10 container mx-auto px-4 py-16 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.5em] text-emerald-200">
-            Somos GOXA
-          </p>
-          <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Quiénes somos
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg text-white/90">
-            En GOXA producimos y distribuimos productos premium desde Oxapampa, Perú.
-          </p>
-          <p className="mt-3 max-w-3xl text-lg text-white/90">
-            Somos una empresa familiar con más de 30 años de experiencia, uniendo tradición
-            y visión joven enfocada en eficiencia y distribución.
-          </p>
+          <div className="grid gap-10 lg:grid-cols-[1.2fr,0.95fr] lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.5em] text-emerald-200">
+                Somos GOXA
+              </p>
+              <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
+                Quiénes somos
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg text-white/90">
+                En GOXA producimos y distribuimos productos premium desde Oxapampa, Perú.
+              </p>
+              <p className="mt-3 max-w-3xl text-lg text-white/90">
+                Somos una empresa familiar con más de 30 años de experiencia, uniendo tradición
+                y visión joven enfocada en eficiencia y distribución.
+              </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="https://wa.me/51998855069"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-amber-400 px-6 py-3 text-lg font-semibold text-slate-900 hover:shadow-lg"
-            >
-              Contactar por WhatsApp
-            </a>
-            <a
-              href="/"
-              className="rounded-full border border-white/60 px-6 py-3 text-lg font-semibold"
-            >
-              Volver al inicio
-            </a>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="https://wa.me/51998855069"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-amber-400 px-6 py-3 text-lg font-semibold text-slate-900 hover:shadow-lg"
+                >
+                  Contactar por WhatsApp
+                </a>
+                <a
+                  href="/"
+                  className="rounded-full border border-white/60 px-6 py-3 text-lg font-semibold"
+                >
+                  Volver al inicio
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <div className="relative h-[320px] w-full overflow-hidden rounded-[32px] border border-white/20 bg-white/5 shadow-[0_20px_45px_rgba(2,6,23,0.45)] md:h-[380px]">
+                <Image
+                  src="/hero-3.png"
+                  alt="Fondo de Oxapampa"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

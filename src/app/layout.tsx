@@ -17,7 +17,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "GOXA - Productos Naturales de Oxapampa | Comprar por WhatsApp",
-  description: "Mieles 100% naturales, carnes artesanales y orquídeas únicas de Oxapampa. Envío gratis a Lima. Calidad garantizada. ¡Compra por WhatsApp!",
+  description: "Mieles 100% naturales, polen, Gel natural, hamburguesas de carne de pastura, Café de especialidad, yogurt sin conservantes, chocolates 75% cacao, jabones con aceites escenciales, quesos gourmet con leche pura de vaca, cerveza artesanal y alimentos que fortalecen tu sistema inmunologico! Envíos a todo el Perú!  Compra por WhatsApp",
   keywords: ["miel natural", "orquídeas", "Oxapampa", "carnes artesanales", "chorizos parrilla", "productos naturales", "gourmet", "Perú", "WhatsApp", "envío gratis Lima"],
   authors: [{ name: "GOXA" }],
   creator: "GOXA",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "GOXA - Productos Naturales de Oxapampa | Comprar por WhatsApp",
-    description: "Mieles 100% naturales, carnes artesanales y orquídeas únicas de Oxapampa. Envío gratis a Lima. ¡Compra por WhatsApp!",
+    description: "Mieles 100% naturales, polen, Gel natural, hamburguesas de carne de pastura, Café de especialidad, yogurt sin conservantes, chocolates 75% cacao, jabones con aceites escenciales, quesos gourmet con leche pura de vaca, cerveza artesanal y alimentos que fortalecen tu sistema inmunologico! Envíos a todo el Perú! Compra por WhatsApp",
     url: "https://goxa.pe",
     siteName: "GOXA",
     locale: "es_PE",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GOXA - Productos Naturales de Oxapampa",
-    description: "Mieles 100% naturales, carnes artesanales y orquídeas únicas. Envío gratis a Lima. ¡Compra por WhatsApp!",
+    description: "Mieles 100% naturales, polen, Gel natural, hamburguesas de carne de pastura, Café de especialidad, yogurt sin conservantes, chocolates 75% cacao, jabones con aceites escenciales, quesos gourmet con leche pura de vaca, cerveza artesanal y alimentos que fortalecen tu sistema inmunologico! Envíos a todo el Perú!  Compra por WhatsApp",
     images: ["/logo.png"],
   },
 };
