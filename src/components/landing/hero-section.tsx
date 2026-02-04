@@ -10,7 +10,7 @@ type Slide = { src: string; alt: string };
 
 const navLinks = [
   { label: "HOME", href: "#home" },
-  { label: "PRODUCTOS", href: "#productos" },
+  { label: "PRODUCTOS", href: "/#productos" },
   { label: "QUIÉNES SOMOS", href: "/quienes-somos" },
 ];
 
@@ -135,12 +135,12 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="#productos"
+            <Link
+              href="/#productos"
               className="px-10 py-4 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
             >
               Ver Productos
-            </a>
+            </Link>
             <a
               href="https://wa.me/51998855069"
               target="_blank"
