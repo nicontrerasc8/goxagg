@@ -99,6 +99,16 @@ export default function ProductsSection() {
 
   return (
     <section id="productos" className="relative py-20 bg-gradient-to-b from-white/30 via-green-50/10 to-white/30 overflow-hidden">
+      <div className="absolute left-6 top-6">
+        <div className="relative h-16 w-16 rounded-full border-2 border-white bg-white/80 p-2 shadow-lg">
+          <Image
+            src="/logo.png"
+            alt="Logo GOXA"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
       <div className="relative container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
