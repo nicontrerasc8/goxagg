@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -16,14 +16,16 @@ const instagramComments = [
   { handle: "carlapenagos", text: "DELICIOSOOOO!! Super recomendado!" },
 ];
 
+const navLinks = [
+  { href: "/", label: "Productos" },
+  { href: "/quienes-somos", label: "Quiénes somos" },
+];
+
 export default function InicioPage() {
+
   return (
     <main className="relative text-slate-900">
-      <div className="absolute left-6 top-6">
-        <div className="relative h-20 w-20 rounded-full border-2 border-white bg-white/80 p-2 shadow-lg">
-          <Image src="/logo.png" alt="Logo GOXA" fill className="object-contain" />
-        </div>
-      </div>
+
 
       <div className="fixed inset-0 -z-10">
         <Image
@@ -40,6 +42,22 @@ export default function InicioPage() {
       </div>
 
       <div className="relative z-10">
+        <header className="absolute inset-x-0 top-0 z-20 flex justify-end px-4 py-4 sm:px-8">
+          <nav className="flex items-center gap-4">
+            <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-green-900 bg-white/80 px-4 py-2 rounded-full shadow-lg border border-white/60 backdrop-blur mb-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full bg-gradient-to-br bg-emerald-800 text-white px-4 py-1.5 text-[0.65rem] font-semibold tracking-widest shadow-[0_10px_20px_-18px_rgba(6,78,59,0.9)] transition hover:bg-emerald-700 "
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </header>
+
         <HeroSection />
         <OregonWaySection />
         <section className="bg-gradient-to-b from-green-50 via-white to-green-50 py-18">
@@ -71,14 +89,7 @@ export default function InicioPage() {
                 </article>
               ))}
             </div>
-            <div className="mt-10 text-center">
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
-              >
-                Comprar
-              </Link>
-            </div>
+       
           </div>
         </section>
         <SiteFooter />

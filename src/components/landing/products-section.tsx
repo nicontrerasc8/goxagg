@@ -72,7 +72,7 @@ const categoryMeta: Record<
 };
 
 export default function ProductsSection() {
-  const { addItem }: any = useCart();
+  const { addItem, itemCount, openCart }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -99,21 +99,39 @@ export default function ProductsSection() {
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">
-   
+      <button
+        type="button"
+        onClick={openCart}
+        className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 hover:border-emerald-300 hover:shadow-[0_25px_60px_-25px_rgba(4,73,45,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3"
+        aria-label="Abrir carrito"
+      >
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-inner shadow-emerald-900/30">
+          <ShoppingCart className="h-4 w-4" />
+        </div>
+        <span className="hidden text-xs uppercase tracking-[0.3em] text-emerald-600 sm:inline">
+          Carrito
+        </span>
+        <span className="inline-flex h-6 min-w-[24px] items-center justify-center rounded-full border border-white bg-emerald-600 px-2 text-[11px] font-bold text-white shadow-lg shadow-emerald-900/40">
+          {itemCount}
+        </span>
+      </button>
+
       <div className="relative container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-2 mb-4 rounded-full bg-green-100/50 text-green-800 text-sm font-bold tracking-wider uppercase px-4">
-            <Sparkles className="w-4 h-4 mr-2" /> Catalogo Disponible
+        <div className="mx-auto text-center space-y-4 rounded-[2rem] bg-white/90 p-8 shadow-2xl shadow-emerald-900/10 border border-white/60 backdrop-blur-md mb-16">
+          <div className="inline-flex items-center justify-center rounded-full bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.4em] text-emerald-700 shadow-inner shadow-emerald-100">
+            <Sparkles className="w-4 h-4 mr-2 text-emerald-600" /> Categorias
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-green-950 tracking-tight mb-4">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-green-950 tracking-tight">
             Nuestros Productos
           </h2>
-      
-        </div>
+          <p className="text-sm text-slate-600">
+            Explora lo mejor de la cocina artesanal desde Oxapampa: mieles, cafés, desayunos y packs premium.
+          </p>
+     
 
         {/* CategorÃ­as */}
-        <div className="relative mb-20">
+       
   <span className="pointer-events-none absolute -left-6 -top-10 hidden h-32 w-32 rounded-full bg-emerald-200/60 blur-3xl sm:block" />
   <span className="pointer-events-none absolute right-6 -bottom-10 hidden h-36 w-36 rounded-full bg-amber-200/70 blur-3xl lg:block" />
 
@@ -134,16 +152,16 @@ export default function ProductsSection() {
             type="button"
             onClick={handleClick}
             className={cn(
-              "group relative flex flex-col items-center gap-3 rounded-3xl px-6 py-6 text-center transition-all duration-300",
+              "group relative flex flex-col items-center gap-3 rounded-[2rem] px-4 py-5 text-center transition-all duration-300",
               isActive
-                ? `bg-gradient-to-br ${meta.accentBg} text-white shadow-xl scale-[1.04]`
+                ? `bg-gradient-to-br ${meta.accentBg} text-white shadow-[0_20px_50px_-30px_rgba(4,73,45,0.6)] scale-[1.04]`
                 : "bg-white border border-emerald-100 hover:-translate-y-1 hover:shadow-lg"
             )}
           >
             {/* Icono */}
             <div
               className={cn(
-                "flex h-20 w-20 items-center justify-center rounded-full transition-all duration-300",
+                "flex h-16 w-16 items-center justify-center rounded-full border border-white/40 bg-white/80 shadow-inner transition-all duration-300",
                 isActive
                   ? "bg-white/20"
                   : "bg-emerald-50 group-hover:bg-emerald-100"
@@ -151,7 +169,7 @@ export default function ProductsSection() {
             >
               <meta.icon
                 className={cn(
-                  "h-10 w-10",
+                  "h-9 w-9 transition-colors duration-300",
                   isActive ? "text-white" : "text-emerald-600"
                 )}
               />

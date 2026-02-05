@@ -238,7 +238,7 @@ export const products: Product[] = [
     id: 7,
     name: "Yogurt Probiótico",
     description: "Yogurt con cultivos vivos que fortalecen digestión y sistema inmunológico.",
-    variants: [{ label: "1L", price: "S/ 12" }],
+    variants: [{ label: "350ml", price: "S/ 5" },{ label: "1L", price: "S/ 12" }],
     imageSrc: "/yogurt-mosel.png",
     alt: "Yogurt probiótico",
     category: "Desayunos",

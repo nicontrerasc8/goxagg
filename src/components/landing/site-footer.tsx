@@ -15,7 +15,7 @@ export default function SiteFooter() {
               href="/"
               className="text-white/90 underline-offset-4 hover:text-white"
             >
-              Comprar
+              Compra en línea
             </Link>
             <Link
               href="/"

@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
             href="/"
             className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-green-800 text-white font-bold shadow-lg hover:bg-green-900 transition"
           >
-            Comprar
+            Compra en línea
           </Link>
         </div>
       </div>

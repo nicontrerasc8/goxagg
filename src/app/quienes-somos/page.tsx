@@ -159,6 +159,12 @@ export default function QuienesSomosPage() {
             >
               Compra en línea
             </Link>
+            <Link
+              href="/inicio"
+              className="rounded-full border border-white/70 bg-white/80 px-6 py-3 text-lg font-semibold text-slate-900 transition hover:border-white hover:bg-white hover:shadow-lg"
+            >
+              Volver al inicio
+            </Link>
 
           </div>
         </div>
@@ -263,14 +269,7 @@ export default function QuienesSomosPage() {
               </article>
             ))}
           </div>
-          <div className="mt-10 text-center">
-            <Link
-              href="/#productos"
-              className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
-            >
-              Comprar
-            </Link>
-          </div>
+   
         </div>
       </section>
     </main>

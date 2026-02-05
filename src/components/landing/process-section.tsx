@@ -111,7 +111,7 @@ export default function ProcessSection() {
                 href="/"
                 className="rounded-full border border-gray-300 bg-white px-6 py-2 text-sm font-bold uppercase tracking-[0.2em] text-gray-900 transition hover:border-gray-400"
               >
-                Comprar
+                Compra en línea
               </Link>
             </div>
           </div>

@@ -9,7 +9,7 @@ import { StickyComprarButton } from "@/components/ui/cta-button";
 export default function Home() {
   return (
     <main className="relative text-slate-900">
-         <div className="absolute left-6 top-6">
+         <div className="relative left-6 top-6">
               <div className="relative h-24 w-24 rounded-full border-2 border-white bg-white/80 p-2 shadow-lg">
                 <Image
                   src="/logo.png"
@@ -29,7 +29,7 @@ export default function Home() {
           className="object-cover"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80 backdrop-blur-[0.5px]"
+          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/10 to-white/10 backdrop-blur-[0.5px]"
           aria-hidden
         />
       </div>
@@ -38,14 +38,14 @@ export default function Home() {
       <div className="relative z-10 min-h-screen">
         <section className="bg-gradient-to-b from-white-50/10 via-white/20 to-white/10">
           <div className="container mx-auto px-4 py-12 lg:py-20">
-            <div className="mx-auto max-w-5xl text-center space-y-8">
+            <div className="mx-auto max-w-5xl text-center space-y-8 bg-white/90 p-8 rounded-[2.5rem] shadow-2xl shadow-emerald-900/10 border border-white/60 backdrop-blur-lg">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
                 Catálogo premium
               </p>
               <h1 className="text-3xl font-extrabold text-green-950 md:text-4xl lg:text-5xl">
           Compra los productos más selectos desde Oxapampa
               </h1>
-              <p className="text-lg text-green-900/85 leading-relaxed">
+              <p className="text-lg text-green-950/90 leading-relaxed">
 Haz tu pedido de miel pura, polen, yogurt y quesos   gourmet, parrillas de carne de pastura, chocolates 75% cacao. <br/>
 Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!              </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
