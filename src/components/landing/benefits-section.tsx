@@ -41,7 +41,7 @@ const benefits = [
   {
     icon: MessageCircle,
     title: "Atención Personalizada",
-    description: "Asesoría directa por WhatsApp",
+    description: "Asesoría personalizada para armar tus pedidos",
     color: "text-whatsapp",
     bgColor: "bg-green-100",
   },

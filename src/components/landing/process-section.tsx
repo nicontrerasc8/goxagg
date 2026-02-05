@@ -1,13 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { MessageCircle, ShoppingCart, CreditCard, Truck } from "lucide-react";
 
 const processSteps = [
   {
     step: 1,
     icon: MessageCircle,
-    title: "Contacta por WhatsApp",
-    description: "Escríbenos tu pedido",
+    title: "Inicia tu compra",
+    description: "Selecciona productos y agrégalos al carrito",
     color: "text-whatsapp",
     bgColor: "bg-green-100",
   },
@@ -96,23 +97,22 @@ export default function ProcessSection() {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-amber-50 to-green-50 rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-poppins font-bold text-gray-900 mb-4">
-              ¿Tienes dudas sobre el proceso?
+              ¿Quieres avanzar ya?
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Nuestro equipo está listo para ayudarte en cada paso del proceso de compra
+              Nuestro carrito está listo: elige tus productos, confirma y prepárate para recibirlos.
             </p>
             
-            {/* Contact info */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center gap-2 text-gray-700">
-                <MessageCircle className="w-5 h-5 text-whatsapp" />
-                <span>WhatsApp: +51 998 855 069</span>
-              </div>
-              <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Truck className="w-5 h-5 text-green-600" />
-                <span>Envío gratis a Lima</span>
-              </div>
+              <p className="text-gray-700 text-base font-semibold">
+                Compra en línea con seguimiento en tiempo real.
+              </p>
+              <Link
+                href="/"
+                className="rounded-full border border-gray-300 bg-white px-6 py-2 text-sm font-bold uppercase tracking-[0.2em] text-gray-900 transition hover:border-gray-400"
+              >
+                Comprar
+              </Link>
             </div>
           </div>
         </div>

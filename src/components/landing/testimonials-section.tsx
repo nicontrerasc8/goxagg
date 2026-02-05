@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Star } from "lucide-react";
 
 type Testimonial = {
@@ -100,14 +101,12 @@ export default function TestimonialsSection() {
         </div>
 
         <div id="contacto" className="mt-14 text-center">
-          <a
-            href="https://wa.me/51998855069"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/"
             className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-green-800 text-white font-bold shadow-lg hover:bg-green-900 transition"
           >
-            Escribir por WhatsApp
-          </a>
+            Comprar
+          </Link>
         </div>
       </div>
     </section>

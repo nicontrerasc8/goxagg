@@ -16,8 +16,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GOXA - Productos Naturales de Oxapampa | Comprar por WhatsApp",
-  description: "Mieles 100% naturales, polen, Gel natural, hamburguesas de carne de pastura, Café de especialidad, yogurt sin conservantes, chocolates 75% cacao, jabones con aceites escenciales, quesos gourmet con leche pura de vaca, cerveza artesanal y alimentos que fortalecen tu sistema inmunologico! Envíos a todo el Perú!  Compra por WhatsApp",
+  title: "GOXA ¡Compra online y recíbelos el mismo día!",
+  description: "Productos naturales de Oxapampa que mejoran tu calidad de vida y salud.",
   keywords: ["miel natural", "orquídeas", "Oxapampa", "carnes artesanales", "chorizos parrilla", "productos naturales", "gourmet", "Perú", "WhatsApp", "envío gratis Lima"],
   authors: [{ name: "GOXA" }],
   creator: "GOXA",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "GOXA - Productos Naturales de Oxapampa | Comprar por WhatsApp",
-    description: "Mieles 100% naturales, polen, Gel natural, hamburguesas de carne de pastura, Café de especialidad, yogurt sin conservantes, chocolates 75% cacao, jabones con aceites escenciales, quesos gourmet con leche pura de vaca, cerveza artesanal y alimentos que fortalecen tu sistema inmunologico! Envíos a todo el Perú! Compra por WhatsApp",
+    description: "Productos naturales de Oxapampa que mejoran tu calidad de vida y salud.",
     url: "https://goxa.pe",
     siteName: "GOXA",
     locale: "es_PE",
@@ -59,7 +59,10 @@ export default function RootLayout({
     <html lang="es" data-theme="light">
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-white min-h-screen`}>
         <ApolloWrapper>
-          <Providers>{children}</Providers>
+          <Providers>
+       
+            {children}
+          </Providers>
         </ApolloWrapper>
       </body>
     </html>

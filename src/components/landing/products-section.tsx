@@ -98,7 +98,7 @@ export default function ProductsSection() {
   const closePopup = () => setSelectedProduct(null);
 
   return (
-    <section id="productos" className="relative py-20 bg-gradient-to-b from-white via-green-50/70 to-white overflow-hidden">
+    <section id="productos" className="relative py-20 bg-gradient-to-b from-white/50 via-green-50/10 to-white/50 overflow-hidden">
       <div className="relative container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -184,7 +184,7 @@ export default function ProductsSection() {
 
         {/* Resumen dinÃ¡mico */}
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-green-700/80 uppercase tracking-[0.3em] mb-2">
+          <p className="text-sm font-semibold text-green-700 uppercase tracking-[0.3em] mb-2">
             {activeLabel}
           </p>
     

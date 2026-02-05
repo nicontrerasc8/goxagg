@@ -1,53 +1,36 @@
 "use client";
 
 import { useCart } from "@/context/cart-context";
-import { X, ShoppingBag, MessageCircle, ArrowRight, Heart } from "lucide-react";
+import { X, ShoppingBag, ArrowRight, Heart, ShoppingCart } from "lucide-react";
 import CartItemComponent from "./cart-item";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
-
-const WHATSAPP_NUMBER = "51998855069";
+import Link from "next/link";
 
 export default function CartDrawer() {
     const { isOpen, closeCart, items, totalPrice } = useCart();
     const drawerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === "Escape") closeCart();
-        };
-
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-            window.addEventListener("keydown", handleEscape);
-        } else {
-            document.body.style.overflow = "unset";
-            window.removeEventListener("keydown", handleEscape);
-        }
-
-        return () => {
-            document.body.style.overflow = "unset";
-            window.removeEventListener("keydown", handleEscape);
-        };
-    }, [isOpen, closeCart]);
-
-    if (!isOpen) return null;
-
-    const handleWhatsAppCheckout = () => {
-        if (items.length === 0) return;
-
-        let message = "*¡Hola! Me encantaron sus productos y quiero hacer este pedido:*%0A%0A";
-
-        items.forEach((item) => {
-            message += `• ${item.quantity}x ${item.productName} (${item.variantLabel}) - S/ ${(item.price * item.quantity).toFixed(2)}%0A`;
-        });
-
-        message += `%0A*Total estimado: S/ ${totalPrice.toFixed(2)}*`;
-        message += "%0A%0A¿Me podrían ayudar con el envío y el pago? ¡Gracias!";
-
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeCart();
     };
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleEscape);
+    } else {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, closeCart]);
+
+  if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 z-[100] flex justify-end font-poppins">
@@ -148,19 +131,18 @@ export default function CartDrawer() {
                         >
                             Seguir comprando
                         </Button>
-                        <Button
-                            className="w-full relative h-[56px] text-lg font-bold bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl shadow-lg hover:shadow-[#25D366]/25 hover:-translate-y-0.5 transition-all duration-300 group overflow-hidden"
-                            onClick={handleWhatsAppCheckout}
+                    <Button
+                        asChild
+                        className="w-full relative h-[56px] text-lg font-bold bg-emerald-900 hover:bg-emerald-800 text-white rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                        <Link
+                            href="/"
+                            className="relative flex items-center justify-center gap-2"
                         >
-                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                            <span className="relative flex items-center justify-center gap-2">
-                                <MessageCircle className="h-6 w-6 fill-white" />
-                                Completar Pedido en WhatsApp
-                            </span>
-                        </Button>
-                        <p className="mt-4 text-xs text-center text-green-800/40">
-                            Serás redirigido a WhatsApp para coordinar los detalles.
-                        </p>
+                            <ShoppingCart className="h-6 w-6" />
+                            Comprar
+                        </Link>
+                    </Button>
               
                     </div>
                 )}

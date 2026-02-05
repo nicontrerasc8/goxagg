@@ -1,14 +1,14 @@
 "use client";
 
-
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import {
   Facebook,
   Instagram,
   MapPin,
-  MessageCircle,
   Music2,
+  ShoppingCart,
   Video,
 } from "lucide-react";
 
@@ -41,11 +41,11 @@ const highlightValues = [
 
 const contactDetails = [
   {
-    label: "WhatsApp",
-    value: "+51 998 855 069",
-    description: "Un mensaje y te respondemos con catálogo y disponibilidad.",
-    href: "https://wa.me/51998855069?text=Hola%20GOXA%2C%20quiero%20conocer%20sus%20productos%20premium",
-    icon: MessageCircle,
+    label: "Comprar",
+    value: "Catálogo premium en línea",
+    description: "Ingresa al catálogo y agrégalo todo al carrito.",
+    href: "/#productos",
+    icon: ShoppingCart,
   },
   {
     label: "Ubicación",
@@ -153,20 +153,13 @@ export default function QuienesSomosPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="https://wa.me/51998855069"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/#productos"
               className="rounded-full bg-amber-400 px-6 py-3 text-lg font-semibold text-slate-900 hover:shadow-lg"
             >
-              Contactar por WhatsApp
-            </a>
-            <a
-              href="/"
-              className="rounded-full border border-white/60 px-6 py-3 text-lg font-semibold"
-            >
-              Volver al inicio
-            </a>
+              Compra en línea
+            </Link>
+
           </div>
         </div>
       </section>
@@ -186,6 +179,14 @@ export default function QuienesSomosPage() {
               <p className="mt-4 text-slate-600">{item.description}</p>
             </article>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/#productos"
+            className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
+          >
+            Compra en línea
+          </Link>
         </div>
       </section>
 
@@ -208,6 +209,7 @@ export default function QuienesSomosPage() {
             </p>
 
             <VideoEleganteGOXA />
+        
           </div>
 
           <div className="space-y-6 rounded-3xl border bg-gradient-to-b from-white via-emerald-50 to-white p-6 shadow-lg">
@@ -220,11 +222,9 @@ export default function QuienesSomosPage() {
               {contactDetails.map((c) => {
                 const Icon = c.icon;
                 return (
-                  <a
+                  <Link
                     key={c.label}
                     href={c.href}
-                    target="_blank"
-                    rel="noreferrer"
                     className="flex items-center gap-4 rounded-2xl border bg-white p-4 hover:shadow"
                   >
                     <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-600">
@@ -237,7 +237,7 @@ export default function QuienesSomosPage() {
                       <p className="text-lg font-semibold">{c.value}</p>
                       <p className="text-sm text-slate-500">{c.description}</p>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -269,6 +269,14 @@ export default function QuienesSomosPage() {
                 <p className="mt-2 text-sm text-slate-600">{rec.text}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/#productos"
+              className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
+            >
+              Comprar
+            </Link>
           </div>
         </div>
       </section>

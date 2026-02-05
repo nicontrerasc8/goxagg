@@ -4,7 +4,7 @@ import Link from "next/link";
 import HeroSection from "@/components/landing/hero-section";
 import OregonWaySection from "@/components/landing/oregon-way-section";
 import SiteFooter from "@/components/landing/site-footer";
-import { StickyWhatsAppButton } from "@/components/ui/whatsapp-button";
+import { StickyComprarButton } from "@/components/ui/cta-button";
 
 const instagramComments = [
   { handle: "sofiacarreras1", text: "👏👏👏👏❤️💕 es excelente la miel que vendes!!! 😍😍" },
@@ -21,30 +21,6 @@ export default function InicioPage() {
     <main className="bg-white text-slate-900">
       <HeroSection />
 
-      <section className="border-b border-emerald-100 bg-emerald-50">
-        <div className="container mx-auto px-4 py-10 text-center">
-          <p className="text-sm uppercase tracking-[0.4em] text-green-700">Tienda & ecommerce</p>
-          <h2 className="mt-2 text-3xl font-extrabold text-green-900">Todo listo para tu carrito</h2>
-          <p className="mx-auto mt-3 max-w-3xl text-base text-green-900/80">
-            Navega por productos premium y agrégalos al carrito en la tienda. También puedes
-            hablar con nosotros por WhatsApp si necesitas soporte inmediato.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/"
-              className="rounded-full bg-emerald-900 px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-emerald-800"
-            >
-              Ir al catálogo
-            </Link>
-            <Link
-              href="/quienes-somos"
-              className="rounded-full border border-emerald-900 px-6 py-3 text-base font-semibold text-emerald-900 transition hover:bg-emerald-100"
-            >
-              Ver historia y equipo
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <OregonWaySection />
 
@@ -77,10 +53,18 @@ export default function InicioPage() {
               </article>
             ))}
           </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
+            >
+              Comprar
+            </Link>
+          </div>
         </div>
       </section>
 
-      <StickyWhatsAppButton />
+      <StickyComprarButton />
 
       <SiteFooter />
     </main>

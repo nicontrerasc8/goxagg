@@ -9,7 +9,7 @@ import { TikTokIcon } from "@/components/icons/tiktok-icon";
 type Slide = { src: string; alt: string };
 
 const navLinks = [
-  { label: "HOME", href: "#home" },
+
   { label: "PRODUCTOS", href: "/#productos" },
   { label: "QUIÉNES SOMOS", href: "/quienes-somos" },
 ];
@@ -139,16 +139,8 @@ export default function HeroSection() {
               href="/#productos"
               className="px-10 py-4 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
             >
-              Ver Productos
+              Compra en línea
             </Link>
-            <a
-              href="https://wa.me/51998855069"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-10 py-4 rounded-full bg-green-800 text-white font-semibold border border-white/25 transition text-lg sm:text-xl"
-            >
-              Comprar por WhatsApp
-            </a>
           </div>
 
     

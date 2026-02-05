@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from "next/link";
 import { MessageCircle, Clock, Truck, Star } from "lucide-react";
 
 // NOTA: Se ha quitado el import de WhatsAppButton y se ha reemplazado por botones nativos de React
@@ -15,27 +16,22 @@ export default function CTASection() {
           
           {/* Main CTA */}
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            ¿Listo para probar lo auténtico?
+            ¿Listo para comprar lo auténtico?
           </h2>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Contáctanos ahora y recibe los mejores productos de Oxapampa en tu domicilio.
+            Agrega ahora los productos premium de Oxapampa a tu carrito y recibe el pedido directo en tu domicilio.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            
-             <a href="https://wa.me/51998855069">
-            <button
-              className="flex items-center justify-center text-xl px-8 py-4 rounded-full shadow-2xl 
-                         bg-amber-400 text-green-900 font-bold transition-all duration-300 transform hover:scale-105 hover:bg-amber-300 w-full sm:w-auto"
-              // onClick={() => window.open(`https://wa.me/TUNUMERO?text=Quiero hacer un pedido GOXA`)} 
+            <Link
+              href="/"
+              className="flex items-center justify-center text-xl px-8 py-4 rounded-full shadow-2xl bg-amber-400 text-green-900 font-bold transition-all duration-300 transform hover:scale-105 hover:bg-amber-300 w-full sm:w-auto"
             >
               <MessageCircle className="w-6 h-6 mr-3" />
-              Comprar por WhatsApp
-            </button>
-            </a>
-   
+              Comprar
+            </Link>
           </div>
 
           {/* Urgency elements (Pills) */}
@@ -79,9 +75,8 @@ export default function CTASection() {
 
           {/* Contact info */}
           <div className="mt-12 text-white/80 text-lg">
-            <p className="mb-2">📱 **WhatsApp:** +51 998 855 069</p>
- 
-            <p>📍 Entregas en Lima | Origen en Oxapampa</p>
+            <p className="mb-2">📦 Compra en línea con seguimiento completo de tu pedido</p>
+            <p>🚚 Entregas en Lima y provincias | Origen en Oxapampa</p>
           </div>
         </div>
       </div>

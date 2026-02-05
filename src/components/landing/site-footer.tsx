@@ -11,7 +11,12 @@ export default function SiteFooter() {
           <h3 className="text-2xl font-poppins font-bold mb-3 tracking-wide">GOXA</h3>
           <p className="text-white/90 mb-4">Productos naturales y gourmet de Oxapampa</p>
           <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-6 text-sm text-white/90">
-            <span>WhatsApp: +51 998 855 069</span>
+            <Link
+              href="/"
+              className="text-white/90 underline-offset-4 hover:text-white"
+            >
+              Comprar
+            </Link>
             <Link
               href="/"
               className="text-white/90 underline-offset-4 hover:text-white"
