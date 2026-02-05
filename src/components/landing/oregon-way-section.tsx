@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function OregonWaySection() {
   return (
-    <section className="bg-[#F4F1EA] py-20">
+    <section className="bg-white/60 ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
@@ -15,7 +15,7 @@ export default function OregonWaySection() {
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-green-900 tracking-tight">
               Oxapampa se siente, el sabor lo confirma
             </h2>
-            <div className="mt-6 space-y-5 text-green-950/80 leading-relaxed">
+            <div className="mt-6 space-y-5 text-lg text-green-950/80 leading-relaxed">
               <p>
                 En GOXA seleccionamos insumos de la Selva Central bajo criterios claros de
                 calidad y respeto por su entorno. Cada proceso es cuidado con precisión,
@@ -41,12 +41,20 @@ export default function OregonWaySection() {
               </span>
             </div>
             <div className="mt-10 text-center">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
+                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-4 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
               >
-                Compra an línea
+                Compra en línea
               </Link>
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center rounded-full bg-white text-green-950 font-bold shadow-lg border border-white/25 px-10 py-4 text-lg sm:text-xl transition hover:bg-green-50"
+              >
+                Volver al inicio
+              </Link>
+            </div>
             </div>
           </div>
           <div className="relative overflow-hidden rounded-[32px] shadow-xl">

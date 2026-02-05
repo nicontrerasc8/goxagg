@@ -87,8 +87,8 @@ export default function ProductsSection() {
     addItem(product, variantIdx);
     const variantLabel = product.variants[variantIdx].label;
 
-    toast.success("Â¡Agregado al carrito!", {
-      description: `${product.name} (${variantLabel}) ya estÃ¡ listo para ti.`,
+    toast.success("¡Agregado al carrito!", {
+      description: `${product.name} (${variantLabel}) ya está¡ listo para ti.`,
       icon: <ShoppingCart className="w-5 h-5 text-green-600" />,
       duration: 3000,
       className: "bg-white border-green-100"
@@ -102,7 +102,7 @@ export default function ProductsSection() {
       <button
         type="button"
         onClick={openCart}
-        className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 hover:border-emerald-300 hover:shadow-[0_25px_60px_-25px_rgba(4,73,45,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3"
+        className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3"
         aria-label="Abrir carrito"
       >
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-inner shadow-emerald-900/30">
@@ -118,14 +118,14 @@ export default function ProductsSection() {
 
       <div className="relative container mx-auto px-4">
         {/* Header */}
-        <div className="mx-auto text-center space-y-4 rounded-[2rem] bg-white/90 p-8 shadow-2xl shadow-emerald-900/10 border border-white/60 backdrop-blur-md mb-16">
+        <div className="mx-auto text-center space-y-4 mb-16">
           <div className="inline-flex items-center justify-center rounded-full bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.4em] text-emerald-700 shadow-inner shadow-emerald-100">
-            <Sparkles className="w-4 h-4 mr-2 text-emerald-600" /> Categorias
+            <Sparkles className="w-4 h-4 mr-2 text-emerald-600 text-lg" /> Categorias
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold text-green-950 tracking-tight">
             Nuestros Productos
           </h2>
-          <p className="text-sm text-slate-600">
+          <p className="text-lg">
             Explora lo mejor de la cocina artesanal desde Oxapampa: mieles, cafés, desayunos y packs premium.
           </p>
      
@@ -155,7 +155,7 @@ export default function ProductsSection() {
               "group relative flex flex-col items-center gap-3 rounded-[2rem] px-4 py-5 text-center transition-all duration-300",
               isActive
                 ? `bg-gradient-to-br ${meta.accentBg} text-white shadow-[0_20px_50px_-30px_rgba(4,73,45,0.6)] scale-[1.04]`
-                : "bg-white border border-emerald-100 hover:-translate-y-1 hover:shadow-lg"
+                : "bg-white border border-emerald-100 "
             )}
           >
             {/* Icono */}
@@ -164,7 +164,7 @@ export default function ProductsSection() {
                 "flex h-16 w-16 items-center justify-center rounded-full border border-white/40 bg-white/80 shadow-inner transition-all duration-300",
                 isActive
                   ? "bg-white/20"
-                  : "bg-emerald-50 group-hover:bg-emerald-100"
+                  : "bg-emerald-50 "
               )}
             >
               <meta.icon
@@ -203,7 +203,7 @@ export default function ProductsSection() {
 
         {/* Resumen dinÃ¡mico */}
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-green-700 uppercase tracking-[0.3em] mb-2">
+          <p className="text-sm font-semibold text-black uppercase tracking-[0.3em] mb-2">
             {activeLabel}
           </p>
     
@@ -212,7 +212,7 @@ export default function ProductsSection() {
         {/* Grid */}
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {filtered.map((p) => (
-           <article key={p.id} className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-white border border-gray-100 shadow-xl shadow-green-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-900/10 hover:border-green-200/50">
+           <article key={p.id} className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-white border border-gray-100 shadow-xl shadow-green-900/5 transition-all duration-500 ">
 
   {/* Imagen Container */}
   <div className="relative w-full aspect-[4/5] overflow-hidden bg-white rounded-xl">
@@ -280,7 +280,7 @@ export default function ProductsSection() {
           
           <button
             onClick={() => handleAddToCart(p, idx)}
-            className="rounded-lg border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95"
+            className="rounded-lg border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95"
             aria-label={`Agregar ${variant.label} de ${p.name}`}
           >
             Agregar

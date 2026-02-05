@@ -138,7 +138,7 @@ export default function QuienesSomosPage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-950/60 via-emerald-900/60 to-emerald-800/0" />
 
         <div className="relative z-10 container mx-auto px-4 py-16 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.5em] text-emerald-200">
+          <p className="text-xs font-semibold uppercase tracking-[0.5em] text-white">
             Somos GOXA
           </p>
           <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
@@ -153,14 +153,15 @@ export default function QuienesSomosPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
+          
             <Link
               href="/#productos"
               className="rounded-full bg-amber-400 px-6 py-3 text-lg font-semibold text-slate-900 hover:shadow-lg"
             >
               Compra en línea
             </Link>
-            <Link
-              href="/inicio"
+              <Link
+              href="/"
               className="rounded-full border border-white/70 bg-white/80 px-6 py-3 text-lg font-semibold text-slate-900 transition hover:border-white hover:bg-white hover:shadow-lg"
             >
               Volver al inicio

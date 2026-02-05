@@ -40,29 +40,7 @@ export default function HeroSection() {
       {/* Header (estilo Oregon Foods) */}
     
 
-      {/* Slider background */}
-      <div className="absolute inset-0">
-        {slides.map((s, i) => (
-          <div
-            key={s.src}
-            className={`absolute inset-0 transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <Image
-              src={s.src}
-              alt={s.alt}
-              fill
-              priority={i === 0}
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
-        ))}
-
-        {/* Overlays para look premium */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/25" />
-      </div>
+  
 
    
 
@@ -98,11 +76,18 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+            
             <Link
               href="/#productos"
               className="px-10 py-4 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
             >
               Compra en línea
+            </Link>
+              <Link
+              href="/"
+              className="px-10 py-4 rounded-full bg-white text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
+            >
+              Volver al inicio
             </Link>
           </div>
 

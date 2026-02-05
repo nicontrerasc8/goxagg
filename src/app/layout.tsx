@@ -48,6 +48,10 @@ export const metadata: Metadata = {
     description: "Productos naturales de Oxapampa que mejoran tu calidad de vida y salud.",
     images: ["/logo.png"],
   },
+  icons: {
+    icon: "/logo.ico",
+    shortcut: "/logo.ico",
+  },
 };
 
 export default function RootLayout({

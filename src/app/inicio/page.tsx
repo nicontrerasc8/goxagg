@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import HeroSection from "@/components/landing/hero-section";
 import OregonWaySection from "@/components/landing/oregon-way-section";
 import SiteFooter from "@/components/landing/site-footer";
@@ -16,57 +15,32 @@ const instagramComments = [
   { handle: "carlapenagos", text: "DELICIOSOOOO!! Super recomendado!" },
 ];
 
-const navLinks = [
-  { href: "/", label: "Productos" },
-  { href: "/quienes-somos", label: "Quiénes somos" },
-];
-
 export default function InicioPage() {
-
   return (
-    <main className="relative text-slate-900">
-
-
+    <main className="relative min-h-screen text-slate-900 overflow-hidden">
       <div className="fixed inset-0 -z-10">
         <Image
-          src="/hero-4.png"
+          src="/hero-1.png"
           alt="Paisaje de Oxapampa"
           fill
           priority
           className="object-cover"
         />
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/90 backdrop-blur-[0.5px]"
-          aria-hidden
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/40 to-white/80" aria-hidden />
       </div>
 
-      <div className="relative z-10">
-        <header className="absolute inset-x-0 top-0 z-20 flex justify-end px-4 py-4 sm:px-8">
-          <nav className="flex items-center gap-4">
-            <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-green-900 bg-white/80 px-4 py-2 rounded-full shadow-lg border border-white/60 backdrop-blur mb-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-full bg-gradient-to-br bg-emerald-800 text-white px-4 py-1.5 text-[0.65rem] font-semibold tracking-widest shadow-[0_10px_20px_-18px_rgba(6,78,59,0.9)] transition hover:bg-emerald-700 "
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-        </header>
-
+      <div className="relative z-10 flex flex-col gap-16 pb-20">
         <HeroSection />
+
         <OregonWaySection />
-        <section className="bg-gradient-to-b from-green-50 via-white to-green-50 py-18">
+
+        <section className="bg-white/60 py-18">
           <div className="container mx-auto px-4 py-10">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-green-950 mb-3">
                 Lo que dicen en Instagram
               </h2>
-              <p className="text-green-800/80 max-w-2xl mx-auto text-base md:text-lg">
+              <p className="text-black max-w-2xl mx-auto text-base md:text-lg">
                 Comentarios reales de quienes prueban nuestros productos de Oxapampa.
               </p>
             </div>
@@ -89,9 +63,9 @@ export default function InicioPage() {
                 </article>
               ))}
             </div>
-       
           </div>
         </section>
+
         <SiteFooter />
       </div>
     </main>
