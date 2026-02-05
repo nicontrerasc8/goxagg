@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* Contenido principal */}
       <div className="relative z-10 min-h-screen">
-        <section className="border-b border-emerald-100 bg-gradient-to-b from-emerald-50 via-white/80 to-white/60">
+        <section className="bg-gradient-to-b from-white-50/50 via-white/30 to-white/50">
           <div className="container mx-auto px-4 py-12 lg:py-20">
             <div className="mx-auto max-w-4xl text-center space-y-8">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
