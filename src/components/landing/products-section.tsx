@@ -98,7 +98,7 @@ export default function ProductsSection() {
   const closePopup = () => setSelectedProduct(null);
 
   return (
-    <section id="productos" className="relative py-20 bg-gradient-to-b from-white/50 via-green-50/10 to-white/50 overflow-hidden">
+    <section id="productos" className="relative py-20 bg-gradient-to-b from-white/30 via-green-50/10 to-white/30 overflow-hidden">
       <div className="relative container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
