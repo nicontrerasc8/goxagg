@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     email: true,
   },
   openGraph: {
-    title: "GOXA - Productos Naturales de Oxapampa | Comprar por WhatsApp",
+    title: "GOXA ¡Compra online y recíbelos el mismo día!",
     description: "Productos naturales de Oxapampa que mejoran tu calidad de vida y salud.",
     url: "https://goxa.pe",
     siteName: "GOXA",
