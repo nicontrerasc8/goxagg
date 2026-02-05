@@ -180,14 +180,7 @@ export default function QuienesSomosPage() {
             </article>
           ))}
         </div>
-        <div className="mt-10 text-center">
-          <Link
-            href="/#productos"
-            className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
-          >
-            Compra en línea
-          </Link>
-        </div>
+
       </section>
 
       {/* VIDEO + CONTACT */}
