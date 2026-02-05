@@ -9,7 +9,7 @@ import { StickyComprarButton } from "@/components/ui/cta-button";
 export default function Home() {
   return (
     <main className="relative text-slate-900">
-         <div className="absolute left-6 top-6">
+         <div className="relative left-6 top-6">
               <div className="relative h-24 w-24 rounded-full border-2 border-white bg-white/80 p-2 shadow-lg">
                 <Image
                   src="/logo.png"
