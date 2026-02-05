@@ -130,7 +130,7 @@ export default function ProductsSection() {
           </p>
      
 
-        {/* CategorÃ­as */}
+        {/* Categorías */}
        
   <span className="pointer-events-none absolute -left-6 -top-10 hidden h-32 w-32 rounded-full bg-emerald-200/60 blur-3xl sm:block" />
   <span className="pointer-events-none absolute right-6 -bottom-10 hidden h-36 w-36 rounded-full bg-amber-200/70 blur-3xl lg:block" />
@@ -201,7 +201,7 @@ export default function ProductsSection() {
   </div>
 </div>
 
-        {/* Resumen dinÃ¡mico */}
+        {/* Resumen dinámico */}
         <div className="text-center mb-10">
           <p className="text-sm font-semibold text-black uppercase tracking-[0.3em] mb-2">
             {activeLabel}
@@ -228,7 +228,7 @@ export default function ProductsSection() {
       <button
         type="button"
         onClick={() => setSelectedProduct(p)}
-        className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+        className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out md:group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
       >
         <span className="text-xs font-semibold tracking-[0.4em] uppercase">
           Ver info
@@ -237,7 +237,7 @@ export default function ProductsSection() {
       </button>
     )}
     {/* Badges */}
-    <div className="absolute top-4 left-4 flex flex-col gap-2">
+    <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
       {p.badge && (
         <div className="rounded-full bg-white/95 text-green-900 px-3 py-1 text-xs font-extrabold tracking-widest uppercase shadow-sm backdrop-blur border border-green-100">
           {p.badge}
@@ -279,8 +279,11 @@ export default function ProductsSection() {
           </div>
           
           <button
-            onClick={() => handleAddToCart(p, idx)}
-            className="rounded-lg border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleAddToCart(p, idx);
+            }}
+            className="rounded-lg relative z-20 border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95 touch-manipulation"
             aria-label={`Agregar ${variant.label} de ${p.name}`}
           >
             Agregar
