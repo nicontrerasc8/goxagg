@@ -9,6 +9,16 @@ import { StickyComprarButton } from "@/components/ui/cta-button";
 export default function Home() {
   return (
     <main className="relative text-slate-900">
+         <div className="absolute left-6 top-6">
+              <div className="relative h-24 w-24 rounded-full border-2 border-white bg-white/80 p-2 shadow-lg">
+                <Image
+                  src="/logo.png"
+                  alt="Logo GOXA"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
       {/* Fondo global */}
       <div className="fixed inset-0 -z-10">
         <Image
@@ -26,9 +36,9 @@ export default function Home() {
 
       {/* Contenido principal */}
       <div className="relative z-10 min-h-screen">
-        <section className="bg-gradient-to-b from-white-50/50 via-white/30 to-white/50">
+        <section className="bg-gradient-to-b from-white-50/10 via-white/20 to-white/10">
           <div className="container mx-auto px-4 py-12 lg:py-20">
-            <div className="mx-auto max-w-4xl text-center space-y-8">
+            <div className="mx-auto max-w-5xl text-center space-y-8">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
                 Catálogo premium
               </p>
@@ -36,7 +46,7 @@ export default function Home() {
           Compra los productos más selectos desde Oxapampa
               </h1>
               <p className="text-lg text-green-900/85 leading-relaxed">
-Haz tu pedido de miel pura, polen, yogurt y quesos   gourmet, parrillas de carne de pastura, chocolates 75% cacao.
+Haz tu pedido de miel pura, polen, yogurt y quesos   gourmet, parrillas de carne de pastura, chocolates 75% cacao. <br/>
 Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!              </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
@@ -67,7 +77,7 @@ Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!          
         </section>
 
         <ProductsSection />
-        <StickyComprarButton />
+  
         <SiteFooter />
       </div>
     </main>

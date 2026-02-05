@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GOXA - Productos Naturales de Oxapampa",
-    description: "Mieles 100% naturales, polen, Gel natural, hamburguesas de carne de pastura, Café de especialidad, yogurt sin conservantes, chocolates 75% cacao, jabones con aceites escenciales, quesos gourmet con leche pura de vaca, cerveza artesanal y alimentos que fortalecen tu sistema inmunologico! Envíos a todo el Perú!  Compra por WhatsApp",
+    description: "Productos naturales de Oxapampa que mejoran tu calidad de vida y salud.",
     images: ["/logo.png"],
   },
 };

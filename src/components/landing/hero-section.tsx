@@ -38,44 +38,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-[92vh] w-full overflow-hidden">
       {/* Header (estilo Oregon Foods) */}
-      <div className="absolute top-0 left-0 right-0 z-30 bg-[#2F4B39]/90 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-6 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.png"
-              alt="Logo GOXA"
-              className="w-24 h-24 rounded-full border border-white/20 object-cover shadow-lg transition-transform duration-300"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  "https://placehold.co/80x80/333/FFF?text=Logo";
-              }}
-            />
-         
-          </div>
-
-
-          <nav className="flex items-center gap-3 text-sm sm:text-base font-semibold text-white/90 uppercase tracking-wide">
-            {navLinks.map(({ label, href }) => {
-              const navClass =
-                "rounded-full border border-white/30 bg-white/5 px-5 sm:px-6 py-3 text-sm sm:text-base transition-all duration-200 hover:border-white hover:bg-white/20";
-
-              if (href.startsWith("#")) {
-                return (
-                  <a key={label} href={href} className={navClass}>
-                    {label}
-                  </a>
-                );
-              }
-
-              return (
-                <Link key={label} href={href} className={navClass}>
-                  {label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-      </div>
+    
 
       {/* Slider background */}
       <div className="absolute inset-0">
