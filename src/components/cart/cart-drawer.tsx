@@ -1,15 +1,24 @@
 "use client";
 
 import { useCart } from "@/context/cart-context";
-import { X, ShoppingBag, ArrowRight, Heart, ShoppingCart } from "lucide-react";
+import { X, ShoppingBag, ArrowRight, Heart, MessageSquare, XCircle } from "lucide-react";
 import CartItemComponent from "./cart-item";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 
 export default function CartDrawer() {
-    const { isOpen, closeCart, items, totalPrice } = useCart();
+    const { isOpen, closeCart, items, totalPrice, clearCart } = useCart();
     const drawerRef = useRef<HTMLDivElement>(null);
+    const whatsappNumber = "51998855069";
+    const whatsappLink = items.length
+        ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent([
+              "Hola, me gustaria hacer el siguiente pedido:",
+              ...items.map((item) =>
+                  `- ${item.quantity} x ${item.productName}${item.variantLabel ? ` (${item.variantLabel})` : ""}`
+              ),
+              `Total estimado: S/ ${totalPrice.toFixed(2)}`,
+          ].join("\n"))}`
+        : undefined;
 
     useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -124,24 +133,37 @@ export default function CartDrawer() {
                                 </div>
                             </div>
                         </div>
-                                  <Button
+                    <div className="mb-4 space-y-2">
+                        <Button
                             variant="ghost"
-                            className="w-full mb-4 border border-green-200 rounded-xl text-green-800 font-semibold"
+                            className="w-full border border-green-200 rounded-xl text-green-800 font-semibold flex items-center justify-center gap-2"
+                            onClick={clearCart}
+                        >
+                            <XCircle className="h-4 w-4" />
+                            Vaciar carrito
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            className="w-full border border-green-200 rounded-xl text-green-800 font-semibold flex items-center justify-center gap-2"
                             onClick={closeCart}
                         >
+                            <ArrowRight className="h-4 w-4" />
                             Seguir comprando
                         </Button>
+                    </div>
                     <Button
                         asChild
                         className="w-full relative h-[56px] text-lg font-bold bg-emerald-900 hover:bg-emerald-800 text-white rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                     >
-                        <Link
-                            href="/"
+                        <a
+                            href={whatsappLink}
+                            target="_blank"
+                            rel="noreferrer"
                             className="relative flex items-center justify-center gap-2"
                         >
-                            <ShoppingCart className="h-6 w-6" />
+                            <ShoppingBag className="h-6 w-6" />
                             Comprar
-                        </Link>
+                        </a>
                     </Button>
               
                     </div>
