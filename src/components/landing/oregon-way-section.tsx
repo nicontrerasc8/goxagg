@@ -44,13 +44,13 @@ export default function OregonWaySection() {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-10 py-4 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
+                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-5 py-3 text-base font-semibold text-green-950 shadow-lg border border-white/30 transition hover:bg-amber-300"
               >
                 Compra en línea
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-full bg-white text-green-950 font-bold shadow-lg border border-white/25 px-10 py-4 text-lg sm:text-xl transition hover:bg-green-50"
+                className="inline-flex items-center justify-center rounded-full bg-white text-green-950 font-bold shadow-lg border border-white/25 px-5 py-3 text-md  transition hover:bg-green-50"
               >
                 Volver al inicio
               </Link>

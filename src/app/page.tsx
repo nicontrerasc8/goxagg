@@ -29,7 +29,7 @@ export default function Home() {
           className="object-cover"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80 backdrop-blur-[0.5px]"
+          className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/70 to-white/30 backdrop-blur-[0.5px]"
           aria-hidden
         />
       </div>

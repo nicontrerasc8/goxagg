@@ -814,13 +814,12 @@ export const products: Product[] = [
         badge: "Pack",
     popup: {
       title: "Pack Familiar Salud",
-      description: "Combo ideal para proteger a toda la familia con productos naturales contra resfríos, gripes e influenza.",
+      description: "Combo ideal para proteger a toda la familia contra los resfríos, gripes e influenza con productos naturales.",
       sections: [
         {
           heading: "Contenido",
           points: [
-            "Incluye miel, propóleo y otros aliados naturales para fortalecer defensas.",
-            "Pensado para mantener energía durante temporadas frías sin medicamentos.",
+            "Incluye propóleo, miel, gel natural y polen,  para fortalecer las defensas.",
           ],
         },
         {
@@ -844,20 +843,20 @@ export const products: Product[] = [
     badge: "Pack",
     popup: {
       title: "Pack Familiar GOXA",
-      description: "Selección de favoritos GOXA para la mesa familiar: quesos, café y más productos premium.",
+      description: "Selección de favoritos GOXA más un delicioso Café de especialidad y un riquísimo yogurt con probioticos del sabor de preferencia.",
       sections: [
         {
           heading: "Incluye",
           points: [
-            "Variedad de quesos, café y complementos que reflejan la mesa oxapampina.",
-            "Ideal para compartir en reuniones, celebraciones o como regalo especial.",
+            "Nuestros productos top como propoleo, miel, gel natural, polen, café y yogurt.",
+            "Ideal para compartir en los desayunos.",
           ],
         },
         {
           heading: "Recomendación",
           points: [
-            "Degustarlo con pan artesanal, frutas y vinos ligeros.",
-            "Perfecto para quien quiere llevar a casa lo mejor de la región.",
+            "Degustarlo en el desayuno.",
+            "⁠Perfecto para quien quiere llevar a casa lo mejor de la región.",
           ],
         },
       ],
