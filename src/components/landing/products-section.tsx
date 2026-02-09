@@ -79,6 +79,7 @@ export default function ProductsSection() {
   const { addItem, itemCount }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
+  const summaryRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activePopupOption, setActivePopupOption] = useState<string | null>(null);
 
@@ -115,9 +116,10 @@ export default function ProductsSection() {
     popupOptions.find((option) => option.id === activePopupOption) ?? popupOptions[0] ?? null;
 
   const scrollToProducts = () => {
-    if (!gridRef.current) return;
+    const target = summaryRef.current ?? gridRef.current;
+    if (!target) return;
 
-    gridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
     if (typeof window !== "undefined") {
       window.scrollBy({ top: 120, behavior: "smooth" });
     }
@@ -238,7 +240,7 @@ export default function ProductsSection() {
 </div>
 
         {/* Resumen dinámico */}
-        <div className="text-center mb-10">
+        <div ref={summaryRef} className="text-center mb-10">
           <p className="text-sm font-semibold text-black uppercase tracking-[0.3em] mb-2">
             {activeLabel}
           </p>

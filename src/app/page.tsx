@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import ProductsSection from "@/components/landing/products-section";
 import SiteFooter from "@/components/landing/site-footer";
 import { StickyComprarButton } from "@/components/ui/cta-button";
@@ -76,7 +77,15 @@ Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!          
           </div>
         </section>
 
-        <ProductsSection />
+        <Suspense
+          fallback={
+            <div className="flex items-center justify-center py-16 text-base font-semibold text-green-900">
+              Cargando catálogo…
+            </div>
+          }
+        >
+          <ProductsSection />
+        </Suspense>
   
         <SiteFooter />
       </div>
