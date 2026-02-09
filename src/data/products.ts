@@ -858,6 +858,49 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+    id: 27,
+    name: "Kombucha",
+    description:
+      "La Kombucha es una bebida probiótica fermentada que restaura el equilibrio del organismo y refuerza la microbiota.",
+    variants: [{ label: "250ml", price: "S/ 10" }],
+    imageSrc: "/kombucha.png",
+    alt: "Kombucha natural",
+    category: "Salud",
+    popup: {
+      title: "Kombucha",
+      description:
+        "Infusión fermentada a base de té rica en probióticos, antioxidantes y compuestos bioactivos que benefician digestión, hígado y defensas.",
+      sections: [
+        {
+          heading: "Beneficios principales",
+          points: [
+            "Altamente digestiva y refrescante después de las comidas.",
+            "Refuerza el sistema inmune gracias a su carga de probióticos.",
+            "Mejora la función hepática al ayudar en la eliminación de toxinas.",
+            "Reduce gastritis, reflujo e inflamaciones gastrointestinales.",
+            "Antioxidante, antiinflamatoria e hidratante en climas cálidos.",
+          ],
+        },
+        {
+          heading: "Sabores disponibles",
+          points: [
+            "Piña y spirulina",
+            "Fresa y hierba luisa",
+            "Jamaica y canela",
+          ],
+        },
+        {
+          heading: "Modo de consumo",
+          points: [
+            "Ideal para tomar después de las comidas o como sustituto del agua de tiempo.",
+            "Mantener refrigerada y agitar suavemente antes de servir.",
+          ],
+        },
+      ],
+      notes: ["Contiene probióticos vivos y es una alternativa baja en azúcar a las sodas."],
+    },
+  },
   // {
   //   id: 22,
   //   name: "Penicilina Natural",

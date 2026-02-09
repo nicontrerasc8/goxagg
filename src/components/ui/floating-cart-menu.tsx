@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useCart } from "@/context/cart-context";
@@ -33,12 +33,17 @@ const menuButtonClasses =
 export default function FloatingCartMenu() {
   const { openCart, itemCount } = useCart();
   const pathname = usePathname();
+  const router = useRouter();
   const isHome = pathname === "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleCategoryClick = (category: Category) => {
     setMenuOpen(false);
+    if (pathname !== "/") {
+      router.push(`/?categoria=${encodeURIComponent(category)}#productos`);
+      return;
+    }
     const target = document.getElementById("productos");
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });

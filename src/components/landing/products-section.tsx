@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import React, { useMemo, useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Coffee, Flame, Gift, HeartPulse, LayoutGrid, ShoppingCart, Sparkles, Sunrise } from "lucide-react";
 import { products, Category, Product } from "@/data/products";
@@ -72,6 +73,9 @@ const categoryMeta: Record<
 };
 
 export default function ProductsSection() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("categoria");
   const { addItem, itemCount }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
@@ -110,12 +114,21 @@ export default function ProductsSection() {
   const activeOption =
     popupOptions.find((option) => option.id === activePopupOption) ?? popupOptions[0] ?? null;
 
+  const scrollToProducts = () => {
+    if (!gridRef.current) return;
+
+    gridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (typeof window !== "undefined") {
+      window.scrollBy({ top: 120, behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     const handler = (event: Event) => {
       const detail = (event as CustomEvent<{ category: Category } | undefined>).detail;
       if (detail?.category && categoryOrder.includes(detail.category)) {
         setActive(detail.category);
-        gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToProducts();
       }
     };
 
@@ -124,6 +137,17 @@ export default function ProductsSection() {
       window.removeEventListener("goxa-select-category", handler as EventListener);
     };
   }, []);
+
+  useEffect(() => {
+    if (!categoryParam) return;
+
+    const normalizedCategory = categoryParam as Category;
+    if (!categoryOrder.includes(normalizedCategory)) return;
+
+    setActive(normalizedCategory);
+    scrollToProducts();
+    router.replace("/#productos");
+  }, [router, categoryParam]);
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">
@@ -155,7 +179,7 @@ export default function ProductsSection() {
 
         const handleClick = () => {
           setActive(cat);
-          gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+          scrollToProducts();
         };
 
         return (
