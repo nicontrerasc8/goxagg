@@ -86,6 +86,14 @@ export default function CartDrawer() {
         }
     };
 
+    const handleDeleteOrder = (entryId: string) => {
+        const filtered = orderHistory.filter((entry) => entry.id !== entryId);
+        setOrderHistory(filtered);
+        if (typeof window !== "undefined") {
+            localStorage.setItem(ORDER_HISTORY_KEY, JSON.stringify(filtered));
+        }
+    };
+
     const formatOrderDate = (iso: string) => {
         try {
             return new Date(iso).toLocaleString("es-PE", {
@@ -227,15 +235,24 @@ export default function CartDrawer() {
                                             </span>
                                         </div>
                                         <p className="mt-2 text-[13px] text-slate-700 leading-snug">{summary}</p>
-                                        {entry.whatsappLink && (
+                                        <div className="mt-3 flex flex-wrap gap-2">
+                                            {entry.whatsappLink && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => handleRepeatOrder(entry)}
+                                                    className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-700 transition hover:border-emerald-400 hover:bg-emerald-50"
+                                                >
+                                                    Repetir pedido
+                                                </button>
+                                            )}
                                             <button
                                                 type="button"
-                                                onClick={() => handleRepeatOrder(entry)}
-                                                className="mt-3 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-700 transition hover:border-emerald-400 hover:bg-emerald-50"
+                                                onClick={() => handleDeleteOrder(entry.id)}
+                                                className="inline-flex items-center justify-center rounded-full border border-red-200 bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-red-700 transition hover:border-red-400 hover:bg-red-50"
                                             >
-                                                Repetir pedido
+                                                Borrar pedido
                                             </button>
-                                        )}
+                                        </div>
                                     </div>
                                 );
                             })}
