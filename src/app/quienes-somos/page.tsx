@@ -11,6 +11,7 @@ import {
   ShoppingCart,
   Video,
 } from "lucide-react";
+import SiteFooter from "@/components/landing/site-footer";
 
 
 
@@ -249,6 +250,7 @@ export default function QuienesSomosPage() {
                 <a href="https://www.instagram.com/goxa_pe" target="_blank">Instagram</a>
                 <a href="https://www.facebook.com/people/Goxa/61566229425220/" target="_blank">Facebook</a>
                 <a href="https://www.tiktok.com/@goxa_peru" target="_blank">TikTok</a>
+                 <a href="https://www.linkedin.com/company/grupo-especa/" target="_blank">LinkedIn</a>
               </div>
             </div>
           </div>
@@ -272,6 +274,7 @@ export default function QuienesSomosPage() {
    
         </div>
       </section>
+      <SiteFooter/>
     </main>
   );
 }

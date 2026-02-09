@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { Coffee, Flame, Gift, HeartPulse, LayoutGrid, ShoppingCart, Sparkles, Sunrise } from "lucide-react";
 import { products, Category, Product } from "@/data/products";
@@ -109,6 +109,21 @@ export default function ProductsSection() {
   const popupOptions = selectedProduct?.options ?? [];
   const activeOption =
     popupOptions.find((option) => option.id === activePopupOption) ?? popupOptions[0] ?? null;
+
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const detail = (event as CustomEvent<{ category: Category } | undefined>).detail;
+      if (detail?.category && categoryOrder.includes(detail.category)) {
+        setActive(detail.category);
+        gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    window.addEventListener("goxa-select-category", handler as EventListener);
+    return () => {
+      window.removeEventListener("goxa-select-category", handler as EventListener);
+    };
+  }, []);
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">

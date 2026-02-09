@@ -207,7 +207,7 @@ export const products: Product[] = [
           heading: "Perfil sensorial",
           points: [
             "Aroma intenso y sabor equilibrado que despierta los sentidos desde la primera infusion.",
-            "Ideal para preparar en prensa francesa o filtro.",
+            "Ideal para preparar en gota a gota, cafetera italiana, prensa francesa, filtro.",
           ],
         },
       ],
@@ -830,7 +830,7 @@ export const products: Product[] = [
   {
     id: 26,
     name: "Fideos de Quinoa y Arroz",
-    description: "Fideos integrales libres de gluten elaborados con quinoa, arroz y kiwicha libres de gluten para pastas ligeras.",
+    description: "Fideos integrales libres de gluten elaborados con quinoa, arroz y kiwicha, libres de gluten para pastas ligeras.",
     variants: [
       { label: "200g", price: "S/ 14" },
     ],

@@ -6,11 +6,22 @@ import { ShoppingCart, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useCart } from "@/context/cart-context";
 import { cn } from "@/lib/utils";
+import type { Category } from "@/data/products";
 
 const NAV_LINKS = [
   { href: "/", label: "Compra en línea" },
   { href: "/inicio", label: "Conocer más" },
   { href: "/quienes-somos", label: "¿Quiénes somos?" },
+];
+
+const CATEGORY_NAMES: Category[] = [
+  "Todos",
+  "Miel",
+  "Café y chocolates",
+  "Desayunos",
+  "Parrillas",
+  "Salud",
+  "Packs",
 ];
 
 const triggerClasses =
@@ -25,6 +36,16 @@ export default function FloatingCartMenu() {
   const isHome = pathname === "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleCategoryClick = (category: Category) => {
+    setMenuOpen(false);
+    const target = document.getElementById("productos");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    const event = new CustomEvent("goxa-select-category", { detail: { category } });
+    window.dispatchEvent(event);
+  };
 
   useEffect(() => {
     if (!menuOpen) {
@@ -100,7 +121,8 @@ export default function FloatingCartMenu() {
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="flex flex-col gap-3 text-xs font-semibold uppercase mt-20 tracking-[0.4em] text-emerald-700">
+            <div className="flex flex-col gap-3 mt-12 text-xs font-semibold uppercase tracking-[0.4em] text-emerald-700">
+          
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.label}
@@ -110,6 +132,19 @@ export default function FloatingCartMenu() {
                 >
                   {link.label}
                 </Link>
+              ))}
+            </div>
+            <div className="flex flex-col gap-3 text-xs font-semibold uppercase tracking-[0.4em] text-emerald-700 pt-6">
+              <p className="text-[10px] tracking-[0.5em] text-emerald-500">Categorías</p>
+              {CATEGORY_NAMES.map((category) => (
+                <button
+                  key={`cat-${category}`}
+                  type="button"
+                  onClick={() => handleCategoryClick(category)}
+                  className="rounded-full bg-gradient-to-br from-emerald-700/90 to-emerald-500 px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-2xl transition hover:from-emerald-600 hover:to-emerald-500"
+                >
+                  {category}
+                </button>
               ))}
             </div>
           </div>
