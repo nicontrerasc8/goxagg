@@ -2,6 +2,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { ApolloWrapper } from "@/components/providers/apollo-provider";
+import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next";
 
 const inter = Inter({
@@ -68,6 +69,7 @@ export default function RootLayout({
             {children}
           </Providers>
         </ApolloWrapper>
+        <Analytics />
       </body>
     </html>
   );

@@ -1,14 +1,31 @@
 "use client";
 
 import { useCart } from "@/context/cart-context";
-import { X, ShoppingBag, ArrowRight, Heart, MessageSquare, XCircle } from "lucide-react";
+import { X, ShoppingBag, ArrowRight, Heart, XCircle } from "lucide-react";
 import CartItemComponent from "./cart-item";
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const ORDER_HISTORY_KEY = "goxa-order-history";
+const MAX_ORDER_HISTORY = 12;
+
+type OrderHistoryEntry = {
+  id: string;
+  placedAt: string;
+  total: number;
+  whatsappLink?: string;
+  items: Array<{
+    productName: string;
+    variantLabel: string;
+    quantity: number;
+    price: number;
+  }>;
+};
 
 export default function CartDrawer() {
     const { isOpen, closeCart, items, totalPrice, clearCart } = useCart();
     const drawerRef = useRef<HTMLDivElement>(null);
+    const [orderHistory, setOrderHistory] = useState<OrderHistoryEntry[]>([]);
     const whatsappNumber = "51998855069";
     const whatsappLink = items.length
         ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent([
@@ -19,6 +36,69 @@ export default function CartDrawer() {
               `Total estimado: S/ ${totalPrice.toFixed(2)}`,
           ].join("\n"))}`
         : undefined;
+
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+        const stored = localStorage.getItem(ORDER_HISTORY_KEY);
+        if (stored) {
+            try {
+                setOrderHistory(JSON.parse(stored));
+            } catch (error) {
+                console.error("No se pudo leer el historial de pedidos", error);
+            }
+        }
+    }, []);
+
+    const persistOrderHistory = () => {
+        if (!whatsappLink || items.length === 0 || typeof window === "undefined") return;
+
+        const nextEntry: OrderHistoryEntry = {
+            id: `${Date.now()}`,
+            placedAt: new Date().toISOString(),
+            total: totalPrice,
+            whatsappLink,
+            items: items.map((item) => ({
+                productName: item.productName,
+                variantLabel: item.variantLabel,
+                quantity: item.quantity,
+                price: item.price,
+            })),
+        };
+
+        try {
+            const existing = localStorage.getItem(ORDER_HISTORY_KEY);
+            const parsed: OrderHistoryEntry[] = existing ? JSON.parse(existing) : [];
+            const next = [nextEntry, ...parsed].slice(0, MAX_ORDER_HISTORY);
+            localStorage.setItem(ORDER_HISTORY_KEY, JSON.stringify(next));
+            setOrderHistory(next);
+        } catch (error) {
+            console.error("No se pudo guardar el pedido", error);
+        }
+    };
+
+    const handleBuyClick = () => {
+        persistOrderHistory();
+    };
+
+    const handleRepeatOrder = (entry: OrderHistoryEntry) => {
+        if (entry.whatsappLink && typeof window !== "undefined") {
+            window.open(entry.whatsappLink, "_blank", "noopener");
+        }
+    };
+
+    const formatOrderDate = (iso: string) => {
+        try {
+            return new Date(iso).toLocaleString("es-PE", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+        } catch {
+            return iso;
+        }
+    };
 
     useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -117,6 +197,52 @@ export default function CartDrawer() {
                     )}
                 </div>
 
+                {orderHistory.length > 0 && (
+                    <div className="border-t border-green-50 bg-white/70 px-6 py-4 text-sm text-slate-700">
+                        <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.4em] text-emerald-700">
+                            <span>Pedidos guardados</span>
+                            <span className="text-[11px] font-normal uppercase tracking-[0.3em] text-slate-400">
+                                {orderHistory.length} registros
+                            </span>
+                        </div>
+                        <div className="mt-3 space-y-3 max-h-56 overflow-y-auto pr-1">
+                            {orderHistory.map((entry) => {
+                                const summary = entry.items
+                                    .map(
+                                        (item) =>
+                                            `${item.quantity}x ${item.productName}${
+                                                item.variantLabel ? ` (${item.variantLabel})` : ""
+                                            }`
+                                    )
+                                    .join(" - ");
+                                return (
+                                    <div
+                                        key={entry.id}
+                                        className="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-3 shadow-sm"
+                                    >
+                                        <div className="flex items-center justify-between text-xs text-slate-600">
+                                            <span>{formatOrderDate(entry.placedAt)}</span>
+                                            <span className="font-semibold text-green-900">
+                                                S/ {entry.total.toFixed(2)}
+                                            </span>
+                                        </div>
+                                        <p className="mt-2 text-[13px] text-slate-700 leading-snug">{summary}</p>
+                                        {entry.whatsappLink && (
+                                            <button
+                                                type="button"
+                                                onClick={() => handleRepeatOrder(entry)}
+                                                className="mt-3 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-700 transition hover:border-emerald-400 hover:bg-emerald-50"
+                                            >
+                                                Repetir pedido
+                                            </button>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
                 {/* Footer */}
                 {items.length > 0 && (
                     <div className="border-t border-green-50 p-6 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.03)] z-20">
@@ -153,6 +279,7 @@ export default function CartDrawer() {
                     </div>
                     <Button
                         asChild
+                        onClick={handleBuyClick}
                         className="w-full relative h-[56px] text-lg font-bold bg-emerald-900 hover:bg-emerald-800 text-white rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                     >
                         <a

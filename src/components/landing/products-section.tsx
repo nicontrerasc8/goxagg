@@ -72,7 +72,7 @@ const categoryMeta: Record<
 };
 
 export default function ProductsSection() {
-  const { addItem, itemCount, openCart }: any = useCart();
+  const { addItem, itemCount }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -112,22 +112,6 @@ export default function ProductsSection() {
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">
-      <button
-        type="button"
-        onClick={openCart}
-        className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3"
-        aria-label="Abrir carrito"
-      >
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-inner shadow-emerald-900/30">
-          <ShoppingCart className="h-4 w-4" />
-        </div>
-        <span className="hidden text-xs uppercase tracking-[0.3em] text-emerald-600 sm:inline">
-          Carrito
-        </span>
-        <span className="inline-flex h-6 min-w-[24px] items-center justify-center rounded-full border border-white bg-emerald-600 px-2 text-[11px] font-bold text-white shadow-lg shadow-emerald-900/40">
-          {itemCount}
-        </span>
-      </button>
 
       <div className="relative container mx-auto px-4">
         {/* Header */}

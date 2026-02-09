@@ -506,22 +506,32 @@ export const products: Product[] = [
       title: "Hamburguesas Premium ",
       description: "Carne 100% de res de pastura raza Brahman y Angus criada libre en Oxapampa.",
       sections: [
-        {
-          heading: "Origen y sabor",
-          points: [
-            "Reses criadas en pasturas verdes de Oxapampa para un sabor intenso y natural.",
-            "Sin conservantes ni químicos, con marmoleo equilibrado.",
-          ],
-        },
-        {
-          heading: "Presentaciones",
-          points: [
-            "Hamburguesa La Finca 600gr:  carne de ternera de pastura madurada, sal y especias naturales sin conservantes ni aditivos, 100 % naturales",
-            "Hamburguesa Branguz 680g: Carne 100% de res de pastura, raza Brahman y Angus,  criada libre en Охараmpa.",
-          ],
-        },
+
+
       ],
     },
+    options: [
+      {
+        id: "la-finca",
+        name: "La Finca 600g",
+        description:
+          "Carne de ternera de pastura madurada con especias naturales, ideal para brasear con leña o carbón.",
+        benefits: [
+          "Madurada lentamente para resaltar una textura jugosa y un punto perfecto de cocción.",
+          "Condimentada con sal y especias naturales para mantener el sabor puro de la carne.",
+        ],
+      },
+      {
+        id: "branguz",
+        name: "Branguz 680g",
+        description:
+          "Blend premium de Brahman y Angus criado libre; equilibrio entre marmoleo y firmeza para parrilla intensa.",
+        benefits: [
+          "Grasas naturales que sellan la jugosidad sin necesidad de agregar aditivos.",
+          "Perfecta para planchas o parrillas abiertas gracias a su consistencia firme.",
+        ],
+      },
+    ],
   },
   {
     id: 15,
@@ -751,25 +761,7 @@ export const products: Product[] = [
       description:
         "Jabones con ingredientes botánicos y aceites esenciales totalmente naturales, formulados para nutrir, proteger y renovar la piel.",
       sections: [
-        {
-          heading: "Cuidado de la piel",
-          points: [
-            "Formulado con botánicos y aceites esenciales que limpian sin resecar.",
-            "Ideal para pieles sensibles gracias a su base natural y sin conservantes.",
-          ],
-        },
-
-        {
-          heading: "Opciones disponibles",
-          points: [
-            "Jabón de café: exfoliante corporal, ayuda a reducir celulitis y previene estrías; alto en antioxidantes, hidrata y reafirma.",
-            "Jabón de arcilla rosada: purifica y desinflama aportando nutrición, elasticidad, colágeno y regeneración celular.",
-            "Jabón de cacao: hidratante, nutritivo y antiinflamatorio que mejora la elasticidad y previene el envejecimiento prematuro.",
-            "Jabón de avena y miel: nutre, protege y exfolia suavemente; elimina impurezas y es apto para pieles sensibles.",
-            "Jabón de cúrcuma y miel: retrasa el envejecimiento celular, es antiséptico, antiinflamatorio y ayuda a disminuir acné, manchas y cicatrices.",
-            "Jabón de arroz: exfolia suavemente, disminuye manchas y cicatrices, suaviza, tonifica y aclara la piel aportando vitaminas y antioxidantes.",
-          ],
-        },
+        
       ],
     },
     options: [
