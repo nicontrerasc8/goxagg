@@ -26,10 +26,10 @@ export default function InicioPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/40 to-white/80" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/20 to-white/50" aria-hidden />
       </div>
 
-      <div className="relative z-10 flex flex-col gap-16 pb-20">
+      <div className="relative z-10 flex flex-col gap-16">
         <HeroSection />
 
         <OregonWaySection />

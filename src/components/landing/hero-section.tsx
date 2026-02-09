@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Facebook, Instagram, Music2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Facebook, Instagram, Linkedin, Music2 } from "lucide-react";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
 type Slide = { src: string; alt: string };
@@ -79,13 +79,13 @@ export default function HeroSection() {
             
             <Link
               href="/#productos"
-              className="px-10 py-4 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
+              className="px-5 py-3 rounded-full bg-amber-400 text-green-950 font-bold shadow-lg border border-white/25 transition text-md "
             >
               Compra en línea
             </Link>
               <Link
               href="/"
-              className="px-10 py-4 rounded-full bg-white text-green-950 font-bold shadow-lg border border-white/25 transition text-lg sm:text-xl"
+              className="px-5 py-3 rounded-full bg-white text-green-950 font-bold shadow-lg border border-white/25 transition text-md "
             >
               Volver al inicio
             </Link>
@@ -125,6 +125,15 @@ export default function HeroSection() {
         >
           <Music2 className="h-5 w-5" />
         </a>
+           <a
+            href="https://www.linkedin.com/company/grupo-especa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="S�guenos en TikTok"
+             className="hover:text-white transition"
+          >
+            <Linkedin className="w-7 h-7" />
+          </a>
       </div>
     </section>
   );

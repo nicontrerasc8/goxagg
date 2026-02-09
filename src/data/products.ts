@@ -10,6 +10,13 @@ export type PopupSection = {
   points: string[];
 };
 
+export type ProductOption = {
+  id: string;
+  name: string;
+  description: string;
+  benefits?: string[];
+};
+
 export type ProductPopup = {
   title: string;
   description: string;
@@ -27,6 +34,7 @@ export type Product = {
   category: Category;
   badge?: "Top" | "Nuevo" | "Pack";
   popup?: ProductPopup;
+  options?: ProductOption[];
 };
 
 export const products: Product[] = [
@@ -90,7 +98,7 @@ export const products: Product[] = [
         {
           heading: "Nutricion concentrada",
           points: [
-            "Vitaminas del complejo B ademas de C, D y E.",
+            "Vitaminas como el complejo B ademas de C, D y E.",
             "Minerales como fosforo, zinc, hierro, magnesio, potasio y calcio.",
             "Mejora la circulacion sanguinea y respalda la funcion cardiaca y los tratamientos cardiovasculares.",
           ],
@@ -130,7 +138,7 @@ export const products: Product[] = [
           heading: "Modo de uso",
           points: [
             "Una cucharada en ayunas o antes de actividad fisica para activar el organismo.",
-            "Mezclar con agua tibia, jugos o yogur si se prefiere una textura mas suave.",
+            "Mezclar con agua tibia, jugos o yogurt si se prefiere una textura mas suave.",
           ],
         },
       ],
@@ -154,7 +162,7 @@ export const products: Product[] = [
           points: [
             "Refuerza el sistema inmunologico con accion antibacteriana, antimicotica, antiinflamatoria y cicatrizante.",
             "Cura heridas, quemaduras y acne gracias a su capacidad regenerativa.",
-            "Alivia gastritis, ulceras y diarrea cuando se usa con paciencia.",
+            "Alivia gastritis, ulceras y diarrea.",
           ],
         },
         {
@@ -199,7 +207,7 @@ export const products: Product[] = [
           heading: "Perfil sensorial",
           points: [
             "Aroma intenso y sabor equilibrado que despierta los sentidos desde la primera infusion.",
-            "Ideal para preparar en prensa francesa, filtro o espresso moderado.",
+            "Ideal para preparar en prensa francesa o filtro.",
           ],
         },
       ],
@@ -322,7 +330,7 @@ export const products: Product[] = [
           heading: "Maridaje",
           points: [
             "Perfecto para tablas de quesos con pan, frutas o vino blanco.",
-            "Se funde fácilmente al calentar para platos gourmet o tostas rústicas.",
+            "Se funde fácilmente al calentar para platos gourmet o tostadas rústicas.",
           ],
         },
       ],
@@ -442,7 +450,7 @@ export const products: Product[] = [
         {
           heading: "Momento ideal",
           points: [
-            "Perfecta con yogur, leche vegetal o fruta en desayunos y snacks.",
+            "Perfecta con yogurt, leche vegetal o fruta en desayunos y snacks.",
             "Aporta fibra, energia y se mantiene crujiente en bowls energeticos.",
           ],
         },
@@ -452,7 +460,7 @@ export const products: Product[] = [
   {
     id: 13,
     name: "Granola Spirulina Premium",
-    description: "Deliciosa granola con ojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
+    description: "Deliciosa granola con hojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
     variants: [
       { label: "350g", price: "S/ 25" }
     ],
@@ -484,18 +492,18 @@ export const products: Product[] = [
   // PARRILLAS
   {
     id: 14,
-    name: "Hamburguesas Premium Branguz",
+    name: "Hamburguesas Premium ",
     description: "Elaborada 100% con carne de res de pastura, sin conservantes ni quimicos. ",
     variants: [
-      { label: "600g", price: "S/ 38" },
-      { label: "680g", price: "S/ 45" },
+      { label: "La Finca 600g", price: "S/ 38" },
+      { label: "Branguz 680g", price: "S/ 45" },
     ],
     imageSrc: "/branguz.png",
     alt: "Hamburguesas premium",
     category: "Parrillas",
     badge: "Top",
     popup: {
-      title: "Hamburguesas Premium Branguz",
+      title: "Hamburguesas Premium ",
       description: "Carne 100% de res de pastura raza Brahman y Angus criada libre en Oxapampa.",
       sections: [
         {
@@ -506,10 +514,10 @@ export const products: Product[] = [
           ],
         },
         {
-          heading: "Recomendacion al cocinar",
+          heading: "Presentaciones",
           points: [
-            "Cocinar a fuego medio para resaltar su sabor ahumado y jugoso.",
-            "Sirve como complemento para comidas, parrillas o loncheras.",
+            "Hamburguesa La Finca 600gr:  carne de ternera de pastura madurada, sal y especias naturales sin conservantes ni aditivos, 100 % naturales",
+            "Hamburguesa Branguz 680g: Carne 100% de res de pastura, raza Brahman y Angus,  criada libre en Охараmpa.",
           ],
         },
       ],
@@ -729,9 +737,10 @@ export const products: Product[] = [
   {
     id: 25,
     name: "Jabón Artesanal Oxapampa",
-    description: "Jabones producidos con ingredientes botánicos y aceites escenciales totalmente naturales. ",
+    description:
+      "Jabones producidos con ingredientes botánicos y con aceites esenciales para cara y cuerpo, sin aromas sintéticos ni colorantes artificiales.",
     variants: [
-      { label: "100g", price: "S/ 16" },
+      { label: "100g", price: "S/ 16 por unidad" },
   
     ],
     imageSrc: "/jabon.png",
@@ -739,7 +748,8 @@ export const products: Product[] = [
     category: "Salud",
     popup: {
       title: "Jabón Artesanal Oxapampa",
-      description: "Jabones con ingredientes botánicos y aceites esenciales totalmente naturales.",
+      description:
+        "Jabones con ingredientes botánicos y aceites esenciales totalmente naturales, formulados para nutrir, proteger y renovar la piel.",
       sections: [
         {
           heading: "Cuidado de la piel",
@@ -748,15 +758,82 @@ export const products: Product[] = [
             "Ideal para pieles sensibles gracias a su base natural y sin conservantes.",
           ],
         },
+
         {
-          heading: "Ritual",
+          heading: "Opciones disponibles",
           points: [
-            "Usar en baño diario massageando suavemente para activar aromas frescos.",
-            "Complementa rituales de autocuidado y relajación en casa.",
+            "Jabón de café: exfoliante corporal, ayuda a reducir celulitis y previene estrías; alto en antioxidantes, hidrata y reafirma.",
+            "Jabón de arcilla rosada: purifica y desinflama aportando nutrición, elasticidad, colágeno y regeneración celular.",
+            "Jabón de cacao: hidratante, nutritivo y antiinflamatorio que mejora la elasticidad y previene el envejecimiento prematuro.",
+            "Jabón de avena y miel: nutre, protege y exfolia suavemente; elimina impurezas y es apto para pieles sensibles.",
+            "Jabón de cúrcuma y miel: retrasa el envejecimiento celular, es antiséptico, antiinflamatorio y ayuda a disminuir acné, manchas y cicatrices.",
+            "Jabón de arroz: exfolia suavemente, disminuye manchas y cicatrices, suaviza, tonifica y aclara la piel aportando vitaminas y antioxidantes.",
           ],
         },
       ],
     },
+    options: [
+      {
+        id: "cafe",
+        name: "Jabón de café",
+        description:
+          "Exfoliante corporal con granos de café finamente molidos que limpian y tonifican sin resecar.",
+        benefits: [
+          "Reduce celulitis y previene estrías con cada masaje en el cuerpo.",
+          "Alto en antioxidantes que hidratan, tonifican y reafirma visiblemente.",
+        ],
+      },
+      {
+        id: "arcilla-rosada",
+        name: "Jabón de arcilla rosada",
+        description:
+          "Purifica y desinflama mientras aporta nutrición y elasticidad gracias a su carga de minerales.",
+        benefits: [
+          "Aporta colágeno y favorece la regeneración celular.",
+          "Ilumina la piel al tiempo que conserva su equilibrio natural.",
+        ],
+      },
+      {
+        id: "cacao",
+        name: "Jabón de cacao",
+        description:
+          "Hidratante, nutritivo y antiinflamatorio, ideal para recuperar elasticidad y evitar el envejecimiento prematuro.",
+        benefits: [
+          "Mejora visiblemente la elasticidad de la piel.",
+          "Nutre y protege con una sensación de confort y calidez.",
+        ],
+      },
+      {
+        id: "avena-miel",
+        name: "Jabón de avena y miel",
+        description:
+          "Nutre, protege y exfolia suavemente, perfecto para pieles sensibles y con tendencia acneica.",
+        benefits: [
+          "Elimina impurezas y previene la aparición de espinillas.",
+          "Suave ritual diario que mantiene la barrera natural intacta.",
+        ],
+      },
+      {
+        id: "curcuma-miel",
+        name: "Jabón de cúrcuma y miel",
+        description:
+          "Retrasa el envejecimiento celular con propiedades antisépticas, antiinflamatorias y antibacterianas.",
+        benefits: [
+          "Disminuye acné, manchas y cicatrices con uso constante.",
+          "Refuerza la limpieza profunda sin irritar la piel.",
+        ],
+      },
+      {
+        id: "arroz",
+        name: "Jabón de arroz",
+        description:
+          "Exfolia suavemente, disminuye manchas y cicatrices mientras tonifica y aclara con vitaminas y antioxidantes.",
+        benefits: [
+          "Estimula la regeneración celular y producción de colágeno.",
+          "Suaviza y aclara sin resecar ni irritar.",
+        ],
+      },
+    ],
   },
   {
     id: 26,
@@ -835,7 +912,7 @@ export const products: Product[] = [
   {
     id: 24,
     name: "Pack Familiar GOXA",
-    description: "Selección de favoritos para la mesa familiar: quesos, café y más.",
+    description: "Selección de favoritos para la mesa familiar.",
     variants: [{ label: "Pack", price: "S/ 143.9" }],
     imageSrc: "/pack-familia.png",
     alt: "Pack familiar GOXA",

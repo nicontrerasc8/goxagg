@@ -49,7 +49,7 @@ const contactDetails = [
   },
   {
     label: "Ubicación",
-    value: "Oxapampa · Pasco (producción) / Lima & Perú (distribución)",
+    value: "Simón Salguero 525, Santiago de Surco",
     description: "Cuidamos cada detalle del origen hasta la entrega en tu mesa.",
     href: "https://www.google.com/maps/place/Oxapampa,+Pasco,+Per%C3%BA",
     icon: MapPin,
@@ -145,11 +145,10 @@ export default function QuienesSomosPage() {
             Quiénes somos
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-white/90">
-            En GOXA producimos y distribuimos productos premium desde Oxapampa, Perú.
+            Somos Grupo Especa, una empresa familiar que, a través de nuestra marca GOXA, integra experiencia, juventud y pasión por el campo para producir y distribuir alimentos premium de Oxapampa al Perú y al mundo.
           </p>
           <p className="mt-3 max-w-3xl text-lg text-white/90">
-            Somos una empresa familiar con más de 30 años de experiencia, uniendo tradición
-            y visión joven enfocada en eficiencia y distribución.
+            Trabajamos con procesos responsables y canales eficientes que nos permiten llevar productos de origen confiable, desde el campo hasta la mesa, contribuyendo a mejorar la salud y la calidad de vida de las familias.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">

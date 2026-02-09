@@ -76,6 +76,7 @@ export default function ProductsSection() {
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [activePopupOption, setActivePopupOption] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     if (active === "Todos") return products;
@@ -95,7 +96,19 @@ export default function ProductsSection() {
     });
   };
 
-  const closePopup = () => setSelectedProduct(null);
+  const openProductPopup = (product: Product) => {
+    setSelectedProduct(product);
+    setActivePopupOption(product.options?.[0]?.id ?? null);
+  };
+
+  const closePopup = () => {
+    setSelectedProduct(null);
+    setActivePopupOption(null);
+  };
+
+  const popupOptions = selectedProduct?.options ?? [];
+  const activeOption =
+    popupOptions.find((option) => option.id === activePopupOption) ?? popupOptions[0] ?? null;
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">
@@ -227,7 +240,7 @@ export default function ProductsSection() {
     {p.popup && (
       <button
         type="button"
-        onClick={() => setSelectedProduct(p)}
+        onClick={() => openProductPopup(p)}
         className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out md:group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
       >
         <span className="text-xs font-semibold tracking-[0.4em] uppercase">
@@ -258,9 +271,18 @@ export default function ProductsSection() {
       {p.name}
     </h3>
 
-    <p className="text-sm text-gray-500 mb-6 line-clamp-2 leading-relaxed flex-1">
-      {p.description}
-    </p>
+    <div className="text-sm text-gray-500 mb-3 leading-relaxed flex-1">
+      <p>{p.description}</p>
+      {p.popup && (
+        <button
+          type="button"
+          onClick={() => openProductPopup(p)}
+          className="text-sm font-semibold text-emerald-700 transition hover:underline"
+        >
+          Leer más
+        </button>
+      )}
+    </div>
 
     {/* Presentaciones */}
     <div className="flex flex-col gap-2">
@@ -339,10 +361,50 @@ export default function ProductsSection() {
                   </div>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {selectedProduct.popup.sections.map((section) => (
-                      <div
+              <div className="space-y-6">
+                {popupOptions.length > 0 && (
+                  <div className="space-y-4 rounded-[2rem] border border-emerald-100 bg-gradient-to-b from-emerald-50/40 to-white p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
+                      Tipos disponibles
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {popupOptions.map((option) => (
+                        <button
+                          key={option.id}
+                          type="button"
+                          onClick={() => setActivePopupOption(option.id)}
+                          className={cn(
+                            "rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] transition",
+                            option.id === activePopupOption
+                              ? "border-emerald-600 bg-emerald-600 text-white"
+                              : "border-emerald-200 bg-white text-emerald-700 hover:border-emerald-400"
+                          )}
+                        >
+                          {option.name}
+                        </button>
+                      ))}
+                    </div>
+                    {activeOption && (
+                      <div className="rounded-2xl border border-emerald-100 bg-white/90 p-4">
+                        <p className="text-lg font-semibold text-green-950">{activeOption.name}</p>
+                        <p className="mt-2 text-sm text-slate-600">{activeOption.description}</p>
+                        {activeOption.benefits && (
+                          <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                            {activeOption.benefits.map((benefit) => (
+                              <li key={benefit} className="flex items-start gap-2">
+                                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-700" />
+                                <span>{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div className="grid gap-4 md:grid-cols-2">
+                  {selectedProduct.popup.sections.map((section) => (
+                    <div
                         key={section.heading}
                         className="rounded-2xl border border-emerald-100 bg-white/90 p-4"
                       >

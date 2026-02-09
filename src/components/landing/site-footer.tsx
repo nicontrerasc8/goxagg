@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Music2 } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Music2 } from "lucide-react";
 
 export default function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -32,8 +32,9 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-center gap-8 border-t border-green-700 pt-8">
-          <a
+        <div className="mt-8 flex flex-col items-center gap-6 border-t border-green-700 pt-8">
+          <div className="mt-8 flex flex-row gap-6 ">
+            <a
             href="https://www.facebook.com/people/Goxa/61566229425220/"
             target="_blank"
             rel="noopener noreferrer"
@@ -61,6 +62,35 @@ export default function SiteFooter() {
           >
             <Music2 className="w-7 h-7" />
           </a>
+           <a
+            href="https://www.linkedin.com/company/grupo-especa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="S�guenos en TikTok"
+            className="text-green-200 hover:text-white transition-colors duration-300"
+          >
+            <Linkedin className="w-7 h-7" />
+          </a>
+          </div>
+          <div className="flex flex-col items-center gap-1 text-sm text-white/90">
+            <span className="font-semibold">Contáctenos</span>
+            <a
+              href="https://wa.me/51932265148"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white"
+            >
+              +51 932 265 148
+            </a>
+            <a
+              href="https://wa.me/51998855069"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white"
+            >
+              +51 998 855 069
+            </a>
+          </div>
         </div>
 
         <p className="mt-8 text-xs text-white/70">� {currentYear} GOXA. Todos los derechos reservados.</p>
