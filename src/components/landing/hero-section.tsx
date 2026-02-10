@@ -129,7 +129,7 @@ export default function HeroSection() {
             href="https://www.linkedin.com/company/grupo-especa/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="S�guenos en TikTok"
+            aria-label="Síguenos en TikTok"
              className="hover:text-white transition"
           >
             <Linkedin className="w-7 h-7" />

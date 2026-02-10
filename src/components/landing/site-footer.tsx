@@ -38,7 +38,7 @@ export default function SiteFooter() {
             href="https://www.facebook.com/people/Goxa/61566229425220/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="S�guenos en Facebook"
+            aria-label="Síguenos en Facebook"
             className="text-green-200 hover:text-white transition-colors duration-300"
           >
             <Facebook className="w-7 h-7" />
@@ -48,7 +48,7 @@ export default function SiteFooter() {
             href="https://www.instagram.com/goxa_pe"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="S�guenos en Instagram"
+            aria-label="Síguenos en Instagram"
             className="text-green-200 hover:text-white transition-colors duration-300"
           >
             <Instagram className="w-7 h-7" />
@@ -57,7 +57,7 @@ export default function SiteFooter() {
             href="https://www.tiktok.com/@goxa_peru"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="S�guenos en TikTok"
+            aria-label="Síguenos en TikTok"
             className="text-green-200 hover:text-white transition-colors duration-300"
           >
             <Music2 className="w-7 h-7" />
@@ -66,7 +66,7 @@ export default function SiteFooter() {
             href="https://www.linkedin.com/company/grupo-especa/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="S�guenos en TikTok"
+            aria-label="Síguenos en TikTok"
             className="text-green-200 hover:text-white transition-colors duration-300"
           >
             <Linkedin className="w-7 h-7" />
@@ -93,7 +93,7 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-white/70">� {currentYear} GOXA. Todos los derechos reservados.</p>
+        <p className="mt-8 text-xs text-white/70">{currentYear} GOXA. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

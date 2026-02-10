@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { useCart } from "@/context/cart-context";
 import { cn } from "@/lib/utils";
 import type { Category } from "@/data/products";
+import { categoryOrder, getCategorySlug } from "@/data/categories";
 
 const NAV_LINKS = [
   { href: "/", label: "Compra en línea" },
@@ -14,15 +15,7 @@ const NAV_LINKS = [
   { href: "/quienes-somos", label: "¿Quiénes somos?" },
 ];
 
-const CATEGORY_NAMES: Category[] = [
-  "Todos",
-  "Miel",
-  "Café y chocolates",
-  "Desayunos",
-  "Parrillas",
-  "Salud",
-  "Packs",
-];
+const CATEGORY_NAMES = categoryOrder;
 
 const triggerClasses =
   "flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3";
@@ -40,16 +33,11 @@ export default function FloatingCartMenu() {
 
   const handleCategoryClick = (category: Category) => {
     setMenuOpen(false);
-    if (pathname !== "/") {
-      router.push(`/?categoria=${encodeURIComponent(category)}#productos`);
+    const slug = getCategorySlug(category);
+    if (!slug) {
       return;
     }
-    const target = document.getElementById("productos");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    const event = new CustomEvent("goxa-select-category", { detail: { category } });
-    window.dispatchEvent(event);
+    router.push(`/categoria/${slug}`);
   };
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 ﻿"use client";
 
-import React, { useMemo, useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { Coffee, Flame, Gift, HeartPulse, LayoutGrid, ShoppingCart, Sparkles, Sunrise } from "lucide-react";
 import { products, Category, Product } from "@/data/products";
@@ -73,15 +72,10 @@ const categoryMeta: Record<
 };
 
 export default function ProductsSection() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const categoryParam = searchParams.get("categoria");
-  const { addItem, itemCount }: any = useCart();
+  const { addItem, itemCount, openCart }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
-  const summaryRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [activePopupOption, setActivePopupOption] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     if (active === "Todos") return products;
@@ -101,58 +95,26 @@ export default function ProductsSection() {
     });
   };
 
-  const openProductPopup = (product: Product) => {
-    setSelectedProduct(product);
-    setActivePopupOption(product.options?.[0]?.id ?? null);
-  };
-
-  const closePopup = () => {
-    setSelectedProduct(null);
-    setActivePopupOption(null);
-  };
-
-  const popupOptions = selectedProduct?.options ?? [];
-  const activeOption =
-    popupOptions.find((option) => option.id === activePopupOption) ?? popupOptions[0] ?? null;
-
-  const scrollToProducts = () => {
-    const target = summaryRef.current ?? gridRef.current;
-    if (!target) return;
-
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (typeof window !== "undefined") {
-      window.scrollBy({ top: 120, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const handler = (event: Event) => {
-      const detail = (event as CustomEvent<{ category: Category } | undefined>).detail;
-      if (detail?.category && categoryOrder.includes(detail.category)) {
-        setActive(detail.category);
-        scrollToProducts();
-      }
-    };
-
-    window.addEventListener("goxa-select-category", handler as EventListener);
-    return () => {
-      window.removeEventListener("goxa-select-category", handler as EventListener);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!categoryParam) return;
-
-    const normalizedCategory = categoryParam as Category;
-    if (!categoryOrder.includes(normalizedCategory)) return;
-
-    setActive(normalizedCategory);
-    scrollToProducts();
-    router.replace("/#productos");
-  }, [router, categoryParam]);
+  const closePopup = () => setSelectedProduct(null);
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">
+      <button
+        type="button"
+        onClick={openCart}
+        className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3"
+        aria-label="Abrir carrito"
+      >
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-inner shadow-emerald-900/30">
+          <ShoppingCart className="h-4 w-4" />
+        </div>
+        <span className="hidden text-xs uppercase tracking-[0.3em] text-emerald-600 sm:inline">
+          Carrito
+        </span>
+        <span className="inline-flex h-6 min-w-[24px] items-center justify-center rounded-full border border-white bg-emerald-600 px-2 text-[11px] font-bold text-white shadow-lg shadow-emerald-900/40">
+          {itemCount}
+        </span>
+      </button>
 
       <div className="relative container mx-auto px-4">
         {/* Header */}
@@ -181,7 +143,7 @@ export default function ProductsSection() {
 
         const handleClick = () => {
           setActive(cat);
-          scrollToProducts();
+          gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
         };
 
         return (
@@ -240,7 +202,7 @@ export default function ProductsSection() {
 </div>
 
         {/* Resumen dinámico */}
-        <div ref={summaryRef} className="text-center mb-10">
+        <div className="text-center mb-10">
           <p className="text-sm font-semibold text-black uppercase tracking-[0.3em] mb-2">
             {activeLabel}
           </p>
@@ -265,7 +227,7 @@ export default function ProductsSection() {
     {p.popup && (
       <button
         type="button"
-        onClick={() => openProductPopup(p)}
+        onClick={() => setSelectedProduct(p)}
         className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out md:group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
       >
         <span className="text-xs font-semibold tracking-[0.4em] uppercase">
@@ -296,18 +258,9 @@ export default function ProductsSection() {
       {p.name}
     </h3>
 
-    <div className="text-sm text-gray-500 mb-3 leading-relaxed flex-1">
-      <p>{p.description}</p>
-      {p.popup && (
-        <button
-          type="button"
-          onClick={() => openProductPopup(p)}
-          className="text-sm font-semibold text-emerald-700 transition hover:underline"
-        >
-          Leer más
-        </button>
-      )}
-    </div>
+    <p className="text-sm text-gray-500 mb-6 line-clamp-2 leading-relaxed flex-1">
+      {p.description}
+    </p>
 
     {/* Presentaciones */}
     <div className="flex flex-col gap-2">
@@ -386,50 +339,10 @@ export default function ProductsSection() {
                   </div>
                 </div>
 
-              <div className="space-y-6">
-                {popupOptions.length > 0 && (
-                  <div className="space-y-4 rounded-[2rem] border border-emerald-100 bg-gradient-to-b from-emerald-50/40 to-white p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
-                      Tipos disponibles
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {popupOptions.map((option) => (
-                        <button
-                          key={option.id}
-                          type="button"
-                          onClick={() => setActivePopupOption(option.id)}
-                          className={cn(
-                            "rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] transition",
-                            option.id === activePopupOption
-                              ? "border-emerald-600 bg-emerald-600 text-white"
-                              : "border-emerald-200 bg-white text-emerald-700 hover:border-emerald-400"
-                          )}
-                        >
-                          {option.name}
-                        </button>
-                      ))}
-                    </div>
-                    {activeOption && (
-                      <div className="rounded-2xl border border-emerald-100 bg-white/90 p-4">
-                        <p className="text-lg font-semibold text-green-950">{activeOption.name}</p>
-                        <p className="mt-2 text-sm text-slate-600">{activeOption.description}</p>
-                        {activeOption.benefits && (
-                          <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                            {activeOption.benefits.map((benefit) => (
-                              <li key={benefit} className="flex items-start gap-2">
-                                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-700" />
-                                <span>{benefit}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
-                <div className="grid gap-4 md:grid-cols-2">
-                  {selectedProduct.popup.sections.map((section) => (
-                    <div
+                <div className="space-y-6">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {selectedProduct.popup.sections.map((section) => (
+                      <div
                         key={section.heading}
                         className="rounded-2xl border border-emerald-100 bg-white/90 p-4"
                       >
