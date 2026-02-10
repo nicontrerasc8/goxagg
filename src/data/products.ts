@@ -863,7 +863,7 @@ export const products: Product[] = [
     name: "Kombucha",
     description:
       "La Kombucha es una bebida probiótica fermentada que restaura el equilibrio del organismo y refuerza la microbiota.",
-    variants: [{ label: "250ml", price: "S/ 10" }],
+    variants: [{ label: "260ml", price: "S/ 10" }],
     imageSrc: "/kombucha.png",
     alt: "Kombucha natural",
     category: "Salud",
