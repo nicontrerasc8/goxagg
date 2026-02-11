@@ -72,10 +72,11 @@ const categoryMeta: Record<
 };
 
 export default function ProductsSection() {
-  const { addItem, itemCount, openCart }: any = useCart();
+  const { addItem }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     if (active === "Todos") return products;
@@ -95,27 +96,23 @@ export default function ProductsSection() {
     });
   };
 
-  const closePopup = () => setSelectedProduct(null);
+  const openProductModal = (product: Product) => {
+    setSelectedProduct(product);
+    const defaultOptionId = product.options?.[0]?.id ?? null;
+    setSelectedOptionId(defaultOptionId);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+    setSelectedOptionId(null);
+  };
+
+  const activeModalOption = selectedProduct
+    ? selectedProduct.options?.find((option) => option.id === selectedOptionId) ?? selectedProduct.options?.[0]
+    : undefined;
 
   return (
     <section id="productos" className="relative py-20  overflow-hidden">
-      <button
-        type="button"
-        onClick={openCart}
-        className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-emerald-200 bg-gradient-to-br from-white/90 to-emerald-50 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-900 shadow-[0_20px_40px_-20px_rgba(4,73,45,0.9)] transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:gap-3"
-        aria-label="Abrir carrito"
-      >
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-inner shadow-emerald-900/30">
-          <ShoppingCart className="h-4 w-4" />
-        </div>
-        <span className="hidden text-xs uppercase tracking-[0.3em] text-emerald-600 sm:inline">
-          Carrito
-        </span>
-        <span className="inline-flex h-6 min-w-[24px] items-center justify-center rounded-full border border-white bg-emerald-600 px-2 text-[11px] font-bold text-white shadow-lg shadow-emerald-900/40">
-          {itemCount}
-        </span>
-      </button>
-
       <div className="relative container mx-auto px-4">
         {/* Header */}
         <div className="mx-auto text-center space-y-4 mb-16">
@@ -164,7 +161,7 @@ export default function ProductsSection() {
                 "flex h-16 w-16 items-center justify-center rounded-full border border-white/40 bg-white/80 shadow-inner transition-all duration-300",
                 isActive
                   ? "bg-white/20"
-                  : "bg-emerald-50 "
+                  : ""
               )}
             >
               <meta.icon
@@ -188,7 +185,7 @@ export default function ProductsSection() {
             {/* Descripción */}
             <span
               className={cn(
-                "text-xs leading-snug",
+                "text-sm leading-snug",
                 isActive ? "text-white/90" : "text-slate-500"
               )}
             >
@@ -211,96 +208,103 @@ export default function ProductsSection() {
 
         {/* Grid */}
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filtered.map((p) => (
-           <article key={p.id} className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-white border border-gray-100 shadow-xl shadow-green-900/5 transition-all duration-500 ">
-
-  {/* Imagen Container */}
-  <div className="relative w-full aspect-[4/5] overflow-hidden bg-white rounded-xl">
-    <Image
-      src={p.imageSrc}
-      alt={p.alt}
-      fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-      quality={90}
-      className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105 rounded-xl"
-    />
-    {p.popup && (
-      <button
-        type="button"
-        onClick={() => setSelectedProduct(p)}
-        className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out md:group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
-      >
-        <span className="text-xs font-semibold tracking-[0.4em] uppercase">
-          Ver info
-        </span>
-        <span className="text-[11px] text-white/80">Más sobre este producto</span>
-      </button>
-    )}
-    {/* Badges */}
-    <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
-      {p.badge && (
-        <div className="rounded-full bg-white/95 text-green-900 px-3 py-1 text-xs font-extrabold tracking-widest uppercase shadow-sm backdrop-blur border border-green-100">
-          {p.badge}
-        </div>
-      )}
-    </div>
-  </div>
-
-  {/* Contenido */}
-  <div className="p-6 flex flex-col flex-1">
-    <div className="flex justify-between items-start mb-2">
-      <span className="text-[10px] font-bold tracking-wider text-green-600 uppercase bg-green-50 px-2 py-1 rounded-md">
-        {p.category}
-      </span>
-    </div>
-
-    <h3 className="text-xl font-bold text-green-950 mb-2 leading-tight group-hover:text-green-700 transition-colors">
-      {p.name}
-    </h3>
-
-    <p className="text-sm text-gray-500 mb-6 line-clamp-2 leading-relaxed flex-1">
-      {p.description}
-    </p>
-
-    {/* Presentaciones */}
-    <div className="flex flex-col gap-2">
-      {p.variants.map((variant, idx) => (
-        <div
-          key={idx}
-          className="flex items-center justify-between rounded-lg border border-green-100 bg-green-50/80 px-4 py-3"
-        >
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-green-900">
-              {variant.label}
-            </span>
-            <span className="text-lg font-bold text-green-800">
-              {variant.price}
-            </span>
-          </div>
+          {filtered.map((p) => {
           
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleAddToCart(p, idx);
-            }}
-            className="rounded-lg relative z-20 border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95 touch-manipulation"
-            aria-label={`Agregar ${variant.label} de ${p.name}`}
-          >
-            Agregar
-          </button>
-        </div>
-      ))}
-    </div>
-  </div>
-</article>
-          ))}
+            return (
+              <article
+                key={p.id}
+                className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-white border border-gray-100 shadow-xl shadow-green-900/5 transition-all duration-500 "
+              >
+                {/* Imagen Container */}
+                <div className="relative w-full aspect-[4/5] overflow-hidden bg-white rounded-xl">
+                  <Image
+                    src={p.imageSrc}
+                    alt={p.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    quality={90}
+                    className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105 rounded-xl"
+                  />
+                  {p.popup && (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProduct(p)}
+                      className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out md:group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+                    >
+                      <span className="text-sm font-semibold tracking-[0.4em] uppercase">
+                        Ver info
+                      </span>
+                      <span className="text-[11px] text-white/80">Más sobre este producto</span>
+                    </button>
+                  )}
+                  <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
+                    {p.badge && (
+                      <div className="rounded-full bg-white/95 text-green-900 px-3 py-1 text-xs font-extrabold tracking-widest uppercase shadow-sm backdrop-blur border border-green-100">
+                        {p.badge}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Contenido */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex justify-between items-start mb-2">
+                    <span className="text-[10px] font-bold tracking-wider text-green-600 uppercase bg-green-50 px-2 py-1 rounded-md">
+                      {p.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-green-950 mb-2 leading-tight group-hover:text-green-700 transition-colors">
+                    {p.name}
+                  </h3>
+
+                    <p className="text-sm text-gray-500 mb-6 flex-1">
+                      {p.description}
+                      <button className="text-emerald-700 font-bold ml-2" onClick={() => openProductModal(p)}>
+                        Leer más
+                      </button>
+                    </p>
+
+                  {/* Presentaciones */}
+                  <div className="flex flex-col gap-2">
+                    {p.variants.map((variant, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center justify-between rounded-lg border border-green-100 bg-green-50/80 px-4 py-3"
+                      >
+                        <div className="flex flex-col">
+                          <span className="text-sm font-semibold text-green-900">
+                            {variant.label}
+                          </span>
+                          <span className="text-lg font-bold text-green-800">
+                            {variant.price}
+                          </span>
+                        </div>
+
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleAddToCart(p, idx);
+                          }}
+                          className="rounded-lg relative z-20 border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95 touch-manipulation"
+                          aria-label={`Agregar ${variant.label} de ${p.name}`}
+                        >
+                          Agregar
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         {selectedProduct?.popup && (
           <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
             <div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
-              onClick={closePopup}
+              onClick={closeModal}
             />
             <div className="relative z-10 w-full max-w-[95vw] lg:max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl shadow-emerald-900/10 ring-1 ring-emerald-100">
               <div className="flex items-start justify-between gap-6">
@@ -317,7 +321,7 @@ export default function ProductsSection() {
 
             <button
               type="button"
-              onClick={closePopup}
+              onClick={closeModal}
               className="absolute top-4 right-4 inline-flex items-center justify-center rounded-full bg-white/90 p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:bg-white hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 sm:top-6 sm:right-6"
             >
               <span className="sr-only">Cerrar</span>
@@ -340,6 +344,43 @@ export default function ProductsSection() {
                 </div>
 
                 <div className="space-y-6">
+                  {selectedProduct.options && (
+                    <div className="space-y-4 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProduct.options.map((option) => {
+                          const isActive = option.id === activeModalOption?.id;
+                          return (
+                            <button
+                              key={option.id}
+                              type="button"
+                              onClick={() => setSelectedOptionId(option.id)}
+                              className={`rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] transition ${
+                                isActive
+                                  ? "border border-emerald-900 bg-emerald-900 text-white"
+                                  : "border border-emerald-500 bg-white text-emerald-700 hover:bg-emerald-50"
+                              }`}
+                              aria-pressed={isActive}
+                            >
+                              {option.name}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {activeModalOption && (
+                        <div className="space-y-2 rounded-2xl border border-emerald-200 bg-white p-4 text-sm text-slate-600">
+                          <p>{activeModalOption.description}</p>
+                          {activeModalOption.benefits && (
+                            <ul className="list-disc space-y-1 pl-4 ">
+                              {activeModalOption.benefits.map((benefit) => (
+                                <li key={benefit}>{benefit}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
                   <div className="grid gap-4 md:grid-cols-2">
                     {selectedProduct.popup.sections.map((section) => (
                       <div
