@@ -504,7 +504,7 @@ export const products: Product[] = [
     badge: "Top",
     popup: {
       title: "Hamburguesas Premium ",
-      description: "Carne 100% de res de pastura raza Brahman y Angus criada libre en Oxapampa.",
+      description: "Elaborada 100% con carne de res de pastura, sin conservantes ni quimicos.",
       sections: [
 
 
@@ -870,7 +870,7 @@ export const products: Product[] = [
     popup: {
       title: "Kombucha",
       description:
-        "Infusión fermentada a base de té rica en probióticos, antioxidantes y compuestos bioactivos que benefician digestión, hígado y defensas.",
+        "Infusión fermentada hecha a base de té verde orgánico, stevia natural y pulpa de fruta, rica en probioticos, antioxidantes y compuestos bioactivos que benefician digestión, hígado y defensas.",
       sections: [
         {
           heading: "Beneficios principales",
