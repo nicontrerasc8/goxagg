@@ -301,7 +301,7 @@ export default function ProductsSection() {
         </div>
 
         {selectedProduct?.popup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4 py-6">
             <div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
               onClick={closeModal}
