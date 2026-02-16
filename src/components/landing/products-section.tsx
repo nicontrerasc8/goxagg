@@ -71,12 +71,16 @@ const categoryMeta: Record<
   },
 };
 
+
 export default function ProductsSection() {
   const { addItem }: any = useCart();
   const [active, setActive] = useState<Category>("Todos");
   const gridRef = React.useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+  
+  // Nuevo estado para el selector de opciones en las tarjetas
+  const [cardSelectedOptions, setCardSelectedOptions] = useState<Record<number, string>>({});
 
   const filtered = useMemo(() => {
     if (active === "Todos") return products;
@@ -84,12 +88,37 @@ export default function ProductsSection() {
   }, [active]);
 
   const activeLabel = active === "Todos" ? "Todo el catálogo" : active;
-  const handleAddToCart = (product: typeof products[0], variantIdx: number) => {
-    addItem(product, variantIdx);
+  
+  const handleAddToCart = (product: typeof products[0], variantIdx: number, optionId?: string) => {
+    // Si el producto tiene options y no se seleccionó una opción, mostrar error
+    if (product.options && product.options.length > 0 && !optionId) {
+      toast.error("Selecciona una opción", {
+        description: "Por favor elige un tipo antes de agregar al carrito.",
+        duration: 3000,
+      });
+      return;
+    }
+
+    // Crear un producto modificado con el nombre de la opción concatenado
+    let modifiedProduct = product;
+    if (optionId && product.options) {
+      const selectedOption = product.options.find(opt => opt.id === optionId);
+      if (selectedOption) {
+        modifiedProduct = {
+          ...product,
+          name: `${product.name} - ${selectedOption.name}`
+        };
+      }
+    }
+
+    addItem(modifiedProduct, variantIdx);
     const variantLabel = product.variants[variantIdx].label;
+    const optionName = optionId 
+      ? product.options?.find(opt => opt.id === optionId)?.name 
+      : "";
 
     toast.success("¡Agregado al carrito!", {
-      description: `${product.name} (${variantLabel}) ya está¡ listo para ti.`,
+      description: `${product.name}${optionName ? ` - ${optionName}` : ""} (${variantLabel}) ya está listo para ti.`,
       icon: <ShoppingCart className="w-5 h-5 text-green-600" />,
       duration: 3000,
       className: "bg-white border-green-100"
@@ -209,6 +238,8 @@ export default function ProductsSection() {
         {/* Grid */}
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {filtered.map((p) => {
+            const hasOptions = p.options && p.options.length > 0;
+            const selectedOptionForCard = hasOptions ? cardSelectedOptions[p.id] || p.options![0].id : undefined;
           
             return (
               <article
@@ -228,7 +259,7 @@ export default function ProductsSection() {
                   {p.popup && (
                     <button
                       type="button"
-                      onClick={() => setSelectedProduct(p)}
+                      onClick={() => openProductModal(p)}
                       className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-b from-black/70 to-black/20 text-center text-white opacity-0 transition duration-500 ease-out md:group-hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
                     >
                       <span className="text-sm font-semibold tracking-[0.4em] uppercase">
@@ -258,12 +289,46 @@ export default function ProductsSection() {
                     {p.name}
                   </h3>
 
-                    <p className="text-sm text-gray-500 mb-6 flex-1">
-                      {p.description}
-                      <button className="text-emerald-700 font-bold ml-2" onClick={() => openProductModal(p)}>
-                        Leer más
-                      </button>
-                    </p>
+                  <p className="text-sm text-gray-500 mb-6 flex-1">
+                    {p.description}
+                    <button className="text-emerald-700 font-bold ml-2" onClick={() => openProductModal(p)}>
+                      Leer más
+                    </button>
+                  </p>
+
+                  {/* Selector de opciones si existen */}
+                  {hasOptions && p.id !=14  && (
+                    <div className="mb-4 space-y-2">
+                      <label className="text-xs font-semibold text-green-700 uppercase tracking-wide">
+                        Elige tipo:
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {p.options!.map((option) => {
+                          const isSelected = option.id === selectedOptionForCard;
+                          return (
+                            <button
+                              key={option.id}
+                              type="button"
+                              onClick={() => {
+                                setCardSelectedOptions(prev => ({
+                                  ...prev,
+                                  [p.id]: option.id
+                                }));
+                              }}
+                              className={cn(
+                                "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all",
+                                isSelected
+                                  ? "bg-green-600 text-white border-2 border-green-600"
+                                  : "bg-white text-green-700 border-2 border-green-200 hover:border-green-400"
+                              )}
+                            >
+                              {option.name}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Presentaciones */}
                   <div className="flex flex-col gap-2">
@@ -284,7 +349,7 @@ export default function ProductsSection() {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            handleAddToCart(p, idx);
+                            handleAddToCart(p, idx, selectedOptionForCard);
                           }}
                           className="rounded-lg relative z-20 border border-green-600 bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500 active:scale-95 touch-manipulation"
                           aria-label={`Agregar ${variant.label} de ${p.name}`}
@@ -322,7 +387,8 @@ export default function ProductsSection() {
             <button
               type="button"
               onClick={closeModal}
-className="absolute top-4 left-4 sm:top-6 sm:right-6 sm:left-auto inline-flex items-center justify-center rounded-full bg-white/90 p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:bg-white hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"            >
+              className="absolute top-4 left-4 sm:top-6 sm:right-6 sm:left-auto inline-flex items-center justify-center rounded-full bg-white/90 p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:bg-white hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+            >
               <span className="sr-only">Cerrar</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -343,7 +409,7 @@ className="absolute top-4 left-4 sm:top-6 sm:right-6 sm:left-auto inline-flex it
                 </div>
 
                 <div className="space-y-6">
-                  {selectedProduct.options && (
+                  {selectedProduct.options  &&  (
                     <div className="space-y-4 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
                       <div className="flex flex-wrap gap-2">
                         {selectedProduct.options.map((option) => {
