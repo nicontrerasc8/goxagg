@@ -307,12 +307,12 @@ export default function ProductsSection() {
               onClick={closeModal}
             />
             <div className="relative z-10 w-full max-w-[95vw] lg:max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl shadow-emerald-900/10 ring-1 ring-emerald-100">
-              <div className="flex items-start justify-between gap-6">
+              <div className="flex items-center justify-center  gap-6">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
+                  <p className="text-xs mt-4 font-semibold uppercase text-center tracking-[0.4em] text-emerald-600">
                     {selectedProduct.category}
                   </p>
-                <h3 className="mt-2 text-3xl font-bold text-green-950">
+                <h3 className="mt-2 text-3xl text-center font-bold text-green-950">
                   {selectedProduct.popup.title}
                 </h3>
                 <p className="mt-2 text-sm text-slate-500">{selectedProduct.popup.description}</p>
@@ -322,8 +322,7 @@ export default function ProductsSection() {
             <button
               type="button"
               onClick={closeModal}
-              className="absolute top-4 right-4 inline-flex items-center justify-center rounded-full bg-white/90 p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:bg-white hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 sm:top-6 sm:right-6"
-            >
+className="absolute top-4 left-4 sm:top-6 sm:right-6 sm:left-auto inline-flex items-center justify-center rounded-full bg-white/90 p-2 text-slate-500 shadow-lg shadow-slate-900/10 transition hover:bg-white hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"            >
               <span className="sr-only">Cerrar</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
