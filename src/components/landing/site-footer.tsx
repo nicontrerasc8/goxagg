@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Music2 } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Music2, Youtube } from "lucide-react";
 
 export default function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -61,6 +61,15 @@ export default function SiteFooter() {
             className="text-green-200 hover:text-white transition-colors duration-300"
           >
             <Music2 className="w-7 h-7" />
+          </a>
+          <a
+            href="https://www.youtube.com/@goxaperu"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Síguenos en YouTube"
+            className="text-green-200 hover:text-white transition-colors duration-300"
+          >
+            <Youtube className="w-7 h-7" />
           </a>
            <a
             href="https://www.linkedin.com/company/grupo-especa/"

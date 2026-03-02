@@ -46,10 +46,7 @@ export default function Home() {
               <h1 className="text-3xl font-extrabold text-green-950 md:text-4xl lg:text-5xl">
           Compra los productos más selectos desde Oxapampa
               </h1>
-              <p className="text-lg text-green-900/85 leading-relaxed">
-Haz tu pedido de miel pura, polen, yogurt y quesos   gourmet, parrillas de carne de pastura, chocolates 75% cacao. <br/>
-Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="#productos"
                   className="rounded-full bg-emerald-900 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-emerald-900/30 transition hover:bg-emerald-800"
@@ -58,6 +55,10 @@ Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!          
                 </Link>
     
               </div>
+              <p className="text-lg text-green-900/85 leading-relaxed">
+Haz tu pedido de miel pura, polen, yogurt y quesos   gourmet, parrillas de carne de pastura, chocolates 75% cacao. <br/>
+Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!              </p>
+            
  
             </div>
             <div className="mt-10 flex flex-wrap justify-center gap-4 text-xs font-semibold uppercase tracking-[0.2em]">

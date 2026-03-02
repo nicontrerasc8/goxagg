@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Facebook, Instagram, Linkedin, Music2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Facebook, Instagram, Linkedin, Music2, Youtube } from "lucide-react";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
 type Slide = { src: string; alt: string };
@@ -124,6 +124,15 @@ export default function HeroSection() {
           className="hover:text-white transition"
         >
           <Music2 className="h-5 w-5" />
+        </a>
+        <a
+          href="https://www.youtube.com/@goxaperu"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+          className="hover:text-white transition"
+        >
+          <Youtube className="h-5 w-5" />
         </a>
            <a
             href="https://www.linkedin.com/company/grupo-especa/"

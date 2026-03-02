@@ -70,13 +70,13 @@ export default function InicioPage() {
           <div className="container mx-auto">
             <div className="rounded-3xl border border-emerald-100 bg-white/50  p-8 md:p-10 shadow-[0_10px_15px_-10px_rgba(6,95,70,0.6)] text-center">
               <p className="text-emerald-900/80 text-sm md:text-base font-medium tracking-wide uppercase mb-3">
-                Nueva oportunidad en Oxapampa
+                Proximamente
               </p>
               <h3 className="text-2xl md:text-3xl font-poppins font-bold text-emerald-950 mb-4">
-                Te interesan propiedades?
+                Goxa Propiedades
               </h3>
               <p className="text-emerald-900/90 max-w-2xl mx-auto text-base md:text-lg mb-7">
-                Descubre lotes y espacios listos para invertir o vivir rodeado de naturaleza.
+                Estamos preparando esta seccion. Muy pronto estara disponible.
               </p>
               <a
                 href="https://propiedadeslandhaus.vercel.app/"
@@ -84,7 +84,7 @@ export default function InicioPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-7 py-3 text-white font-semibold transition hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
               >
-                Ve a Goxa Propiedades
+                Proximamente
               </a>
             </div>
           </div>
