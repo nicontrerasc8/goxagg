@@ -688,7 +688,7 @@ export const products: Product[] = [
     id: 20,
     name: "Sacha Jergón",
     description: "Tubérculo anticanceroso y antiinflamatorio, de la selva peruana. Fortalece el sistema inmunológico.",
-    variants: [{ label: "100g", price: "S/ 15" }],
+    variants: [{ label: "100g", price: "S/ 18" }],
     imageSrc: "/sacha-jergon.png",
     alt: "Sacha Jergón",
     category: "Salud",
