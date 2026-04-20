@@ -974,4 +974,34 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+    id: 30,
+    name: "GOXA STEAK!!",
+    description: "Bistecs suaves de Brangus de pastura, criados libres en los valles de Oxapampa.",
+    variants: [{ label: "Pack 750g", price: "S/ 45" }],
+    imageSrc: "/carne.jpeg",
+    alt: "Bistecs de carne Brangus de Oxapampa",
+    category: "Parrillas",
+    badge: "Nuevo",
+    popup: {
+      title: "GOXA STEAK!!",
+      description: "Bistecs de tapa o bola de lomo: cortes suaves de terneras Brangus criadas libres y alimentadas solo con pasto en los valles de Oxapampa.",
+      sections: [
+        {
+          heading: "Origen",
+          points: [
+            "Carne de pastura Brangus de Oxapampa.",
+            "Vacas criadas libres, alimentadas solo con pasto de los valles de Oxapampa.",
+          ],
+        },
+        {
+          heading: "Presentación",
+          points: [
+            "Pack de 4 bistecs.",
+            "Precio referencial: S/ 45 por pack de 750g.",
+          ],
+        },
+      ],
+    },
+  },
 ];

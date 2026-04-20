@@ -165,6 +165,7 @@ export default function CategoryProductsView({ category, products }: CategoryPro
 
                     <p className="mb-6 flex-1 text-sm text-gray-500">
                       {product.description}
+                      {" "}
                       <button className="ml-2 font-bold text-emerald-700" onClick={() => openProductModal(product)}>
                         Leer más
                       </button>

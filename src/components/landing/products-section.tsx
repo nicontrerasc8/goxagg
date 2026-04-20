@@ -291,6 +291,7 @@ export default function ProductsSection() {
 
                   <p className="text-sm text-gray-500 mb-6 flex-1">
                     {p.description}
+                    {" "}
                     <button className="text-emerald-700 font-bold ml-2" onClick={() => openProductModal(p)}>
                       Leer más
                     </button>
