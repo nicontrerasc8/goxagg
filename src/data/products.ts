@@ -305,6 +305,38 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+    id: 32,
+    name: "Kefir de Leche Premium",
+    description: "Kefir de leche 100% natural con fermentos probioticos y cultivos primitivos. Sin conservantes ni quimicos.",
+    variants: [{ label: "720ml", price: "S/ 27" }],
+    imageSrc: "/kefir.png",
+    alt: "Kefir de leche natural",
+    category: "Desayunos",
+    badge: "Nuevo",
+    popup: {
+      title: "Kefir de Leche Premium",
+      description: "Kefir de leche 100% natural elaborado con fermentos probioticos y leche natural para acompanar desayunos nutritivos.",
+      sections: [
+        {
+          heading: "Producto natural",
+          points: [
+            "Con cultivos primitivos y fermentos probioticos.",
+            "Utilizamos leche 100% natural.",
+            "Sin conservantes ni quimicos.",
+          ],
+        },
+        {
+          heading: "Presentacion y conservacion",
+          points: [
+            "Presentacion de 720 ml.",
+            "Conservar en refrigeracion, recomendable entre 2 C y 6 C.",
+            "Ideal para tomar solo o combinar con frutas, miel o granola.",
+          ],
+        },
+      ],
+    },
+  },
   // DESAYUNOS
   
   {
@@ -914,6 +946,38 @@ export const products: Product[] = [
   //   category: "Salud",
   // },
 
+  {
+    id: 31,
+    name: "Ashwagandha Premium",
+    description: "Suplemento natural premium para liberar el estres mental, fisico y emocional, con 60 vegcapsules de 500mg.",
+    variants: [{ label: "Frasco 60 pastillas", price: "S/ 69.90" }],
+    imageSrc: "/ashwaganda.png",
+    alt: "Ashwagandha premium",
+    category: "Salud",
+    badge: "Nuevo",
+    popup: {
+      title: "Ashwagandha Premium",
+      description: "Formula premium en vegcapsules de 500mg orientada al equilibrio del sistema nervioso central y el bienestar diario.",
+      sections: [
+        {
+          heading: "Beneficios",
+          points: [
+            "Libera el estres mental, fisico y emocional.",
+            "Ayuda a prevenir la ansiedad, la deficiencia inmune, la falta de energia, la fatiga cronica, el insomnio y la depresion.",
+            "Regula el sistema nervioso central e induce la homeostasis.",
+          ],
+        },
+        {
+          heading: "Presentacion",
+          points: [
+            "Frasco de 60 pastillas.",
+            "60 vegcapsules de 500mg.",
+            "Producto premium para rutinas de salud y bienestar.",
+          ],
+        },
+      ],
+    },
+  },
   // PACKS
   {
     id: 23,

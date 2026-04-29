@@ -5,6 +5,7 @@ import { X, ShoppingBag, ArrowRight, Heart, XCircle } from "lucide-react";
 import CartItemComponent from "./cart-item";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
+import CulqiPaymentButton from "./culqi-payment-button";
 
 const ORDER_HISTORY_KEY = "goxa-order-history";
 const MAX_ORDER_HISTORY = 12;
@@ -294,21 +295,24 @@ export default function CartDrawer() {
                             Seguir comprando
                         </Button>
                     </div>
-                    <Button
-                        asChild
-                        onClick={handleBuyClick}
-                        className="w-full relative h-[56px] text-lg font-bold bg-emerald-900 hover:bg-emerald-800 text-white rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-300"
-                    >
-                        <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="relative flex items-center justify-center gap-2"
+                    <div className="space-y-3">
+                        <CulqiPaymentButton />
+                        <Button
+                            asChild
+                            onClick={handleBuyClick}
+                            className="w-full relative h-[56px] text-lg font-bold bg-emerald-900 hover:bg-emerald-800 text-white rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                         >
-                            <ShoppingBag className="h-6 w-6" />
-                            Comprar
-                        </a>
-                    </Button>
+                            <a
+                                href={whatsappLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="relative flex items-center justify-center gap-2"
+                            >
+                                <ShoppingBag className="h-6 w-6" />
+                                Comprar por WhatsApp
+                            </a>
+                        </Button>
+                    </div>
               
                     </div>
                 )}
