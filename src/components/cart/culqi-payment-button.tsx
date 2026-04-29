@@ -225,7 +225,7 @@ export default function CulqiPaymentButton() {
 
   return (
     <div className="space-y-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
-      <div>
+      {/* <div>
         <p className="text-sm font-bold text-green-950">Pagar online con Culqi</p>
         <p className="mt-1 text-xs leading-relaxed text-green-900/65">
           Ingresa tu correo para recibir la confirmacion del pago.
@@ -252,7 +252,7 @@ export default function CulqiPaymentButton() {
           <CreditCard className="h-5 w-5" />
         )}
         Pagar con Culqi
-      </Button>
+      </Button> */}
     </div>
   );
 }
