@@ -307,7 +307,7 @@ export const products: Product[] = [
   },
   {
     id: 32,
-    name: "Kefir de Leche Premium",
+    name: "Kefir de Leche ",
     description: "Kefir de leche 100% natural con fermentos probioticos y cultivos primitivos. Sin conservantes ni quimicos.",
     variants: [{ label: "720ml", price: "S/ 27" }],
     imageSrc: "/kefir.png",
@@ -315,7 +315,7 @@ export const products: Product[] = [
     category: "Desayunos",
     badge: "Nuevo",
     popup: {
-      title: "Kefir de Leche Premium",
+      title: "Kefir de Leche ",
       description: "Kefir de leche 100% natural elaborado con fermentos probioticos, cepas vivas y leche natural para acompanar desayunos nutritivos.",
       sections: [
         {
