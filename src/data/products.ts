@@ -316,14 +316,15 @@ export const products: Product[] = [
     badge: "Nuevo",
     popup: {
       title: "Kefir de Leche Premium",
-      description: "Kefir de leche 100% natural elaborado con fermentos probioticos y leche natural para acompanar desayunos nutritivos.",
+      description: "Kefir de leche 100% natural elaborado con fermentos probioticos, cepas vivas y leche natural para acompanar desayunos nutritivos.",
       sections: [
         {
-          heading: "Producto natural",
+          heading: "Beneficios",
           points: [
-            "Con cultivos primitivos y fermentos probioticos.",
-            "Utilizamos leche 100% natural.",
-            "Sin conservantes ni quimicos.",
+            "Es un potente probiótico natural rico en bacterias benéficas.",
+            "Contiene calcio, proteínas y vitamina K2.",
+            "Mejora la salud digestiva al equilibrar la microbiota intestinal.",
+            "Fortalece el sistema inmunológico, reduce la inflamación, mejora la tolerancia a la lactosa y promueve la salud ósea y cardiovascular.",
           ],
         },
         {
