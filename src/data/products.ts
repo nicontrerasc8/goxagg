@@ -952,7 +952,7 @@ export const products: Product[] = [
     name: "Ashwagandha Premium",
     description: "Suplemento natural premium para liberar el estres mental, fisico y emocional, con 60 vegcapsules de 500mg.",
     variants: [{ label: "Frasco 60 pastillas", price: "S/ 69.90" }],
-    imageSrc: "/ashwaganda.png",
+    imageSrc: "/ashwaganda.jpeg",
     alt: "Ashwagandha premium",
     category: "Salud",
     badge: "Nuevo",
@@ -1069,4 +1069,38 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+  id: 33,
+  name: "Aceite de Oliva Extra Virgen de Tacna",
+  description:
+    "Aceite de oliva extra virgen 100% natural, de alta calidad, extraído mediante procesos continuos sin químicos. Destaca por su sabor, aroma y reconocimiento internacional.",
+  variants: [{ label: "Botella 1L", price: "S/ 60" }],
+  imageSrc: "/aceiteoliva.jpeg",
+  alt: "Aceite de oliva extra virgen de Tacna",
+  category: "Salud",
+  badge: "Nuevo",
+  popup: {
+    title: "Aceite de Oliva Extra Virgen de Tacna",
+    description:
+      "Aceite 100% natural producido en Tacna, reconocido internacionalmente por su calidad, sabor y aroma.",
+    sections: [
+      {
+        heading: "Características",
+        points: [
+          "Extraído mediante procesos continuos sin químicos.",
+          "Producto natural de alta calidad.",
+          "Reconocido internacionalmente y premiado con medallas de oro en concursos de prestigio.",
+        ],
+      },
+      {
+        heading: "Beneficios",
+        points: [
+          "Rico en antioxidantes y grasas buenas.",
+          "Ideal para acompañar ensaladas, panes, pastas y comidas diarias.",
+          "Una opción saludable para la dieta diaria.",
+        ],
+      },
+    ],
+  },
+},
 ];
