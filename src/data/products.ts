@@ -46,6 +46,9 @@ export const products: Product[] = [
     variants: [
       { label: "500gr Neto", price: "S/ 30" },
       { label: "1kg Neto", price: "S/ 55" },
+      {
+        label: "265gr Neto", price: "S/.20"
+      }
     ],
     imageSrc: "/miel.png",
     alt: "Miel Oxapampa Goxa",
