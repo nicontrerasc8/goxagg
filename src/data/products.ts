@@ -43,12 +43,12 @@ export const products: Product[] = [
     id: 1,
     name: "Miel de Abeja de Oxapampa",
     description: "100% natural y pura, cosecha artesanal de selva central. Mejora el sistema inmunológico y es fuente de energía natural.",
-    variants: [
-      { label: "500gr Neto", price: "S/ 30" },
-      { label: "1kg Neto", price: "S/ 55" },
-      {
+    variants: [    {
         label: "265gr Neto", price: "S/.20"
-      }
+      },
+      { label: "500gr Neto", price: "S/ 30" },
+      { label: "1kg Neto", price: "S/ 55" }
+  
     ],
     imageSrc: "/miel.png",
     alt: "Miel Oxapampa Goxa",
@@ -603,7 +603,7 @@ export const products: Product[] = [
     name: "Costillas Ahumadas",
     description: "Deliciosas costillas de cerdo sazonadas y ahumadas artesanalmente.",
     variants: [
-      { label: "250g", price: "S/ 25" },
+
       { label: "500g", price: "S/ 38" },
     ],
     imageSrc: "/costillas.png",
@@ -1035,8 +1035,8 @@ export const products: Product[] = [
         {
           heading: "Recomendación",
           points: [
-            "Degustarlo en el desayuno.",
-            "⁠Perfecto para quien quiere llevar a casa lo mejor de la región.",
+            "Disfrutarlo en el desayuno.",
+            "Lo más saludable y natural, para compartir en Familia",
           ],
         },
       ],
@@ -1046,7 +1046,7 @@ export const products: Product[] = [
     id: 30,
     name: "GOXA STEAK!!",
     description: "Bistecs suaves de Brangus de pastura, criados libres en los valles de Oxapampa.",
-    variants: [{ label: "Pack 750g", price: "S/ 45" }],
+    variants: [{ label: "Pack", price: "S/ 45" }],
     imageSrc: "/carne.jpeg",
     alt: "Bistecs de carne Brangus de Oxapampa",
     category: "Parrillas",
