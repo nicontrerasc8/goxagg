@@ -50,7 +50,7 @@ export const products: Product[] = [
       { label: "1kg Neto", price: "S/ 55" }
   
     ],
-    imageSrc: "/miel.png",
+    imageSrc: "/miel.jpeg",
     alt: "Miel Oxapampa Goxa",
     category: "Miel",
     badge: "Top",
@@ -1065,8 +1065,7 @@ export const products: Product[] = [
         {
           heading: "Presentación",
           points: [
-            "Pack de 4 bistecs.",
-            "Precio referencial: S/ 45 por pack de 750g.",
+            "Pack de 4 bistecs."
           ],
         },
       ],
