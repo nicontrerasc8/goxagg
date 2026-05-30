@@ -982,6 +982,70 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+    id: 34,
+    name: "Black Maca",
+    description: "Maca negra en vegcapsules para aumentar la resistencia, la fuerza vital, el rendimiento fisico y la virilidad masculina.",
+    variants: [{ label: "60 vegcapsules de 500mg", price: "S/ 39.90" }],
+    imageSrc: "/black_maca.jpeg",
+    alt: "Black Maca en vegcapsules",
+    category: "Salud",
+    badge: "Nuevo",
+    popup: {
+      title: "Black Maca",
+      description: "Suplemento natural de maca negra orientado a energia, rendimiento fisico y vitalidad.",
+      sections: [
+        {
+          heading: "Beneficios",
+          points: [
+            "Aumenta la resistencia, la fuerza vital y el rendimiento fisico.",
+            "Contiene aminoacidos, fitonutrientes, vitaminas y minerales esenciales.",
+            "Aumenta la virilidad masculina y el apetito sexual en ambos sexos.",
+          ],
+        },
+        {
+          heading: "Presentacion",
+          points: [
+            "Frasco de 60 vegcapsules.",
+            "Cada vegcapsule contiene 500mg.",
+            "Ideal para rutinas de energia, bienestar y desempeno diario.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 35,
+    name: "Turmeric Formula",
+    description: "Formula de curcuma, kion y pimienta negra con soporte antiinflamatorio, digestivo, inmune y articular.",
+    variants: [{ label: "60 vegcapsules de 500mg", price: "S/ 39.90" }],
+    imageSrc: "/turmeric_formula.jpeg",
+    alt: "Turmeric Formula con curcuma kion y pimienta negra",
+    category: "Salud",
+    badge: "Nuevo",
+    popup: {
+      title: "Turmeric Formula",
+      description: "Curcuma, kion y pimienta negra en vegcapsules para soporte integral del bienestar diario.",
+      sections: [
+        {
+          heading: "Beneficios",
+          points: [
+            "Antiinflamatorio natural de amplio espectro.",
+            "Refuerzo para el sistema inmunologico, el corazon, el tracto gastrointestinal y demas organos.",
+            "Mejora la digestion y brinda soporte a las articulaciones.",
+          ],
+        },
+        {
+          heading: "Presentacion",
+          points: [
+            "Frasco de 60 vegcapsules.",
+            "Cada vegcapsule contiene 500mg.",
+            "Formula con curcuma, kion y pimienta negra.",
+          ],
+        },
+      ],
+    },
+  },
   // PACKS
   {
     id: 23,
