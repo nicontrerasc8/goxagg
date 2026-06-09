@@ -52,6 +52,16 @@ export default function StoreLayout({
                 <li><Link href="/about" className="text-gray-300 hover:text-white">Nosotros</Link></li>
                 <li><Link href="/contact" className="text-gray-300 hover:text-white">Contacto</Link></li>
                 <li><Link href="/terms" className="text-gray-300 hover:text-white">Términos y Condiciones</Link></li>
+                <li>
+                  <a
+                    href="https://privacypolicyurl.com/goxa/privacy-policy.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-white"
+                  >
+                    Politica de privacidad
+                  </a>
+                </li>
               </ul>
             </div>
             <div>

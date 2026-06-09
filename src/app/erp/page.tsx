@@ -141,7 +141,15 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-800 text-white">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <a
+              href="https://privacypolicyurl.com/goxa/privacy-policy.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white"
+            >
+              Politica de privacidad
+            </a>
             <p>© {new Date().getFullYear()} GOXA Platform. Todos los derechos reservados.</p>
           </div>
         </div>

@@ -102,7 +102,17 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-white/70">{currentYear} GOXA. Todos los derechos reservados.</p>
+        <div className="mt-8 flex flex-col items-center gap-2 text-xs text-white/70">
+          <a
+            href="https://privacypolicyurl.com/goxa/privacy-policy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            Politica de privacidad
+          </a>
+          <p>{currentYear} GOXA. Todos los derechos reservados.</p>
+        </div>
       </div>
     </footer>
   );
