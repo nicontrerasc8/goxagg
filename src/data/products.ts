@@ -44,7 +44,7 @@ export const products: Product[] = [
     name: "Miel de Abeja de Oxapampa",
     description: "100% natural y pura, cosecha artesanal de selva central. Mejora el sistema inmunológico y es fuente de energía natural.",
     variants: [    {
-        label: "265gr Neto", price: "S/.20"
+        label: "265gr Neto", price: "S/ 20"
       },
       { label: "500gr Neto", price: "S/ 30" },
       { label: "1kg Neto", price: "S/ 55" }
