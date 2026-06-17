@@ -45,7 +45,7 @@ export default function SiteFooter() {
           </a>
 
           <a
-            href="https://www.instagram.com/goxa_pe"
+            href="https://www.instagram.com/goxa_peru"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Síguenos en Instagram"

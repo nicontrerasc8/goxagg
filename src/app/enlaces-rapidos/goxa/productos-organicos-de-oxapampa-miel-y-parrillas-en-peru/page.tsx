@@ -100,7 +100,7 @@ export default function EnlacesRapidos() {
         
         {/* Instagram Link */}
         <motion.a 
-          href="https://www.instagram.com/goxa_pe" 
+          href="https://www.instagram.com/goxa_peru" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm transition-all hover:shadow-md hover:bg-purple-50"

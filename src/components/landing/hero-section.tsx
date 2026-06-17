@@ -108,7 +108,7 @@ export default function HeroSection() {
           <Facebook className="w-5 h-5" />
         </a>
         <a
-          href="https://www.instagram.com/goxa_pe"
+          href="https://www.instagram.com/goxa_peru"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"

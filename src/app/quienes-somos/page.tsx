@@ -247,7 +247,7 @@ export default function QuienesSomosPage() {
                 Redes sociales
               </p>
               <div className="mt-4 flex gap-4">
-                <a href="https://www.instagram.com/goxa_pe" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/goxa_peru" target="_blank">Instagram</a>
                 <a href="https://www.facebook.com/people/Goxa/61566229425220/" target="_blank">Facebook</a>
                 <a href="https://www.tiktok.com/@goxa_peru" target="_blank">TikTok</a>
                  <a href="https://www.linkedin.com/company/grupo-especa/" target="_blank">LinkedIn</a>
