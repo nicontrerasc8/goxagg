@@ -493,37 +493,37 @@ export const products: Product[] = [
       ],
     },
   },
-  {
-    id: 13,
-    name: "Granola Spirulina Premium",
-    description: "Deliciosa granola con hojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
-    variants: [
-      { label: "350g", price: "S/ 25" }
-    ],
-    imageSrc: "/granola1.png",
-    alt: "Granola artesanal",
-    category: "Desayunos",
-    popup: {
-      title: "Granola Spirulina Premium",
-      description: "Granola con avena, spirulina, pasas y granos endulzada con panela, sin preservantes ni colorantes.",
-      sections: [
-        {
-          heading: "Beneficios",
-          points: [
-            "Spirulina que aumenta la energia y la resistencia al fatigar.",
-            "Ingredientes integrales que aportan fibra y minerales esenciales.",
-          ],
-        },
-        {
-          heading: "Consumo sugerido",
-          points: [
-            "Ideal para desayunos, bowls de yogur o snacks energizantes.",
-            "Mantiene su textura natural sin necesidad de hornear nuevamente.",
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   id: 13,
+  //   name: "Granola Spirulina Premium",
+  //   description: "Deliciosa granola con hojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
+  //   variants: [
+  //     { label: "350g", price: "S/ 25" }
+  //   ],
+  //   imageSrc: "/granola1.png",
+  //   alt: "Granola artesanal",
+  //   category: "Desayunos",
+  //   popup: {
+  //     title: "Granola Spirulina Premium",
+  //     description: "Granola con avena, spirulina, pasas y granos endulzada con panela, sin preservantes ni colorantes.",
+  //     sections: [
+  //       {
+  //         heading: "Beneficios",
+  //         points: [
+  //           "Spirulina que aumenta la energia y la resistencia al fatigar.",
+  //           "Ingredientes integrales que aportan fibra y minerales esenciales.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Consumo sugerido",
+  //         points: [
+  //           "Ideal para desayunos, bowls de yogur o snacks energizantes.",
+  //           "Mantiene su textura natural sin necesidad de hornear nuevamente.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
 
   // PARRILLAS
   {
@@ -720,66 +720,66 @@ export const products: Product[] = [
       ],
     },
   },
-  {
-    id: 20,
-    name: "Sacha Jergón",
-    description: "Tubérculo anticanceroso y antiinflamatorio, de la selva peruana. Fortalece el sistema inmunológico.",
-    variants: [{ label: "100g", price: "S/ 18" }],
-    imageSrc: "/sacha-jergon.png",
-    alt: "Sacha Jergón",
-    category: "Salud",
-    popup: {
-      title: "Sacha Jergón",
-      description: "Tubérculo de la selva peruana con propiedades anticancerígenas, antitumorales y antiinflamatorias.",
-      sections: [
-        {
-          heading: "Beneficios",
-          points: [
-            "Fortalece el sistema inmunológico y ayuda a combatir problemas respiratorios como tos, bronquitis y asma.",
-            "Rico en vitamina C, calcio, hierro, fibra y potasio para apoyar la salud general.",
-            "Ayuda a prevenir úlceras gastrointestinales y actúa como cicatrizante tópico en infecciones virales.",
-          ],
-        },
-        {
-          heading: "Modo de uso",
-          points: [
-            "Una cucharada diluida en agua tibia o infusiones para tomar en ayunas o antes de comidas.",
-            "Complementa alimentos y jugos para reforzar defensas en temporada de resfriados.",
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 21,
-    name: "Tocosh (Penicilina Natural)",
-    description: "Papa fermentada, antibiótico natural que combate gastritis y úlceras.",
-    variants: [{ label: "200g", price: "S/ 16" }],
-    imageSrc: "/penicilina.png",
-    alt: "Harina de tocosh",
-    category: "Salud",
-    popup: {
-      title: "Tocosh",
-      description: "Papa fermentada considerada penicilina natural con múltiples beneficios antimicrobianos y digestivos.",
-      sections: [
-        {
-          heading: "Beneficios",
-          points: [
-            "Acción antibiótica natural que combate gastritis, úlceras y resfriados.",
-            "Regenera la flora intestinal y fortalece el sistema inmunológico.",
-            "Alivia afecciones respiratorias y renales, además de ser antioxidante y antiinflamatorio.",
-          ],
-        },
-        {
-          heading: "Modo de consumo",
-          points: [
-            "Una cucharada antes de las comidas diluida en agua para aprovechar sus propiedades.",
-            "Se puede combinar con jugos o infusiones tibias para suavizar su sabor.",
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   id: 20,
+  //   name: "Sacha Jergón",
+  //   description: "Tubérculo anticanceroso y antiinflamatorio, de la selva peruana. Fortalece el sistema inmunológico.",
+  //   variants: [{ label: "100g", price: "S/ 18" }],
+  //   imageSrc: "/sacha-jergon.png",
+  //   alt: "Sacha Jergón",
+  //   category: "Salud",
+  //   popup: {
+  //     title: "Sacha Jergón",
+  //     description: "Tubérculo de la selva peruana con propiedades anticancerígenas, antitumorales y antiinflamatorias.",
+  //     sections: [
+  //       {
+  //         heading: "Beneficios",
+  //         points: [
+  //           "Fortalece el sistema inmunológico y ayuda a combatir problemas respiratorios como tos, bronquitis y asma.",
+  //           "Rico en vitamina C, calcio, hierro, fibra y potasio para apoyar la salud general.",
+  //           "Ayuda a prevenir úlceras gastrointestinales y actúa como cicatrizante tópico en infecciones virales.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Modo de uso",
+  //         points: [
+  //           "Una cucharada diluida en agua tibia o infusiones para tomar en ayunas o antes de comidas.",
+  //           "Complementa alimentos y jugos para reforzar defensas en temporada de resfriados.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   id: 21,
+  //   name: "Tocosh (Penicilina Natural)",
+  //   description: "Papa fermentada, antibiótico natural que combate gastritis y úlceras.",
+  //   variants: [{ label: "200g", price: "S/ 16" }],
+  //   imageSrc: "/penicilina.png",
+  //   alt: "Harina de tocosh",
+  //   category: "Salud",
+  //   popup: {
+  //     title: "Tocosh",
+  //     description: "Papa fermentada considerada penicilina natural con múltiples beneficios antimicrobianos y digestivos.",
+  //     sections: [
+  //       {
+  //         heading: "Beneficios",
+  //         points: [
+  //           "Acción antibiótica natural que combate gastritis, úlceras y resfriados.",
+  //           "Regenera la flora intestinal y fortalece el sistema inmunológico.",
+  //           "Alivia afecciones respiratorias y renales, además de ser antioxidante y antiinflamatorio.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Modo de consumo",
+  //         points: [
+  //           "Una cucharada antes de las comidas diluida en agua para aprovechar sus propiedades.",
+  //           "Se puede combinar con jugos o infusiones tibias para suavizar su sabor.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
   {
     id: 25,
     name: "Jabón Artesanal Oxapampa",
@@ -863,80 +863,80 @@ export const products: Product[] = [
       },
     ],
   },
-  {
-    id: 26,
-    name: "Fideos de Quinoa y Arroz",
-    description: "Fideos integrales libres de gluten elaborados con quinoa, arroz y kiwicha, libres de gluten para pastas ligeras.",
-    variants: [
-      { label: "200g", price: "S/ 14" },
-    ],
-    imageSrc: "/fideos.png",
-    alt: "Fideos de quinoa y arroz",
-    category: "Salud",
-    popup: {
-      title: "Fideos de Quinoa y Arroz",
-      description: "Fideos integrales libres de gluten elaborados con quinoa, arroz y kiwicha para platos ligeros.",
-      sections: [
-        {
-          heading: "Nutrición",
-          points: [
-            "Quinoa y kiwicha aportan aminoácidos, fibra y minerales sin gluten.",
-            "Leves y digestivos para acompañar salsas, salteados o caldos.",
-          ],
-        },
-        {
-          heading: "Recomendación culinaria",
-          points: [
-            "Cocinar en agua hirviendo hasta que queden al dente y mezclar con vegetales frescos.",
-            "Ideales para platos vegetarianos o como base de bowls nutritivos.",
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 27,
-    name: "Kombucha",
-    description:
-      "La Kombucha es una bebida probiótica fermentada que restaura el equilibrio del organismo y refuerza la microbiota.",
-    variants: [{ label: "260ml", price: "S/ 10" }],
-    imageSrc: "/kombucha.png",
-    alt: "Kombucha natural",
-    category: "Salud",
-    popup: {
-      title: "Kombucha",
-      description:
-        "Infusión fermentada hecha a base de té verde orgánico, stevia natural y pulpa de fruta, rica en probioticos, antioxidantes y compuestos bioactivos que benefician digestión, hígado y defensas.",
-      sections: [
-        {
-          heading: "Beneficios principales",
-          points: [
-            "Altamente digestiva y refrescante después de las comidas.",
-            "Refuerza el sistema inmune gracias a su carga de probióticos.",
-            "Mejora la función hepática al ayudar en la eliminación de toxinas.",
-            "Reduce gastritis, reflujo e inflamaciones gastrointestinales.",
-            "Antioxidante, antiinflamatoria e hidratante en climas cálidos.",
-          ],
-        },
-        {
-          heading: "Sabores disponibles",
-          points: [
-            "Piña y spirulina",
-            "Fresa y hierba luisa",
-            "Jamaica y canela",
-          ],
-        },
-        {
-          heading: "Modo de consumo",
-          points: [
-            "Ideal para tomar después de las comidas o como sustituto del agua de tiempo.",
-            "Mantener refrigerada y agitar suavemente antes de servir.",
-          ],
-        },
-      ],
-      notes: ["Contiene probióticos vivos y es una alternativa baja en azúcar a las sodas."],
-    },
-  },
+  // {
+  //   id: 26,
+  //   name: "Fideos de Quinoa y Arroz",
+  //   description: "Fideos integrales libres de gluten elaborados con quinoa, arroz y kiwicha, libres de gluten para pastas ligeras.",
+  //   variants: [
+  //     { label: "200g", price: "S/ 14" },
+  //   ],
+  //   imageSrc: "/fideos.png",
+  //   alt: "Fideos de quinoa y arroz",
+  //   category: "Salud",
+  //   popup: {
+  //     title: "Fideos de Quinoa y Arroz",
+  //     description: "Fideos integrales libres de gluten elaborados con quinoa, arroz y kiwicha para platos ligeros.",
+  //     sections: [
+  //       {
+  //         heading: "Nutrición",
+  //         points: [
+  //           "Quinoa y kiwicha aportan aminoácidos, fibra y minerales sin gluten.",
+  //           "Leves y digestivos para acompañar salsas, salteados o caldos.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Recomendación culinaria",
+  //         points: [
+  //           "Cocinar en agua hirviendo hasta que queden al dente y mezclar con vegetales frescos.",
+  //           "Ideales para platos vegetarianos o como base de bowls nutritivos.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   id: 27,
+  //   name: "Kombucha",
+  //   description:
+  //     "La Kombucha es una bebida probiótica fermentada que restaura el equilibrio del organismo y refuerza la microbiota.",
+  //   variants: [{ label: "260ml", price: "S/ 10" }],
+  //   imageSrc: "/kombucha.png",
+  //   alt: "Kombucha natural",
+  //   category: "Salud",
+  //   popup: {
+  //     title: "Kombucha",
+  //     description:
+  //       "Infusión fermentada hecha a base de té verde orgánico, stevia natural y pulpa de fruta, rica en probioticos, antioxidantes y compuestos bioactivos que benefician digestión, hígado y defensas.",
+  //     sections: [
+  //       {
+  //         heading: "Beneficios principales",
+  //         points: [
+  //           "Altamente digestiva y refrescante después de las comidas.",
+  //           "Refuerza el sistema inmune gracias a su carga de probióticos.",
+  //           "Mejora la función hepática al ayudar en la eliminación de toxinas.",
+  //           "Reduce gastritis, reflujo e inflamaciones gastrointestinales.",
+  //           "Antioxidante, antiinflamatoria e hidratante en climas cálidos.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Sabores disponibles",
+  //         points: [
+  //           "Piña y spirulina",
+  //           "Fresa y hierba luisa",
+  //           "Jamaica y canela",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Modo de consumo",
+  //         points: [
+  //           "Ideal para tomar después de las comidas o como sustituto del agua de tiempo.",
+  //           "Mantener refrigerada y agitar suavemente antes de servir.",
+  //         ],
+  //       },
+  //     ],
+  //     notes: ["Contiene probióticos vivos y es una alternativa baja en azúcar a las sodas."],
+  //   },
+  // },
   // {
   //   id: 22,
   //   name: "Penicilina Natural",
@@ -1135,38 +1135,38 @@ export const products: Product[] = [
       ],
     },
   },
-  {
-  id: 33,
-  name: "Aceite de Oliva Extra Virgen de Tacna",
-  description:
-    "Aceite de oliva extra virgen 100% natural, de alta calidad, extraído mediante procesos continuos sin químicos. Destaca por su sabor, aroma y reconocimiento internacional.",
-  variants: [{ label: "Botella 1L", price: "S/ 60" }],
-  imageSrc: "/aceiteoliva.jpeg",
-  alt: "Aceite de oliva extra virgen de Tacna",
-  category: "Salud",
-  badge: "Nuevo",
-  popup: {
-    title: "Aceite de Oliva Extra Virgen de Tacna",
-    description:
-      "Aceite 100% natural producido en Tacna, reconocido internacionalmente por su calidad, sabor y aroma.",
-    sections: [
-      {
-        heading: "Características",
-        points: [
-          "Extraído mediante procesos continuos sin químicos.",
-          "Producto natural de alta calidad.",
-          "Reconocido internacionalmente y premiado con medallas de oro en concursos de prestigio.",
-        ],
-      },
-      {
-        heading: "Beneficios",
-        points: [
-          "Rico en antioxidantes y grasas buenas.",
-          "Ideal para acompañar ensaladas, panes, pastas y comidas diarias.",
-          "Una opción saludable para la dieta diaria.",
-        ],
-      },
-    ],
-  },
-},
+//   {
+//   id: 33,
+//   name: "Aceite de Oliva Extra Virgen de Tacna",
+//   description:
+//     "Aceite de oliva extra virgen 100% natural, de alta calidad, extraído mediante procesos continuos sin químicos. Destaca por su sabor, aroma y reconocimiento internacional.",
+//   variants: [{ label: "Botella 1L", price: "S/ 60" }],
+//   imageSrc: "/aceiteoliva.jpeg",
+//   alt: "Aceite de oliva extra virgen de Tacna",
+//   category: "Salud",
+//   badge: "Nuevo",
+//   popup: {
+//     title: "Aceite de Oliva Extra Virgen de Tacna",
+//     description:
+//       "Aceite 100% natural producido en Tacna, reconocido internacionalmente por su calidad, sabor y aroma.",
+//     sections: [
+//       {
+//         heading: "Características",
+//         points: [
+//           "Extraído mediante procesos continuos sin químicos.",
+//           "Producto natural de alta calidad.",
+//           "Reconocido internacionalmente y premiado con medallas de oro en concursos de prestigio.",
+//         ],
+//       },
+//       {
+//         heading: "Beneficios",
+//         points: [
+//           "Rico en antioxidantes y grasas buenas.",
+//           "Ideal para acompañar ensaladas, panes, pastas y comidas diarias.",
+//           "Una opción saludable para la dieta diaria.",
+//         ],
+//       },
+//     ],
+//   },
+// },
 ];
