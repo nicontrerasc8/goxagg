@@ -189,7 +189,8 @@ export const products: Product[] = [
     name: "Café Señor Ox",
     description: "Café orgánico premium cultivado a 2000 m.s.n.m. con certificado BIOAY y nutrido con agua mineral de manantial de los Andes.",
     variants: [
-      { label: "Molido 250g", price: "S/ 25" }
+      { label: "Molido 250g", price: "S/ 26.90" },
+      { label: "Grano 250g", price: "S/ 28" },
     ],
     imageSrc: "/cafe.png",
     alt: "Café de Oxapampa",
@@ -216,35 +217,35 @@ export const products: Product[] = [
       ],
     },
   },
-  {
-    id: 6,
-    name: "Chocolates Artesanales 75% Cacao",
-    description: "Chocolate GOXA 75% cacao, endulzado con panela, sin aditivos ni conservantes.",
-    variants: [{ label: "6 unidades", price: "S/ 16" }],
-    imageSrc: "/chocolates.png",
-    alt: "Chocolates artesanales Goxa",
-    category: "Café y chocolates",
-    popup: {
-      title: "Chocolates Artesanales 75% Cacao",
-      description: "Chocolate 75% cacao elaborado en Oxapampa con panela y manteca de cacao sin conservantes.",
-      sections: [
-        {
-          heading: "Origen y elaboracion",
-          points: [
-            "Cacao de alta pureza combinado con panela natural y manteca de cacao.",
-            "Hecho en Oxapampa sin aditivos ni conservantes artificiales.",
-          ],
-        },
-        {
-          heading: "Sabor y uso",
-          points: [
-            "Textura firme y aterciopelada para disfrutar en tabla de chocolates o regalar.",
-            "Perfecto con cafes de altura, frutas secas o como snack energetico.",
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   id: 6,
+  //   name: "Chocolates Artesanales 75% Cacao",
+  //   description: "Chocolate GOXA 75% cacao, endulzado con panela, sin aditivos ni conservantes.",
+  //   variants: [{ label: "6 unidades", price: "S/ 16" }],
+  //   imageSrc: "/chocolates.png",
+  //   alt: "Chocolates artesanales Goxa",
+  //   category: "Café y chocolates",
+  //   popup: {
+  //     title: "Chocolates Artesanales 75% Cacao",
+  //     description: "Chocolate 75% cacao elaborado en Oxapampa con panela y manteca de cacao sin conservantes.",
+  //     sections: [
+  //       {
+  //         heading: "Origen y elaboracion",
+  //         points: [
+  //           "Cacao de alta pureza combinado con panela natural y manteca de cacao.",
+  //           "Hecho en Oxapampa sin aditivos ni conservantes artificiales.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Sabor y uso",
+  //         points: [
+  //           "Textura firme y aterciopelada para disfrutar en tabla de chocolates o regalar.",
+  //           "Perfecto con cafes de altura, frutas secas o como snack energetico.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
 {
     id: 7,
     name: "Yogurt Probiótico",
@@ -603,7 +604,7 @@ export const products: Product[] = [
     name: "Costillas Ahumadas",
     description: "Deliciosas costillas de cerdo sazonadas y ahumadas artesanalmente.",
     variants: [
-
+{ label: "250g", price: "S/ 25" },
       { label: "500g", price: "S/ 38" },
     ],
     imageSrc: "/costillas.png",
@@ -780,89 +781,89 @@ export const products: Product[] = [
   //     ],
   //   },
   // },
-  {
-    id: 25,
-    name: "Jabón Artesanal Oxapampa",
-    description:
-      "Jabones producidos con ingredientes botánicos y con aceites esenciales para cara y cuerpo, sin aromas sintéticos ni colorantes artificiales.",
-    variants: [
-      { label: "100g", price: "S/ 16 por unidad" },
+  // {
+  //   id: 25,
+  //   name: "Jabón Artesanal Oxapampa",
+  //   description:
+  //     "Jabones producidos con ingredientes botánicos y con aceites esenciales para cara y cuerpo, sin aromas sintéticos ni colorantes artificiales.",
+  //   variants: [
+  //     { label: "100g", price: "S/ 16 por unidad" },
   
-    ],
-    imageSrc: "/jabon.png",
-    alt: "Jabón natural Oxapampa",
-    category: "Salud",
-    popup: {
-      title: "Jabón Artesanal Oxapampa",
-      description:
-        "Jabones con ingredientes botánicos y aceites esenciales totalmente naturales, formulados para nutrir, proteger y renovar la piel.",
-      sections: [
+  //   ],
+  //   imageSrc: "/jabon.png",
+  //   alt: "Jabón natural Oxapampa",
+  //   category: "Salud",
+  //   popup: {
+  //     title: "Jabón Artesanal Oxapampa",
+  //     description:
+  //       "Jabones con ingredientes botánicos y aceites esenciales totalmente naturales, formulados para nutrir, proteger y renovar la piel.",
+  //     sections: [
         
-      ],
-    },
-    options: [
-      {
-        id: "cafe",
-        name: "Jabón de café",
-        description:
-          "Exfoliante corporal con granos de café finamente molidos que limpian y tonifican sin resecar.",
-        benefits: [
-          "Reduce celulitis y previene estrías con cada masaje en el cuerpo.",
-          "Alto en antioxidantes que hidratan, tonifican y reafirma visiblemente.",
-        ],
-      },
-      {
-        id: "arcilla-rosada",
-        name: "Jabón de arcilla rosada",
-        description:
-          "Purifica y desinflama mientras aporta nutrición y elasticidad gracias a su carga de minerales.",
-        benefits: [
-          "Aporta colágeno y favorece la regeneración celular.",
-          "Ilumina la piel al tiempo que conserva su equilibrio natural.",
-        ],
-      },
-      {
-        id: "cacao",
-        name: "Jabón de cacao",
-        description:
-          "Hidratante, nutritivo y antiinflamatorio, ideal para recuperar elasticidad y evitar el envejecimiento prematuro.",
-        benefits: [
-          "Mejora visiblemente la elasticidad de la piel.",
-          "Nutre y protege con una sensación de confort y calidez.",
-        ],
-      },
-      {
-        id: "avena-miel",
-        name: "Jabón de avena y miel",
-        description:
-          "Nutre, protege y exfolia suavemente, perfecto para pieles sensibles y con tendencia acneica.",
-        benefits: [
-          "Elimina impurezas y previene la aparición de espinillas.",
-          "Suave ritual diario que mantiene la barrera natural intacta.",
-        ],
-      },
-      {
-        id: "curcuma-miel",
-        name: "Jabón de cúrcuma y miel",
-        description:
-          "Retrasa el envejecimiento celular con propiedades antisépticas, antiinflamatorias y antibacterianas.",
-        benefits: [
-          "Disminuye acné, manchas y cicatrices con uso constante.",
-          "Refuerza la limpieza profunda sin irritar la piel.",
-        ],
-      },
-      {
-        id: "arroz",
-        name: "Jabón de arroz",
-        description:
-          "Exfolia suavemente, disminuye manchas y cicatrices mientras tonifica y aclara con vitaminas y antioxidantes.",
-        benefits: [
-          "Estimula la regeneración celular y producción de colágeno.",
-          "Suaviza y aclara sin resecar ni irritar.",
-        ],
-      },
-    ],
-  },
+  //     ],
+  //   },
+  //   options: [
+  //     {
+  //       id: "cafe",
+  //       name: "Jabón de café",
+  //       description:
+  //         "Exfoliante corporal con granos de café finamente molidos que limpian y tonifican sin resecar.",
+  //       benefits: [
+  //         "Reduce celulitis y previene estrías con cada masaje en el cuerpo.",
+  //         "Alto en antioxidantes que hidratan, tonifican y reafirma visiblemente.",
+  //       ],
+  //     },
+  //     {
+  //       id: "arcilla-rosada",
+  //       name: "Jabón de arcilla rosada",
+  //       description:
+  //         "Purifica y desinflama mientras aporta nutrición y elasticidad gracias a su carga de minerales.",
+  //       benefits: [
+  //         "Aporta colágeno y favorece la regeneración celular.",
+  //         "Ilumina la piel al tiempo que conserva su equilibrio natural.",
+  //       ],
+  //     },
+  //     {
+  //       id: "cacao",
+  //       name: "Jabón de cacao",
+  //       description:
+  //         "Hidratante, nutritivo y antiinflamatorio, ideal para recuperar elasticidad y evitar el envejecimiento prematuro.",
+  //       benefits: [
+  //         "Mejora visiblemente la elasticidad de la piel.",
+  //         "Nutre y protege con una sensación de confort y calidez.",
+  //       ],
+  //     },
+  //     {
+  //       id: "avena-miel",
+  //       name: "Jabón de avena y miel",
+  //       description:
+  //         "Nutre, protege y exfolia suavemente, perfecto para pieles sensibles y con tendencia acneica.",
+  //       benefits: [
+  //         "Elimina impurezas y previene la aparición de espinillas.",
+  //         "Suave ritual diario que mantiene la barrera natural intacta.",
+  //       ],
+  //     },
+  //     {
+  //       id: "curcuma-miel",
+  //       name: "Jabón de cúrcuma y miel",
+  //       description:
+  //         "Retrasa el envejecimiento celular con propiedades antisépticas, antiinflamatorias y antibacterianas.",
+  //       benefits: [
+  //         "Disminuye acné, manchas y cicatrices con uso constante.",
+  //         "Refuerza la limpieza profunda sin irritar la piel.",
+  //       ],
+  //     },
+  //     {
+  //       id: "arroz",
+  //       name: "Jabón de arroz",
+  //       description:
+  //         "Exfolia suavemente, disminuye manchas y cicatrices mientras tonifica y aclara con vitaminas y antioxidantes.",
+  //       benefits: [
+  //         "Estimula la regeneración celular y producción de colágeno.",
+  //         "Suaviza y aclara sin resecar ni irritar.",
+  //       ],
+  //     },
+  //   ],
+  // },
   // {
   //   id: 26,
   //   name: "Fideos de Quinoa y Arroz",
