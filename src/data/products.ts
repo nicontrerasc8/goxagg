@@ -109,79 +109,7 @@ export const products: Product[] = [
       ],
     },
   },
-  {
-    id: 3,
-    name: "Goxa Power (Gel Natural)",
-    description: "Mezcla potente de miel, polen, jalea real y propóleo. Aumenta la testosterona y la energía vital.",
-    variants: [{ label: "250g", price: "S/ 25.00" }],
-    imageSrc: "/gel.png",
-    alt: "Goxa Power Gel",
-    category: "Miel",
-    badge: "Top",
-    popup: {
-      title: "Goxa Power (Gel Natural)",
-      description: "Combina miel, polen, jalea real y propoleo para entregar energia y defensas 100% natural.",
-      sections: [
-        {
-          heading: "Combinacion energetica",
-          points: [
-            "Vitaminas B, C, D, E y A junto a Zinc, Magnesio y Manganeso.",
-            "Aporta proteinas y minerales que complementan la alimentacion y la recuperacion muscular.",
-            "Incrementa testosterona y energia vital para jornadas intensas.",
-          ],
-        },
-        {
-          heading: "Defensa respiratoria",
-          points: [
-            "Aliado para combatir bronquitis, asma, tos y resfrios con una combinacion antibacteriana.",
-            "Refuerza las defensas para prevenir enfermedades respiratorias.",
-          ],
-        },
-        {
-          heading: "Modo de uso",
-          points: [
-            "Una cucharada en ayunas o antes de actividad fisica para activar el organismo.",
-            "Mezclar con agua tibia, jugos o yogurt si se prefiere una textura mas suave.",
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 4,
-    name: "Propóleo",
-    description: "Antibiótico natural para reforzar defensas.",
-    variants: [{ label: "20ml", price: "S/ 24" }],
-    imageSrc: "/propoleo.png",
-    alt: "Propóleo",
-    category: "Miel",
-    badge: "Top",
-    popup: {
-      title: "Propoleo",
-      description: "Antibiotico natural de la colmena que refuerza defensas y combate afecciones respiratorias comunes.",
-      sections: [
-        {
-          heading: "Propiedades esenciales",
-          points: [
-            "Refuerza el sistema inmunologico con accion antibacteriana, antimicotica, antiinflamatoria y cicatrizante.",
-            "Cura heridas, quemaduras y acne gracias a su capacidad regenerativa.",
-            "Alivia gastritis, ulceras y diarrea.",
-          ],
-        },
-        {
-          heading: "Uso recomendado",
-          points: [
-            "Tomar dos veces al dia despues de las comidas: adultos 12-15 gotas y ninos 8-10 gotas en medio vaso de agua tibia o infusion.",
-            "Durante resfrios o influenza, mezclar con miel, gel y polen para potenciar la respuesta.",
-          ],
-        },
-      ],
-      notes: [
-        "Tratamiento recomendado para prevenir resfrios, influenza, bronquitis y tos.",
-        "En ayunas, diluir una cucharadita de miel, gel y polen en media taza de agua tibia y luego agregar 12 gotas de propoleo.",
-      ],
-    },
-  },
+
 
   // CAFÉ Y CHOCOLATES
   {
@@ -1170,4 +1098,77 @@ export const products: Product[] = [
 //     ],
 //   },
 // },
+  {
+    id: 3,
+    name: "Goxa Power (Gel Natural)",
+    description: "Mezcla potente de miel, polen, jalea real y propóleo. Aumenta la testosterona y la energía vital.",
+    variants: [{ label: "250g", price: "S/ 25.00" }],
+    imageSrc: "/gel.png",
+    alt: "Goxa Power Gel",
+    category: "Miel",
+    badge: "Top",
+    popup: {
+      title: "Goxa Power (Gel Natural)",
+      description: "Combina miel, polen, jalea real y propoleo para entregar energia y defensas 100% natural.",
+      sections: [
+        {
+          heading: "Combinacion energetica",
+          points: [
+            "Vitaminas B, C, D, E y A junto a Zinc, Magnesio y Manganeso.",
+            "Aporta proteinas y minerales que complementan la alimentacion y la recuperacion muscular.",
+            "Incrementa testosterona y energia vital para jornadas intensas.",
+          ],
+        },
+        {
+          heading: "Defensa respiratoria",
+          points: [
+            "Aliado para combatir bronquitis, asma, tos y resfrios con una combinacion antibacteriana.",
+            "Refuerza las defensas para prevenir enfermedades respiratorias.",
+          ],
+        },
+        {
+          heading: "Modo de uso",
+          points: [
+            "Una cucharada en ayunas o antes de actividad fisica para activar el organismo.",
+            "Mezclar con agua tibia, jugos o yogurt si se prefiere una textura mas suave.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 4,
+    name: "Propóleo",
+    description: "Antibiótico natural para reforzar defensas.",
+    variants: [{ label: "20ml", price: "S/ 24" }],
+    imageSrc: "/propoleo.png",
+    alt: "Propóleo",
+    category: "Miel",
+    badge: "Top",
+    popup: {
+      title: "Propoleo",
+      description: "Antibiotico natural de la colmena que refuerza defensas y combate afecciones respiratorias comunes.",
+      sections: [
+        {
+          heading: "Propiedades esenciales",
+          points: [
+            "Refuerza el sistema inmunologico con accion antibacteriana, antimicotica, antiinflamatoria y cicatrizante.",
+            "Cura heridas, quemaduras y acne gracias a su capacidad regenerativa.",
+            "Alivia gastritis, ulceras y diarrea.",
+          ],
+        },
+        {
+          heading: "Uso recomendado",
+          points: [
+            "Tomar dos veces al dia despues de las comidas: adultos 12-15 gotas y ninos 8-10 gotas en medio vaso de agua tibia o infusion.",
+            "Durante resfrios o influenza, mezclar con miel, gel y polen para potenciar la respuesta.",
+          ],
+        },
+      ],
+      notes: [
+        "Tratamiento recomendado para prevenir resfrios, influenza, bronquitis y tos.",
+        "En ayunas, diluir una cucharadita de miel, gel y polen en media taza de agua tibia y luego agregar 12 gotas de propoleo.",
+      ],
+    },
+  },
 ];
