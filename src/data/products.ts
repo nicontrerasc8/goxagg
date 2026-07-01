@@ -251,7 +251,7 @@ export const products: Product[] = [
     name: "Yogurt Probiótico",
     description: "Yogurt con cultivos vivos que fortalecen digestión y sistema inmunológico.",
     variants: [{ label: "350ml", price: "S/ 7" },{ label: "1L", price: "S/ 12" }],
-    imageSrc: "/yogurt-mosel.png",
+    imageSrc: "/yogurtmosel.jpeg",
     alt: "Yogurt probiótico",
     category: "Desayunos",
     popup: {
@@ -349,7 +349,7 @@ export const products: Product[] = [
     name: "Queso Brie",
     description: "Queso estilo francés premiado internacionalmente, pasta blanda.",
     variants: [{ label: "250g", price: "S/ 30" }],
-    imageSrc: "/queso-brie.png",
+    imageSrc: "/brie.jpeg",
     alt: "Queso Brie",
     category: "Desayunos",
     popup: {
@@ -378,7 +378,7 @@ export const products: Product[] = [
     name: "Queso Camembert",
     description: "Queso francés con sabor intenso y textura cremosa.",
     variants: [{ label: "250g", price: "S/ 30" }],
-    imageSrc: "/queso-brie.png",
+    imageSrc: "/camembert.jpeg",
     alt: "Queso Camembert",
     category: "Desayunos",
     popup: {
@@ -410,7 +410,7 @@ export const products: Product[] = [
       { label: "240g", price: "S/ 18" },
       { label: "450g", price: "S/ 32" },
     ],
-    imageSrc: "/mantequilla.png",
+    imageSrc: "/mantequilla.jpeg",
     alt: "Mantequilla artesanal",
     category: "Desayunos",
     popup: {
@@ -636,7 +636,7 @@ export const products: Product[] = [
     name: "Cecina Ahumada",
     description: "Cortes selectos de cerdo con ahumado artesanal a leña.",
     variants: [{ label: "500g", price: "S/ 34" }],
-    imageSrc: "/cecina.png",
+    imageSrc: "/cecina.jpeg",
     alt: "Cecina ahumada",
     category: "Parrillas",
     popup: {
