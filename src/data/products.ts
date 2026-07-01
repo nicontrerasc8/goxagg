@@ -44,10 +44,10 @@ export const products: Product[] = [
     name: "Miel de Abeja de Oxapampa",
     description: "100% natural y pura, cosecha artesanal de selva central. Mejora el sistema inmunológico y es fuente de energía natural.",
     variants: [    {
-        label: "265gr Neto", price: "S/ 20"
+        label: "265gr Neto", price: "S/ 25"
       },
-      { label: "500gr Neto", price: "S/ 30" },
-      { label: "1kg Neto", price: "S/ 55" }
+      { label: "500gr Neto", price: "S/ 35" },
+      { label: "1kg Neto", price: "S/ 63" }
   
     ],
     imageSrc: "/miel.jpeg",
@@ -113,7 +113,7 @@ export const products: Product[] = [
     id: 3,
     name: "Goxa Power (Gel Natural)",
     description: "Mezcla potente de miel, polen, jalea real y propóleo. Aumenta la testosterona y la energía vital.",
-    variants: [{ label: "250g", price: "S/ 28.90" }],
+    variants: [{ label: "250g", price: "S/ 25.00" }],
     imageSrc: "/gel.png",
     alt: "Goxa Power Gel",
     category: "Miel",
@@ -468,7 +468,7 @@ export const products: Product[] = [
     name: "Granola Gourmet",
     description: "Mezcla crocante de cereales y frutos rojos, endulzado con panela. Libre de preservantes y colorantes. Ideal para desayunos y snacks.",
     variants: [
-      { label: "350g", price: "S/ 18" }
+      { label: "350g", price: "S/ 20" }
     ],
     imageSrc: "/granola2.png",
     alt: "Granola artesanal",
@@ -695,7 +695,7 @@ export const products: Product[] = [
     id: 19,
     name: "Cúrcuma con Pimienta",
     description: "Potente antiinflamatorio y antioxidante natural para tu salud.",
-    variants: [{ label: "200g", price: "S/ 12.90" }],
+    variants: [{ label: "200g", price: "S/ 15.00" }],
     imageSrc: "/curcuma.png",
     alt: "Cúrcuma en polvo",
     category: "Salud",
