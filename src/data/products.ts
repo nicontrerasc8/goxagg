@@ -179,7 +179,7 @@ export const products: Product[] = [
     name: "Yogurt Probiótico",
     description: "Yogurt con cultivos vivos que fortalecen digestión y sistema inmunológico.",
     variants: [{ label: "350ml", price: "S/ 7" },{ label: "1L", price: "S/ 12" }],
-    imageSrc: "/yogurtmosel.jpeg",
+    imageSrc: "/yogurmosel.jpeg",
     alt: "Yogurt probiótico",
     category: "Desayunos",
     popup: {
@@ -446,7 +446,7 @@ export const products: Product[] = [
   //       {
   //         heading: "Consumo sugerido",
   //         points: [
-  //           "Ideal para desayunos, bowls de yogur o snacks energizantes.",
+  //           "Ideal para desayunos, bowlo snacks energizantes.",
   //           "Mantiene su textura natural sin necesidad de hornear nuevamente.",
   //         ],
   //       },
@@ -535,7 +535,7 @@ export const products: Product[] = [
 { label: "250g", price: "S/ 25" },
       { label: "500g", price: "S/ 38" },
     ],
-    imageSrc: "/costillas.png",
+    imageSrc: "/costillas.jpeg",
     alt: "Costillas ahumadas",
     category: "Parrillas",
     popup: {
@@ -884,7 +884,7 @@ export const products: Product[] = [
     name: "Ashwagandha Premium",
     description: "Suplemento natural premium para liberar el estres mental, fisico y emocional, con 60 vegcapsules de 500mg.",
     variants: [{ label: "Frasco 60 pastillas", price: "S/ 69.90" }],
-    imageSrc: "/ashwaganda.jpeg",
+    imageSrc: "/ashwa.png",
     alt: "Ashwagandha premium",
     category: "Salud",
     badge: "Nuevo",
