@@ -975,6 +975,54 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+    id: 36,
+    name: "Filtro de Agua de 3 Etapas",
+    description:
+      "Agua saludable directamente del caño con microfiltración, protección antibacteriana y carbón activado. Fácil de instalar y sin electricidad.",
+    variants: [
+      {
+        label: "Equipo completo · IGV y delivery nacional incluidos",
+        price: "S/ 930",
+      },
+    ],
+    imageSrc: "/filtro.jpg",
+    alt: "Filtro de agua de tres etapas instalado en un caño",
+    category: "Salud",
+    badge: "Nuevo",
+    popup: {
+      title: "Filtro de Agua de 3 Etapas",
+      description:
+        "Fabricado en el Reino Unido con tecnología presente en más de 140 países. Funciona con la presión del agua, sin electricidad, y es fácil de instalar.",
+      sections: [
+        {
+          heading: "Tecnología superior de 3 etapas",
+          points: [
+            "Cerámica microporosa para una microfiltración eficaz.",
+            "Plata ionizada como protección antibacteriana natural.",
+            "Carbón activado para eliminar el cloro y recuperar el rico sabor natural del agua.",
+          ],
+        },
+        {
+          heading: "Instalación y mantenimiento",
+          points: [
+            "Fácil de colocar directamente en el caño.",
+            "No requiere electricidad: funciona con la presión del agua.",
+            "El filtro interno se cambia una vez al año por S/ 260; te avisaremos cuando corresponda.",
+          ],
+        },
+        {
+          heading: "Cómo comprar",
+          points: [
+            "Envíanos por WhatsApp tu nombre, celular, dirección y una foto de tu caño para confirmar la instalación.",
+            "Aceptamos pagos con tarjeta de crédito o transferencia al BCP.",
+            "El precio incluye IGV y delivery a nivel nacional.",
+          ],
+        },
+      ],
+      notes: ["El filtro interno de reemplazo se adquiere por separado una vez al año."],
+    },
+  },
   // PACKS
   {
     id: 23,

@@ -28,6 +28,7 @@ export default function CartDrawer() {
     const drawerRef = useRef<HTMLDivElement>(null);
     const [orderHistory, setOrderHistory] = useState<OrderHistoryEntry[]>([]);
     const whatsappNumber = "51998855069";
+    const includesWaterFilter = items.some((item) => item.productId === 36);
     const whatsappLink = items.length
         ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent([
               "Hola, me gustaria hacer el siguiente pedido:",
@@ -35,6 +36,17 @@ export default function CartDrawer() {
                   `- ${item.quantity} x ${item.productName}${item.variantLabel ? ` (${item.variantLabel})` : ""}`
               ),
               `Total estimado: S/ ${totalPrice.toFixed(2)}`,
+              ...(includesWaterFilter
+                  ? [
+                        "",
+                        "Para coordinar la instalación del filtro:",
+                        "Nombre:",
+                        "Celular:",
+                        "Dirección:",
+                        "Adjuntaré una foto de mi caño en este chat.",
+                        "El filtro incluye IGV y delivery a nivel nacional. Deseo pagar con tarjeta de crédito o transferencia al BCP.",
+                    ]
+                  : []),
           ].join("\n"))}`
         : undefined;
 
@@ -273,7 +285,11 @@ export default function CartDrawer() {
                                 <span className="text-lg font-bold text-green-950">Total Estimado</span>
                                 <div className="text-right">
                                     <span className="block text-2xl font-extrabold text-green-700 leading-none">S/ {totalPrice.toFixed(2)}</span>
-                                    <span className="text-[10px] text-green-800/40 font-medium">No incluye envío</span>
+                                    <span className="text-[10px] text-green-800/40 font-medium">
+                                        {includesWaterFilter
+                                            ? "Filtro: IGV y delivery nacional incluidos"
+                                            : "No incluye envío"}
+                                    </span>
                                 </div>
                             </div>
                         </div>
