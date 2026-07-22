@@ -905,6 +905,7 @@ export const products: Product[] = [
           points: [
             "Frasco de 60 pastillas.",
             "60 vegcapsules de 500mg.",
+            
             "Producto premium para rutinas de salud y bienestar.",
           ],
         },
