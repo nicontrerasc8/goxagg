@@ -39,6 +39,7 @@ export type Product = {
 
 export const products: Product[] = [
   // MIEL
+  
   {
     id: 1,
     name: "Miel de Abeja de Oxapampa",
@@ -77,6 +78,51 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+  id: 37,
+  name: "Café de Especialidad GOXA",
+  description:
+    "Café de especialidad de Oxapampa con 85.5 puntos de análisis sensorial, tratamiento orgánico y producido por pequeños agricultores a más de 1,800 m.s.n.m.",
+  variants: [
+    { label: "Molido 250g", price: "S/ 33" },
+    { label: "Grano 250g", price: "S/ 35" },
+  ],
+  imageSrc: "/goxa-coffee.jpeg",
+  alt: "Café de Especialidad GOXA",
+  category: "Café y chocolates",
+  badge: "Nuevo",
+  popup: {
+    title: "Café de Especialidad GOXA",
+    description:
+      "Un café de especialidad espectacular, con 85.5 puntos de análisis sensorial, producido en Oxapampa por pequeños agricultores que mantienen la tradición y el cuidado artesanal en cada etapa del proceso.",
+    sections: [
+      {
+        heading: "Origen y calidad",
+        points: [
+          "Producido en Oxapampa por pequeños agricultores a más de 1,800 m.s.n.m.",
+          "Café de especialidad con 85.5 puntos de análisis sensorial.",
+          "Cultivado mediante tratamiento orgánico y con especial cuidado en la selección de cada grano rojo (cerezo).",
+        ],
+      },
+      {
+        heading: "Proceso artesanal",
+        points: [
+          "Selección manual de cada cerezo para asegurar la calidad del café.",
+          "Procesos naturales de lavado, fermentación y secado al sol.",
+          "Elaborado respetando el medio ambiente y manteniendo la tradición cafetalera.",
+        ],
+      },
+      {
+        heading: "Presentaciones",
+        points: [
+          "Molido 250g: S/ 33.",
+          "Grano 250g: S/ 35.",
+          "Ideal para conocedores y amantes del café de especialidad.",
+        ],
+      },
+    ],
+  },
+},
   {
     id: 2,
     name: "Polen de Abeja",
