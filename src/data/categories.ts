@@ -5,7 +5,7 @@ import { Coffee, Flame, Gift, HeartPulse, LayoutGrid, Sparkles, Sunrise } from "
 export const categoryOrder: Category[] = [
   "Todos",
   "Miel",
-  "Café y chocolates",
+  "Café",
   "Desayunos",
   "Parrillas",
   "Salud",
@@ -36,11 +36,11 @@ export const categoryMeta: Record<
     description: "Dulzura pura directamente de la colmena",
     buttonGradient: "from-amber-100 to-amber-50",
   },
-  "Café y chocolates": {
+  Café: {
     icon: Coffee,
     circleBg: "bg-amber-100 text-amber-900",
     accentBg: "from-amber-900 to-amber-800",
-    description: "Rituales energizantes y chocolatería fina",
+    description: "Café de altura con aroma y sabor excepcionales",
     buttonGradient: "from-amber-200 to-amber-100",
   },
   Desayunos: {
@@ -76,7 +76,7 @@ export const categoryMeta: Record<
 const categorySlugMap: Record<Category, string> = {
   Todos: "todos",
   Miel: "miel",
-  "Café y chocolates": "cafe-y-chocolates",
+  Café: "cafe",
   Desayunos: "desayunos",
   Parrillas: "parrillas",
   Salud: "salud",
@@ -90,6 +90,9 @@ const slugCategoryMap: Record<string, Category> = Object.entries(categorySlugMap
   },
   {} as Record<string, Category>
 );
+
+// Conserva los enlaces compartidos antes del cambio de nombre de la categoría.
+slugCategoryMap["cafe-y-chocolates"] = "Café";
 
 export const getCategorySlug = (category: Category) => categorySlugMap[category];
 export const getCategoryFromSlug = (slug: string | undefined) => {

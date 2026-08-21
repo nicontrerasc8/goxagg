@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const categoryOrder: Category[] = [
   "Todos",
   "Miel",
-  "Café y chocolates",
+  "Café",
   "Desayunos",
   "Parrillas",
   "Salud",
@@ -39,11 +39,11 @@ const categoryMeta: Record<
     accentBg: "from-amber-900 to-amber-700",
     description: "Dulzura pura directamente de la colmena",
   },
-  "Café y chocolates": {
+  Café: {
     icon: Coffee,
     circleBg: "bg-amber-100 text-amber-900",
     accentBg: "from-amber-900 to-amber-800",
-    description: "Rituales energizantes y chocolatería fina",
+    description: "Café de altura con aroma y sabor excepcionales",
   },
   Desayunos: {
     icon: Sunrise,

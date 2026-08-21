@@ -1,4 +1,4 @@
-export type Category = "Todos" | "Miel" | "Café y chocolates" | "Desayunos" | "Parrillas" | "Salud" | "Packs";
+export type Category = "Todos" | "Miel" | "Café" | "Desayunos" | "Parrillas" | "Salud" | "Packs";
 
 export type ProductVariant = {
   label: string;
@@ -89,7 +89,7 @@ export const products: Product[] = [
   ],
   imageSrc: "/goxa-coffee.jpeg",
   alt: "Café de Especialidad GOXA",
-  category: "Café y chocolates",
+  category: "Café",
   badge: "Nuevo",
   popup: {
     title: "Café de Especialidad GOXA",
@@ -127,7 +127,7 @@ export const products: Product[] = [
     id: 2,
     name: "Polen de Abeja",
     description: "Granulado natural, superalimento rico en proteínas, vitaminas, antioxidantes y minerales como el fósforo (cerebro).",
-    variants: [{ label: "320g", price: "S/ 25" }],
+    variants: [{ label: "320g", price: "S/ 22" }],
     imageSrc: "/polen.png",
     alt: "Polen Oxapampa Goxa",
     category: "Miel",
@@ -157,7 +157,7 @@ export const products: Product[] = [
   },
 
 
-  // CAFÉ Y CHOCOLATES
+  // CAFÉ
   {
     id: 5,
     name: "Café Señor Ox",
@@ -168,7 +168,7 @@ export const products: Product[] = [
     ],
     imageSrc: "/cafe.png",
     alt: "Café de Oxapampa",
-    category: "Café y chocolates",
+    category: "Café",
     badge: "Top",
     popup: {
       title: "Café Señor Ox",
@@ -191,35 +191,6 @@ export const products: Product[] = [
       ],
     },
   },
-  // {
-  //   id: 6,
-  //   name: "Chocolates Artesanales 75% Cacao",
-  //   description: "Chocolate GOXA 75% cacao, endulzado con panela, sin aditivos ni conservantes.",
-  //   variants: [{ label: "6 unidades", price: "S/ 16" }],
-  //   imageSrc: "/chocolates.png",
-  //   alt: "Chocolates artesanales Goxa",
-  //   category: "Café y chocolates",
-  //   popup: {
-  //     title: "Chocolates Artesanales 75% Cacao",
-  //     description: "Chocolate 75% cacao elaborado en Oxapampa con panela y manteca de cacao sin conservantes.",
-  //     sections: [
-  //       {
-  //         heading: "Origen y elaboracion",
-  //         points: [
-  //           "Cacao de alta pureza combinado con panela natural y manteca de cacao.",
-  //           "Hecho en Oxapampa sin aditivos ni conservantes artificiales.",
-  //         ],
-  //       },
-  //       {
-  //         heading: "Sabor y uso",
-  //         points: [
-  //           "Textura firme y aterciopelada para disfrutar en tabla de chocolates o regalar.",
-  //           "Perfecto con cafes de altura, frutas secas o como snack energetico.",
-  //         ],
-  //       },
-  //     ],
-  //   },
-  // },
 {
     id: 7,
     name: "Yogurt Probiótico",

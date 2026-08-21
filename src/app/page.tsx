@@ -56,7 +56,7 @@ export default function Home() {
     
               </div>
               <p className="text-lg text-green-900/85 leading-relaxed">
-Haz tu pedido de miel pura, polen, yogurt y quesos   gourmet, parrillas de carne de pastura, chocolates 75% cacao. <br/>
+Haz tu pedido de miel pura, polen, café de especialidad, yogurt y quesos gourmet, y parrillas de carne de pastura. <br/>
 Todo listo para agregar a tu carrito y recibirlo en Lima y provincias!              </p>
             
  
