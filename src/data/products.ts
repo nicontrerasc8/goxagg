@@ -439,37 +439,37 @@ export const products: Product[] = [
       ],
     },
   },
-  // {
-  //   id: 13,
-  //   name: "Granola Spirulina Premium",
-  //   description: "Deliciosa granola con hojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
-  //   variants: [
-  //     { label: "350g", price: "S/ 25" }
-  //   ],
-  //   imageSrc: "/granola1.png",
-  //   alt: "Granola artesanal",
-  //   category: "Desayunos",
-  //   popup: {
-  //     title: "Granola Spirulina Premium",
-  //     description: "Granola con avena, spirulina, pasas y granos endulzada con panela, sin preservantes ni colorantes.",
-  //     sections: [
-  //       {
-  //         heading: "Beneficios",
-  //         points: [
-  //           "Spirulina que aumenta la energia y la resistencia al fatigar.",
-  //           "Ingredientes integrales que aportan fibra y minerales esenciales.",
-  //         ],
-  //       },
-  //       {
-  //         heading: "Consumo sugerido",
-  //         points: [
-  //           "Ideal para desayunos, bowlo snacks energizantes.",
-  //           "Mantiene su textura natural sin necesidad de hornear nuevamente.",
-  //         ],
-  //       },
-  //     ],
-  //   },
-  // },
+  {
+    id: 13,
+    name: "Granola Spirulina Premium",
+    description: "Deliciosa granola con hojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
+    variants: [
+      { label: "350g", price: "S/ 25" }
+    ],
+    imageSrc: "/granola1.png",
+    alt: "Granola artesanal",
+    category: "Desayunos",
+    popup: {
+      title: "Granola Spirulina Premium",
+      description: "Granola con avena, spirulina, pasas y granos endulzada con panela, sin preservantes ni colorantes.",
+      sections: [
+        {
+          heading: "Beneficios",
+          points: [
+            "Spirulina que aumenta la energia y la resistencia al fatigar.",
+            "Ingredientes integrales que aportan fibra y minerales esenciales.",
+          ],
+        },
+        {
+          heading: "Consumo sugerido",
+          points: [
+            "Ideal para desayunos, bowlo snacks energizantes.",
+            "Mantiene su textura natural sin necesidad de hornear nuevamente.",
+          ],
+        },
+      ],
+    },
+  },
 
   // PARRILLAS
   {
