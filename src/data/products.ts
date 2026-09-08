@@ -127,7 +127,7 @@ export const products: Product[] = [
     id: 2,
     name: "Polen de Abeja",
     description: "Granulado natural, superalimento rico en proteínas, vitaminas, antioxidantes y minerales como el fósforo (cerebro).",
-    variants: [{ label: "320g", price: "S/ 22" }],
+    variants: [{ label: "170g", price: "S/ 22" }],
     imageSrc: "/polen.png",
     alt: "Polen Oxapampa Goxa",
     category: "Miel",
@@ -384,7 +384,7 @@ export const products: Product[] = [
     name: "Queso Bel Paese",
     description: "Queso italiano artesanal de pasta blanda, sin conservantes. Perfecto para sándwiches y comidas.",
     variants: [{ label: "200g", price: "S/ 20" }],
-    imageSrc: "/queso-belpaese.png",
+    imageSrc: "/parmesano.jpeg",
     alt: "Queso Bel Paese",
     category: "Desayunos",
     popup: {
@@ -1202,39 +1202,39 @@ export const products: Product[] = [
   //     ],
   //   },
   // },
-  // {
-  //   id: 4,
-  //   name: "Propóleo",
-  //   description: "Antibiótico natural para reforzar defensas.",
-  //   variants: [{ label: "20ml", price: "S/ 24" }],
-  //   imageSrc: "/propoleo.png",
-  //   alt: "Propóleo",
-  //   category: "Miel",
-  //   badge: "Top",
-  //   popup: {
-  //     title: "Propoleo",
-  //     description: "Antibiotico natural de la colmena que refuerza defensas y combate afecciones respiratorias comunes.",
-  //     sections: [
-  //       {
-  //         heading: "Propiedades esenciales",
-  //         points: [
-  //           "Refuerza el sistema inmunologico con accion antibacteriana, antimicotica, antiinflamatoria y cicatrizante.",
-  //           "Cura heridas, quemaduras y acne gracias a su capacidad regenerativa.",
-  //           "Alivia gastritis, ulceras y diarrea.",
-  //         ],
-  //       },
-  //       {
-  //         heading: "Uso recomendado",
-  //         points: [
-  //           "Tomar dos veces al dia despues de las comidas: adultos 12-15 gotas y ninos 8-10 gotas en medio vaso de agua tibia o infusion.",
-  //           "Durante resfrios o influenza, mezclar con miel, gel y polen para potenciar la respuesta.",
-  //         ],
-  //       },
-  //     ],
-  //     notes: [
-  //       "Tratamiento recomendado para prevenir resfrios, influenza, bronquitis y tos.",
-  //       "En ayunas, diluir una cucharadita de miel, gel y polen en media taza de agua tibia y luego agregar 12 gotas de propoleo.",
-  //     ],
-  //   },
-  // },
+  {
+    id: 4,
+    name: "Propóleo",
+    description: "Antibiótico natural para reforzar defensas.",
+    variants: [{ label: "20ml", price: "S/ 24" }],
+    imageSrc: "/propoleo.png",
+    alt: "Propóleo",
+    category: "Miel",
+    badge: "Top",
+    popup: {
+      title: "Propoleo",
+      description: "Antibiotico natural de la colmena que refuerza defensas y combate afecciones respiratorias comunes.",
+      sections: [
+        {
+          heading: "Propiedades esenciales",
+          points: [
+            "Refuerza el sistema inmunologico con accion antibacteriana, antimicotica, antiinflamatoria y cicatrizante.",
+            "Cura heridas, quemaduras y acne gracias a su capacidad regenerativa.",
+            "Alivia gastritis, ulceras y diarrea.",
+          ],
+        },
+        {
+          heading: "Uso recomendado",
+          points: [
+            "Tomar dos veces al dia despues de las comidas: adultos 12-15 gotas y ninos 8-10 gotas en medio vaso de agua tibia o infusion.",
+            "Durante resfrios o influenza, mezclar con miel, gel y polen para potenciar la respuesta.",
+          ],
+        },
+      ],
+      notes: [
+        "Tratamiento recomendado para prevenir resfrios, influenza, bronquitis y tos.",
+        "En ayunas, diluir una cucharadita de miel, gel y polen en media taza de agua tibia y luego agregar 12 gotas de propoleo.",
+      ],
+    },
+  },
 ];
