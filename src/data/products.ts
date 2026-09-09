@@ -348,6 +348,37 @@ export const products: Product[] = [
     },
   },
   {
+    id: 38,
+    name: "Queso Tipo Parmesano",
+    description: "Queso duro y prensado de Oxapampa, elaborado con leche pura de vaca. Sabor intenso, textura firme y premio nacional.",
+    variants: [{ label: "250g", price: "S/ 28" }],
+    imageSrc: "/parmesano.jpeg",
+    alt: "Queso tipo parmesano de Oxapampa",
+    category: "Desayunos",
+    badge: "Nuevo",
+    popup: {
+      title: "Queso Tipo Parmesano",
+      description: "Exquisito queso tipo parmesano para conocedores, elaborado en Oxapampa con leche pura de vaca. Es un queso duro y prensado que ha ganado el primer lugar en el concurso nacional de quesos.",
+      sections: [
+        {
+          heading: "Sabor y textura",
+          points: [
+            "Por su tiempo de maduracion, normalmente presenta una textura firme y compacta, mas seca que un queso fresco.",
+            "Sabor mas intenso y concentrado, con notas lacteas y ligeramente saladas.",
+            "Aroma mas desarrollado debido a la maduracion.",
+          ],
+        },
+        {
+          heading: "Usos recomendados",
+          points: [
+            "Ideal para rallar sobre pastas, risottos, sopas y ensaladas.",
+            "Tambien puede consumirse en laminas o pequenos trozos como queso de mesa.",
+          ],
+        },
+      ],
+    },
+  },
+  {
     id: 11,
     name: "Mantequilla Artesanal",
     description: "Mantequilla 100% de vaca con fermentos lácticos, sin conservantes.",
@@ -384,7 +415,7 @@ export const products: Product[] = [
     name: "Queso Bel Paese",
     description: "Queso italiano artesanal de pasta blanda, sin conservantes. Perfecto para sándwiches y comidas.",
     variants: [{ label: "200g", price: "S/ 20" }],
-    imageSrc: "/parmesano.jpeg",
+    imageSrc: "/queso-belpaese.png",
     alt: "Queso Bel Paese",
     category: "Desayunos",
     popup: {
