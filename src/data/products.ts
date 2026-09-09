@@ -127,7 +127,7 @@ export const products: Product[] = [
     id: 2,
     name: "Polen de Abeja",
     description: "Granulado natural, superalimento rico en proteínas, vitaminas, antioxidantes y minerales como el fósforo (cerebro).",
-    variants: [{ label: "170g", price: "S/ 22" }],
+    variants: [{ label: "160g", price: "S/ 22" }],
     imageSrc: "/polen.png",
     alt: "Polen Oxapampa Goxa",
     category: "Miel",
