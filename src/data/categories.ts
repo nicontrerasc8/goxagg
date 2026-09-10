@@ -6,7 +6,7 @@ export const categoryOrder: Category[] = [
   "Todos",
   "Miel",
   "Café",
-  "Desayunos",
+  "Desayunos / Quesos",
   "Parrillas",
   "Salud",
   "Packs",
@@ -43,7 +43,7 @@ export const categoryMeta: Record<
     description: "Café de altura con aroma y sabor excepcionales",
     buttonGradient: "from-amber-200 to-amber-100",
   },
-  Desayunos: {
+  "Desayunos / Quesos": {
     icon: Sunrise,
     circleBg: "bg-slate-50 text-slate-700",
     accentBg: "from-slate-900 to-slate-500",
@@ -77,7 +77,7 @@ const categorySlugMap: Record<Category, string> = {
   Todos: "todos",
   Miel: "miel",
   Café: "cafe",
-  Desayunos: "desayunos",
+  "Desayunos / Quesos": "desayunos",
   Parrillas: "parrillas",
   Salud: "salud",
   Packs: "packs",

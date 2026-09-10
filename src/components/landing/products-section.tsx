@@ -12,7 +12,7 @@ const categoryOrder: Category[] = [
   "Todos",
   "Miel",
   "Café",
-  "Desayunos",
+  "Desayunos / Quesos",
   "Parrillas",
   "Salud",
   "Packs",
@@ -45,7 +45,7 @@ const categoryMeta: Record<
     accentBg: "from-amber-900 to-amber-800",
     description: "Café de altura con aroma y sabor excepcionales",
   },
-  Desayunos: {
+  "Desayunos / Quesos": {
     icon: Sunrise,
     circleBg: "bg-slate-50 text-slate-700",
     accentBg: "from-slate-900 to-slate-500",

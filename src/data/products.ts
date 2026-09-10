@@ -1,4 +1,4 @@
-export type Category = "Todos" | "Miel" | "Café" | "Desayunos" | "Parrillas" | "Salud" | "Packs";
+export type Category = "Todos" | "Miel" | "Café" | "Desayunos / Quesos" | "Parrillas" | "Salud" | "Packs";
 
 export type ProductVariant = {
   label: string;
@@ -198,7 +198,7 @@ export const products: Product[] = [
     variants: [{ label: "350ml", price: "S/ 7" },{ label: "1L", price: "S/ 12" }],
     imageSrc: "/yogurt-mosel.png",
     alt: "Yogurt probiótico",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Yogurt Probiotico",
       description: "Elaborado en Oxapampa con leche fresca de la region, sin conservantes ni colorantes artificiales.",
@@ -231,7 +231,7 @@ export const products: Product[] = [
     ],
     imageSrc: "/yogurt-griego.png",
     alt: "Yogurt griego",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Yogurt Griego",
       description: "Yogurt natural y cremoso con 0% grasas, 0% azucar añadida y alto contenido de proteina.",
@@ -261,7 +261,7 @@ export const products: Product[] = [
     variants: [{ label: "720ml", price: "S/ 17" }],
     imageSrc: "/kefir.jpeg",
     alt: "Kefir de leche natural",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     badge: "Nuevo",
     popup: {
       title: "Kefir de Leche ",
@@ -296,7 +296,7 @@ export const products: Product[] = [
     variants: [{ label: "250g", price: "S/ 30" }],
     imageSrc: "/brie.jpeg",
     alt: "Queso Brie",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Queso Brie",
       description: "Queso estilo francés oxapampino, premiado, de pasta blanda y corteza blanca comestible.",
@@ -325,7 +325,7 @@ export const products: Product[] = [
     variants: [{ label: "250g", price: "S/ 30" }],
     imageSrc: "/camembert.jpeg",
     alt: "Queso Camembert",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Queso Camembert",
       description: "Queso estilo francés con sabor intenso, corteza blanca y centro cremoso de Oxapampa.",
@@ -354,7 +354,7 @@ export const products: Product[] = [
     variants: [{ label: "250g", price: "S/ 28" }],
     imageSrc: "/parmesano.jpeg",
     alt: "Queso tipo parmesano de Oxapampa",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     badge: "Nuevo",
     popup: {
       title: "Queso Tipo Parmesano",
@@ -388,7 +388,7 @@ export const products: Product[] = [
     ],
     imageSrc: "/mantequilla.jpeg",
     alt: "Mantequilla artesanal",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Mantequilla Artesanal",
       description: "Elaborada con crema de leche pasteurizada 100% vaca, fermentos lácticos propios y sal justa.",
@@ -417,7 +417,7 @@ export const products: Product[] = [
     variants: [{ label: "200g", price: "S/ 20" }],
     imageSrc: "/queso-belpaese.png",
     alt: "Queso Bel Paese",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Queso Bel Paese",
       description: "Queso artesanal estilo italiano, de pasta blanda y sin conservantes para paladares suaves.",
@@ -448,7 +448,7 @@ export const products: Product[] = [
     ],
     imageSrc: "/granola2.png",
     alt: "Granola artesanal",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Granola Gourmet",
       description: "Mezcla crocante de cereales y frutos rojos endulzada con panela, sin preservantes ni colorantes.",
@@ -479,7 +479,7 @@ export const products: Product[] = [
     ],
     imageSrc: "/granola1.png",
     alt: "Granola artesanal",
-    category: "Desayunos",
+    category: "Desayunos / Quesos",
     popup: {
       title: "Granola Spirulina Premium",
       description: "Granola con avena, spirulina, pasas y granos endulzada con panela, sin preservantes ni colorantes.",
@@ -553,7 +553,7 @@ export const products: Product[] = [
     variants: [{ label: "500g", price: "S/ 32" }],
     imageSrc: "/chorizos.png",
     alt: "Chorizo oxapampino",
-    category: "Desayunos",
+    category: "Parrillas",
     popup: {
       title: "Chorizo Oxapampino",
       description: "Chorizo artesanal ahumado con mezcla de cerdo y especias tradicionales, sin conservantes ni octógonos.",
