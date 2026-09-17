@@ -258,7 +258,7 @@ export const products: Product[] = [
     id: 32,
     name: "Kefir de Leche ",
     description: "Kefir de leche 100% natural con fermentos probioticos y cultivos primitivos. Sin conservantes ni quimicos.",
-    variants: [{ label: "720ml", price: "S/ 17" }],
+    variants: [{ label: "720ml", price: "S/ 15" }],
     imageSrc: "/kefir.jpeg",
     alt: "Kefir de leche natural",
     category: "Desayunos / Quesos",
@@ -384,7 +384,7 @@ export const products: Product[] = [
     description: "Mantequilla 100% de vaca con fermentos lácticos, sin conservantes.",
     variants: [
       { label: "240g", price: "S/ 18" },
-      { label: "450g", price: "S/ 32" },
+  
     ],
     imageSrc: "/mantequilla.jpeg",
     alt: "Mantequilla artesanal",
@@ -475,7 +475,7 @@ export const products: Product[] = [
     name: "Granola Spirulina Premium",
     description: "Deliciosa granola con hojuelas de avena, spirulina (aumenta la energía), pasas y granos, endulzada con panela. Libre de preservantes y colorantes. Ideal para desayunos.",
     variants: [
-      { label: "350g", price: "S/ 25" }
+      { label: "350g", price: "S/ 23" }
     ],
     imageSrc: "/granola1.png",
     alt: "Granola artesanal",
@@ -508,7 +508,7 @@ export const products: Product[] = [
     name: "Hamburguesas Premium ",
     description: "Elaborada 100% con carne de res de pastura, sin conservantes ni quimicos. ",
     variants: [
-      { label: "La Finca 600g", price: "S/ 38" },
+    
       { label: "Branguz 680g", price: "S/ 45" },
     ],
     imageSrc: "/branguz.png",
@@ -524,16 +524,6 @@ export const products: Product[] = [
       ],
     },
     options: [
-      {
-        id: "la-finca",
-        name: "La Finca 600g",
-        description:
-          "Carne de ternera de pastura madurada con especias naturales, ideal para brasear con leña o carbón.",
-        benefits: [
-          "Madurada lentamente para resaltar una textura jugosa y un punto perfecto de cocción.",
-          "Condimentada con sal y especias naturales para mantener el sabor puro de la carne.",
-        ],
-      },
       {
         id: "branguz",
         name: "Branguz 680g",
@@ -727,36 +717,36 @@ export const products: Product[] = [
   //     ],
   //   },
   // },
-  // {
-  //   id: 21,
-  //   name: "Tocosh (Penicilina Natural)",
-  //   description: "Papa fermentada, antibiótico natural que combate gastritis y úlceras.",
-  //   variants: [{ label: "200g", price: "S/ 16" }],
-  //   imageSrc: "/penicilina.png",
-  //   alt: "Harina de tocosh",
-  //   category: "Salud",
-  //   popup: {
-  //     title: "Tocosh",
-  //     description: "Papa fermentada considerada penicilina natural con múltiples beneficios antimicrobianos y digestivos.",
-  //     sections: [
-  //       {
-  //         heading: "Beneficios",
-  //         points: [
-  //           "Acción antibiótica natural que combate gastritis, úlceras y resfriados.",
-  //           "Regenera la flora intestinal y fortalece el sistema inmunológico.",
-  //           "Alivia afecciones respiratorias y renales, además de ser antioxidante y antiinflamatorio.",
-  //         ],
-  //       },
-  //       {
-  //         heading: "Modo de consumo",
-  //         points: [
-  //           "Una cucharada antes de las comidas diluida en agua para aprovechar sus propiedades.",
-  //           "Se puede combinar con jugos o infusiones tibias para suavizar su sabor.",
-  //         ],
-  //       },
-  //     ],
-  //   },
-  // },
+  {
+    id: 21,
+    name: "Tocosh (Penicilina Natural)",
+    description: "Papa fermentada, antibiótico natural que combate gastritis y úlceras.",
+    variants: [{ label: "200g", price: "S/ 15" }],
+    imageSrc: "/penicilina.png",
+    alt: "Harina de tocosh",
+    category: "Salud",
+    popup: {
+      title: "Tocosh",
+      description: "Papa fermentada considerada penicilina natural con múltiples beneficios antimicrobianos y digestivos.",
+      sections: [
+        {
+          heading: "Beneficios",
+          points: [
+            "Acción antibiótica natural que combate gastritis, úlceras y resfriados.",
+            "Regenera la flora intestinal y fortalece el sistema inmunológico.",
+            "Alivia afecciones respiratorias y renales, además de ser antioxidante y antiinflamatorio.",
+          ],
+        },
+        {
+          heading: "Modo de consumo",
+          points: [
+            "Una cucharada antes de las comidas diluida en agua para aprovechar sus propiedades.",
+            "Se puede combinar con jugos o infusiones tibias para suavizar su sabor.",
+          ],
+        },
+      ],
+    },
+  },
   // {
   //   id: 25,
   //   name: "Jabón Artesanal Oxapampa",
@@ -992,38 +982,38 @@ export const products: Product[] = [
       ],
     },
   },
-  {
-    id: 35,
-    name: "Turmeric Formula",
-    description: "Formula de curcuma, kion y pimienta negra con soporte antiinflamatorio, digestivo, inmune y articular.",
-    variants: [{ label: "60 vegcapsules de 500mg", price: "S/ 39.90" }],
-    imageSrc: "/turmeric_formula.jpeg",
-    alt: "Turmeric Formula con curcuma kion y pimienta negra",
-    category: "Salud",
-    badge: "Nuevo",
-    popup: {
-      title: "Turmeric Formula",
-      description: "Curcuma, kion y pimienta negra en vegcapsules para soporte integral del bienestar diario.",
-      sections: [
-        {
-          heading: "Beneficios",
-          points: [
-            "Antiinflamatorio natural de amplio espectro.",
-            "Refuerzo para el sistema inmunologico, el corazon, el tracto gastrointestinal y demas organos.",
-            "Mejora la digestion y brinda soporte a las articulaciones.",
-          ],
-        },
-        {
-          heading: "Presentacion",
-          points: [
-            "Frasco de 60 vegcapsules.",
-            "Cada vegcapsule contiene 500mg.",
-            "Formula con curcuma, kion y pimienta negra.",
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   id: 35,
+  //   name: "Turmeric Formula",
+  //   description: "Formula de curcuma, kion y pimienta negra con soporte antiinflamatorio, digestivo, inmune y articular.",
+  //   variants: [{ label: "60 vegcapsules de 500mg", price: "S/ 39.90" }],
+  //   imageSrc: "/turmeric_formula.jpeg",
+  //   alt: "Turmeric Formula con curcuma kion y pimienta negra",
+  //   category: "Salud",
+  //   badge: "Nuevo",
+  //   popup: {
+  //     title: "Turmeric Formula",
+  //     description: "Curcuma, kion y pimienta negra en vegcapsules para soporte integral del bienestar diario.",
+  //     sections: [
+  //       {
+  //         heading: "Beneficios",
+  //         points: [
+  //           "Antiinflamatorio natural de amplio espectro.",
+  //           "Refuerzo para el sistema inmunologico, el corazon, el tracto gastrointestinal y demas organos.",
+  //           "Mejora la digestion y brinda soporte a las articulaciones.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Presentacion",
+  //         points: [
+  //           "Frasco de 60 vegcapsules.",
+  //           "Cada vegcapsule contiene 500mg.",
+  //           "Formula con curcuma, kion y pimienta negra.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
   {
     id: 36,
     name: "Filtro de Agua de 3 Etapas",
@@ -1134,15 +1124,15 @@ export const products: Product[] = [
   },
   {
     id: 30,
-    name: "GOXA STEAK!!",
+    name: "GOXA STEAK",
     description: "Bistecs suaves de Brangus de pastura, criados libres en los valles de Oxapampa.",
-    variants: [{ label: "Pack", price: "S/ 45" }],
+    variants: [{ label: "Pack", price: "S/ 42" }],
     imageSrc: "/carne.jpeg",
     alt: "Bistecs de carne Brangus de Oxapampa",
     category: "Parrillas",
     badge: "Nuevo",
     popup: {
-      title: "GOXA STEAK!!",
+      title: "GOXA STEAK",
       description: "Bistecs de tapa o bola de lomo: cortes suaves de terneras Brangus criadas libres y alimentadas solo con pasto en los valles de Oxapampa.",
       sections: [
         {
