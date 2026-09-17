@@ -350,7 +350,7 @@ export const products: Product[] = [
   {
     id: 38,
     name: "Queso Tipo Parmesano",
-    description: "Queso duro y prensado de Oxapampa, elaborado con leche pura de vaca. Sabor intenso, textura firme y premio nacional.",
+    description: "Queso duro y prensado de Oxapampa que eleva el sabor de tus comidas y les da un toque gourmet.",
     variants: [{ label: "250g", price: "S/ 28" }],
     imageSrc: "/parmesano.jpeg",
     alt: "Queso tipo parmesano de Oxapampa",
@@ -358,7 +358,7 @@ export const products: Product[] = [
     badge: "Nuevo",
     popup: {
       title: "Queso Tipo Parmesano",
-      description: "Exquisito queso tipo parmesano para conocedores, elaborado en Oxapampa con leche pura de vaca. Es un queso duro y prensado que ha ganado el primer lugar en el concurso nacional de quesos.",
+      description: "Exquisito queso tipo parmesano para conocedores, elaborado en Oxapampa con leche pura de vaca. Eleva el sabor a tus comidas y les da un toque gourmet.",
       sections: [
         {
           heading: "Sabor y textura",
@@ -373,6 +373,15 @@ export const products: Product[] = [
           points: [
             "Ideal para rallar sobre pastas, risottos, sopas y ensaladas.",
             "Tambien puede consumirse en laminas o pequenos trozos como queso de mesa.",
+          ],
+        },
+        {
+          heading: "Premios",
+          points: [
+            "El Parmesano tiene 8 premios.",
+            "Plata en Brasil 2025.",
+            "Plata en Chile 2025.",
+            "Bronce en la Copa America del Queso 2025.",
           ],
         },
       ],
