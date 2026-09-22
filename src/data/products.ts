@@ -515,7 +515,7 @@ export const products: Product[] = [
   {
     id: 14,
     name: "Hamburguesas Premium ",
-    description: "Elaborada 100% con carne de res de pastura, sin conservantes ni quimicos. ",
+    description: "Exquisitas hamburguesas de 680 g elaboradas con pura carne de res de pastura raza Brahman y Angus.",
     variants: [
     
       { label: "Branguz 680g", price: "S/ 45" },
@@ -526,10 +526,22 @@ export const products: Product[] = [
     badge: "Top",
     popup: {
       title: "Hamburguesas Premium ",
-      description: "Elaborada 100% con carne de res de pastura, sin conservantes ni quimicos.",
+      description: "Exquisitas hamburguesas de 680 g elaboradas con pura carne de res de pastura raza Brahman y Angus, criado libre, con una explosion de sabor delicioso que no te la puedes perder.",
       sections: [
-
-
+        {
+          heading: "Presentacion",
+          points: [
+            "4 unidades.",
+            "680 g de hamburguesas premium.",
+          ],
+        },
+        {
+          heading: "Recomendacion",
+          points: [
+            "Cocinar a fuego medio para resaltar su sabor ahumado.",
+            "Disfrutala al maximo como complemento para tus comidas, parrillas y loncheras.",
+          ],
+        },
       ],
     },
     options: [
@@ -537,10 +549,10 @@ export const products: Product[] = [
         id: "branguz",
         name: "Branguz 680g",
         description:
-          "Blend premium de Brahman y Angus criado libre; equilibrio entre marmoleo y firmeza para parrilla intensa.",
+          "Pura carne de res de pastura raza Brahman y Angus, criado libre, con una explosion de sabor delicioso.",
         benefits: [
-          "Grasas naturales que sellan la jugosidad sin necesidad de agregar aditivos.",
-          "Perfecta para planchas o parrillas abiertas gracias a su consistencia firme.",
+          "Presentacion de 4 unidades.",
+          "Cocinar a fuego medio para resaltar su sabor ahumado.",
         ],
       },
     ],
