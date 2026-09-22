@@ -47,8 +47,10 @@ export const products: Product[] = [
     variants: [    {
         label: "265gr Neto", price: "S/ 25"
       },
+      
       { label: "500gr Neto", price: "S/ 35" },
-      { label: "1kg Neto", price: "S/ 63" }
+      
+      { label: "1kg Neto", price: "S/ 58" }
   
     ],
     imageSrc: "/miel.jpeg",
