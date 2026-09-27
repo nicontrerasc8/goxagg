@@ -563,7 +563,7 @@ export const products: Product[] = [
     id: 15,
     name: "Chorizo Oxapampino",
     description: "Chorizos artesanales con carne de cerdo ahumados con especias tradicionales y libre de octógonos.",
-    variants: [{ label: "500g", price: "S/ 32" }],
+    variants: [{ label: "500g", price: "S/ 30" }],
     imageSrc: "/chorizos.png",
     alt: "Chorizo oxapampino",
     category: "Parrillas",
