@@ -4,6 +4,7 @@ import { Providers } from "@/components/providers";
 import { ApolloWrapper } from "@/components/providers/apollo-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({
         </ApolloWrapper>
         <Analytics />
       </body>
+      <GoogleAnalytics gaId="G-DRRJNXSKXD" />
     </html>
   );
 }
